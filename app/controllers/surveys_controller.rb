@@ -1,4 +1,5 @@
 class SurveysController < ApplicationController
+
   def new
     @user = current_user
     @users = User.all
@@ -6,6 +7,7 @@ class SurveysController < ApplicationController
   end
 
   def create
+    @transport_value = calculate_emissions
     raise
   end
 
