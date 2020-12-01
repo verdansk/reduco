@@ -1,5 +1,39 @@
 // Specific CSS for your home-page
 #content {
   width: 75%;
-  margin: 0 auto;
+  margin: 20px auto;
+}
+
+#home-container{
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 10px;
+  background-image: url('homeBG.jpg');
+  background-size: cover;
+
+  img {
+    max-width: 500px;
+  }
+
+  div.row {
+    align-items: center;
+    margin: 0;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+#home-buttons {
+  margin-right:5%;
+  height: 30%;
+  color:white;
+  text-align: right;
+  margin-bottom: 50px;
+
+  h1, h4{
+  text-shadow: 1px 1px #33A0F3;
+  }
+
 }
