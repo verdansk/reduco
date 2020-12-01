@@ -5,4 +5,5 @@ class Transport < ApplicationRecord
   validates :fuel, presence: true, uniqueness: true
   validates :distance, presence: true
   validates :fuel_consumption, presence: true, numericality: true
+  validates :value, numericality: true
 end
