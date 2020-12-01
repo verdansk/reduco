@@ -19,4 +19,5 @@ class TransportsController < ApplicationController
   def strong_params_transports
     params.require(:transport).permit(:category, :fuel, :distance, :fuel_consumption, :happened_at)
   end
+
 end
