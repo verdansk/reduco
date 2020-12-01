@@ -1,1 +1,7 @@
 <h1>test</h1>
+
+<% tabs_tag do |tab| %>
+  <%= tab.home      'Homepage', root_path %>
+  <%= tab.dashboard 'Dashboard', root_path %>
+  <%= tab.account   'Account', root_path %>
+<% end %>
