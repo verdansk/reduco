@@ -8,41 +8,73 @@
     <label for="age1">I use my car</label><br>
     <input type="radio" id="transport-option1" name="transport" value="train">
     <label for="age1">I use my bike</label><br>
-    <a href="#" id="transport-next">Next</a>
+    <a href="#" btn-type="next" id="transport-next">Next</a>
   </div>
   <div class="house hide" id="2-q">
     <input type="radio" id="house-option1" name="house" value="1">
     <label for="age1">Gaz</label><br>
     <input type="radio" id="house-option1" name="house" value="2">
     <label for="age1">Petrol</label><br>
-    <input type="submit" value="Submit">
-
+    <a href="#" btn-type="previous" >Previous</a>
+    <a href="#" btn-type="next" >Next</a>
   </div>
   <div class="house hide" id="3-q">
     <input type="radio" id="house-option1" name="food" value="1">
     <label for="age1">Vegan</label><br>
     <input type="radio" id="house-option1" name="food" value="2">
     <label for="age1">Meat lover</label><br>
+    <a href="#" btn-type="previous" >Previous</a>
     <input type="submit" value="Submit">
+    <%#= link_to "test", "/user/#{user.id2name}/surveys" %>
   </div>
   </div>
 </form>
 <script type="text/javascript">
-  const carNext = document.querySelector("#transport-next")
+  // const carNext = document.querySelector("#transport-next")
 
+  document.addEventListener('click', (e) => {
 
-
-  carNext.addEventListener('click', (event) => {
-    event.preventDefault();
     console.log(event);
-    if(carNext.parentElement.previousElementSibling != null){
-      carNext.parentElement.classList.add("hide");
-      carNext.parentElement.previousElementSibling.classList.add("hide");
-      carNext.parentElement.nextElementSibling.classList.remove("hide")
-    } else{
-      carNext.parentElement.classList.add("hide");
-      carNext.parentElement.nextElementSibling.classList.remove("hide")
+    const targetElement = e.target;
+    console.log(targetElement);
+    if (targetElement.getAttribute("btn-type") == "next"){
+      event.preventDefault();
+      if(targetElement.parentElement.previousElementSibling != null){
+      console.log("here")
+      targetElement.parentElement.classList.add("hide");
+      targetElement.parentElement.previousElementSibling.classList.add("hide");
+      targetElement.parentElement.nextElementSibling.classList.remove("hide")
+      } else{
+        console.log("here3")
+        targetElement.parentElement.classList.add("hide");
+        targetElement.parentElement.nextElementSibling.classList.remove("hide")
+      }
+
+    }else if(targetElement.getAttribute("btn-type") == "previous"){
+      event.preventDefault();
+      if(targetElement.parentElement.nextElementSibling != null){
+        targetElement.parentElement.classList.add("hide");
+        targetElement.parentElement.nextElementSibling.classList.add("hide")
+        targetElement.parentElement.previousElementSibling.classList.remove("hide");
+      }else{
+        targetElement.parentElement.classList.add("hide");
+        targetElement.parentElement.previousElementSibling.classList.remove("hide");
+      }
     }
+
   });
+
+  // carNext.addEventListener('click', (event) => {
+  //   event.preventDefault();
+  //   // console.log(event);
+  //   if(carNext.parentElement.previousElementSibling != null){
+  //     carNext.parentElement.classList.add("hide");
+  //     carNext.parentElement.previousElementSibling.classList.add("hide");
+  //     carNext.parentElement.nextElementSibling.classList.remove("hide")
+  //   } else{
+  //     carNext.parentElement.classList.add("hide");
+  //     carNext.parentElement.nextElementSibling.classList.remove("hide")
+  //   }
+  // });
 
 </script>
