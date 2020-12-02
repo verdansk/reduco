@@ -14,18 +14,18 @@
   <div class=" survey-category house hide" id="2-q">
     <h2 class="survey-title">What kind of house do you have?</h2>
     <input type="radio" btn-type="next1" class="radio-survey" id="house-option1" name="housing_category" value="flat">
-    <label for="house-option1"  class="radio-label">Gaz</label><br>
+    <label for="house-option1"  class="radio-label">Flat</label><br>
     <input type="radio" btn-type="next1" class="radio-survey" id="house-option2" name="housing_category" value="mid-terrace-house">
-    <label for="house-option2"  class="radio-label">Petrol</label><br>
+    <label for="house-option2"  class="radio-label">Mid terrace house</label><br>
     <a href="#" btn-type="previous" class="btn-empty-grey btn-survey" >Back</a>
     <a href="#" btn-type="next" class="btn-blue btn-survey" >Next</a>
   </div>
-  <div class="survey-category house hide" id="3-q">
-    <h2 class="survey-title">What kind of alimentation do you have?</h2>
-    <input type="radio" class="radio-survey" id="food-option1" name="food_category" value="1">
-    <label for="food-option1" btn-type="submit" class="radio-label">Vegan</label><br>
-    <input type="radio" class="radio-survey" id="food-option2" name="food_category" value="2">
-    <label for="food-option2" btn-type="submit" class="radio-label">Meat lover</label><br>
+  <div class="survey-category food hide" id="3-q">
+    <h2 class="survey-title">How much money do you spend in food, alcool, tobacco?</h2>
+      <div class="food-group">
+        <label for="food-option1">Insert the amount:</label><br>
+        <input type="text" id="food-option1" name="spend">
+      </div>
     <a href="#" btn-type="previous" class="btn-empty-grey  btn-survey mr-3" >Back</a>
     <input type="submit" value="Submit" class="btn-blue btn-survey">
     <%#= link_to "test", "/user/#{user.id2name}/surveys" %>
