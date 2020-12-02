@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+
+
+
+  challenge = Challenge.create!(
+    name: "Marathon",
+    duration: 7,
+    xp: 50,
+    description: "Instead of using your car everyday, try using your good old legs for a week!",
+    emission_saving: 20
+    )
+  challenge.save!
