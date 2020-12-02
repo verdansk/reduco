@@ -9,6 +9,13 @@ class UsersController < ApplicationController
     @user = User.find(params[:user_id])
   end
 
+  def search
+    @query = params[:search].downcase
+    @user = current_user
+    @search_users = User.where("lower(first_name) like ?", "%#{@query }%")
+    render :show
+  end
+
   def destroy
     current_user.destroy
     redirect_to root_path

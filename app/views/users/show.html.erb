@@ -125,6 +125,25 @@
     </div>
     <div class=" col-sm-12 col-lg-4">
       <div class="friends-bar back-border mt-1 mb-1">
+
+          <div>
+          <div class="dropdown">
+            <%= form_tag (search_user_path),method: :post , class: "d-flex" do %>
+            <%= text_field_tag :search %>
+            <%= submit_tag 'Search'%>
+            <% end %>
+            <ul>
+              <% if @search_users %>
+                <% @search_users.each do |user| %>
+                <li><%= user.first_name%><%= link_to "add", new_friendship_path(current_user.id,user.id)%>
+                </li>
+                <% end %>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+
+
         <div class="d-flex flex-row justify-content-between align-items-center mt-1 mb-3 mr-2">
           <h3 class="ml-2 text-shadow">Friends</h3>
           <a href="">Invite more friends <i class="fas fa-plus"></i></a>
