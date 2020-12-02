@@ -95,6 +95,28 @@
               <button class="btn">Complete</button>
             </div>
           </div>
+
+
+
+          <% Challenge.all.each do |challenge| %>
+            <div class="challenge-card">
+            <div class="card-picture"><%= image_tag('shower.svg', class: 'animal-mid center') %></div>
+            <div class="card-info">
+              <div class="num-xp"> <%= challenge.xp %>XP </div>
+              <h3 class="text-center"><%= challenge.name.capitalize %> challenge</h3>
+              <p class="p-1"><%= challenge.description %></p>
+              <p class="p-1"> duration: <%= challenge.duration %> day(s)</p>
+            </div>
+            <div class="d-flex justify-content-center mb-3">
+              <% unless UserChallenge.where(challenge: challenge, user: current_user).any? %>
+                <%= button_to "Accept", user_challenges_path(challenge), remote: true, method: :post ,class: "btn", id: "challenge-accept"  %>
+              <% else %>
+                Already accepted!
+              <% end %>
+            </div>
+          </div>
+          <% end %>
+
         </div>
       </div>
     </div>
@@ -197,5 +219,12 @@
     </div>
   </div>
 </div>
+
+<!-- <script>
+  document.getElementById("challenge-accept").addEventListener("click", function() {
+  document.getElementById("challenge-accept").innerHTML = "In progress";
+  document.getElementById("challenge-accept").disabled = true;
+});
+</script> -->
 
 <!-- <p>Last added transport: <%= @user.transports.last.category %>: <%= @user.transports.last.value %> CO2/year </p> -->
