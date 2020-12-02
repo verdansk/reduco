@@ -10,7 +10,7 @@ class UserChallengesController < ApplicationController
       )
     @user_challenge.started!
     if @user_challenge.save
-      redirect_to user_path(current_user, ), notice: 'Challenge was successfully added.'
+      redirect_to user_path(current_user, anchor: "challenge-anchor"), notice: 'Challenge was successfully added.'
     else
       redirect_to request.referer
       flash[:alert] = "Something went wrong, please try again"
