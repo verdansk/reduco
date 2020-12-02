@@ -15,6 +15,9 @@
           <%= link_to "Home", "#", class: "nav-link" %>
         </li>
         <li class="nav-item">
+          <%= link_to "Survey", new_user_survey_path(current_user[:id]), class: "nav-link" %>
+        </li>
+        <li class="nav-item">
           <%= link_to "Messages", "#", class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
@@ -25,7 +28,7 @@
           <% end %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
+            <%= link_to "Edit profile", edit_user_registration_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>

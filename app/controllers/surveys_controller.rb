@@ -35,7 +35,7 @@ class SurveysController < ApplicationController
 
   # Method to create a new datarow in Food-table
   def create_foods
-    @foods = Transport.new(strong_params_foods)
+    @foods = Food.new(strong_params_foods)
     @foods.value = calculate_emissions
     @foods.user = @user
     @foods.save
@@ -47,6 +47,7 @@ class SurveysController < ApplicationController
 
   def strong_params_foods
     params.permit(:spend)
+  end
 
    # Method to create a new datarow in Housing-table
   def create_housings

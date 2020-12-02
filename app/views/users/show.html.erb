@@ -230,10 +230,12 @@
               <h4> <i class="fas fa-car"></i> <%= @user.transports.last&.value %> CO2/year </h4>
             <%  elsif @user.transports.last&.category == "bike" %>
               <h4> <i class="fas fa-bicycle"></i> <%= @user.transports.last&.value %> CO2/year </h4>
-            <%  elsif @user.transports.last&.category == "plane" %>
-              <h4> <i class="fas fa-plane"></i> <%= @user.transports.last&.value %> CO2/year </h4>
-            <%  else %>
-              <h4> <i class="fas fa-train"></i> <%= @user.transports.last&.value %> CO2/year </h4>
+            <%#  elsif @user.transports.last&.category == "plane" %>
+              <!-- <h4> <i class="fas fa-plane"></i> <%#= @user.transports.last&.value %> CO2/year </h4> -->
+            <%#  elsif @user.transports.last&.category == "train" %>
+              <!-- <h4> <i class="fas fa-train"></i> <%#= @user.transports.last&.value %> CO2/year </h4> -->
+            <% else %>
+              <h4> <i class="fas fa-fish"></i> explore your daily emmision... </h4>
             <% end %>
           </div>
        </div>
@@ -250,5 +252,4 @@
 });
 </script> -->
 
-<!-- <p>Last added transport: <%= @user.transports.last.category %>: <%= @user.transports.last.value %> CO2/year </p> -->
 
