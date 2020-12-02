@@ -11,6 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 
+
 ActiveRecord::Schema.define(version: 2020_12_02_144125) do
 
 
@@ -35,6 +36,7 @@ ActiveRecord::Schema.define(version: 2020_12_02_144125) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["relation_type", "relation_id"], name: "index_emissions_on_relation_type_and_relation_id"
   end
+
 
   create_table "friendships", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -111,12 +113,13 @@ ActiveRecord::Schema.define(version: 2020_12_02_144125) do
   end
 
 
+
   add_foreign_key "friendships", "users"
   add_foreign_key "friendships", "users", column: "friend_id"
 
 
-  add_foreign_key "foods", "users"
 
+  add_foreign_key "foods", "users"
   add_foreign_key "housings", "users"
   add_foreign_key "transports", "users"
   add_foreign_key "user_challenges", "challenges"
