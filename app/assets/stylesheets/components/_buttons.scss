@@ -1,0 +1,39 @@
+// Option 1
+.btn {
+  background-color: DodgerBlue; /* Blue background */
+  border: none; /* Remove borders */
+  border-radius: 20px;
+  color: white; /* White text */
+  padding: 4px 16px; /* Some padding */
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.7);
+}
+// Option 2
+.button {
+  padding: 4px 16px;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-image: linear-gradient(red,yellow);
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+.button:hover {
+  background-image: linear-gradient(yellow, green);
+}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
