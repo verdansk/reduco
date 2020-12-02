@@ -18,12 +18,12 @@ class HousingEmissionService
                       &values.heatingType=boiler+(condensing)")
       data["output"]["amounts"].first["value"]
     when "mid-terrace-house"
-      data = open_url("#{@uri}Heating_uk/calculation?homeType=mid-terrace-house&fuel=gas&values.Age=1930-1995
+      data = open_url("#{@uri}Heating_uk/calculation?homeType=mid-terrace+house&fuel=gas&values.Age=1930-1995
                       &values.numberOfBedrooms=3&values.heatingType=boiler+(condensing)")
       data["output"]["amounts"].first["value"]
     when "detached-house"
-      data = open_url("#{@uri}Heating_uk/calculation?homeType=detached-house&fuel=gas&values.Age=1930-1995
-                      &values.numberOfBedrooms=4&values.heatingType=boiler+(condensing)")
+      data = open_url("#{@uri}Heating_uk/calculation?homeType=detached+house&fuel=gas&values.Age=1930-1995&values.numberOfBedrooms=4
+                      &values.heatingType=boiler+(condensing)")
       data["output"]["amounts"].first["value"]
     else puts "Error - No housetype selected"
     end

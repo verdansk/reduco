@@ -9,7 +9,6 @@ class SurveysController < ApplicationController
   def create
     create_transports
     create_housings
-    # create the render logic here
     redirect_to user_path(@user)
   end
 
