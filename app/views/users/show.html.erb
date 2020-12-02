@@ -100,17 +100,18 @@
 
 
           <% Challenge.all.each do |challenge| %>
-            <div class="challenge-card">
+            <div class="challenge-card" id="challenge-anchor">
             <div class="card-picture"><%= image_tag('shower.svg', class: 'animal-mid center') %></div>
             <div class="card-info">
               <div class="num-xp"> <%= challenge.xp %>XP </div>
               <h3 class="text-center"><%= challenge.name.capitalize %> challenge</h3>
               <p class="p-1"><%= challenge.description %></p>
               <p class="p-1"> duration: <%= challenge.duration %> day(s)</p>
+              <p class="p-1"> You'll produce <%= challenge.emission_saving %> emission less</p>
             </div>
             <div class="d-flex justify-content-center mb-3">
               <% unless UserChallenge.where(challenge: challenge, user: current_user).any? %>
-                <%= button_to "Accept", user_challenges_path(challenge), remote: true, method: :post ,class: "btn", id: "challenge-accept"  %>
+                <%= button_to "Accept", user_challenges_path(challenge),remote: true, method: :post ,class: "btn"%>
               <% else %>
                <button class="btn"> <%= UserChallenge.where(challenge: challenge, user: current_user)[0].status %> </button>
               <% end %>
@@ -132,6 +133,21 @@
           <%# end %>
         </div>
         <div class="friends mb-2">
+          <% current_user.friendships.each do |friend|%>
+          <div class="row mb-1">
+            <div class="col-2">
+              <%= image_tag('woman.svg', class: 'avatar') %>
+            </div>
+            <div class="col-4"><p><%= User.find(friend.friend_id).first_name.capitalize %></p></div>
+            <div class="col-3">
+              <div class="avatar-num-xp "><%= User.find(friend.friend_id).xp %></div>
+            </div>
+            <div class="col-3">
+              <%= image_tag('lion.svg', class: 'avatar') %>
+            </div>
+          </div>
+          <% end %>
+
           <div class="row mb-1">
             <div class="col-2">
               <%= image_tag('woman.svg', class: 'avatar') %>
@@ -225,7 +241,6 @@
 <!-- Add links to the previous challenge cards -->
         <div class="d-flex justify-content-between flex-wrap gap-between mt-1 ml-3 mr-3">
          <div class="transport-card">
-
             <% if @user.transports.last&.category == "car" %>
               <h4> <i class="fas fa-car"></i> <%= @user.transports.last&.value %> CO2/year </h4>
             <%  elsif @user.transports.last&.category == "bike" %>
@@ -244,12 +259,10 @@
   </div>
 </div>
 
-
 <!-- <script>
   document.getElementById("challenge-accept").addEventListener("click", function() {
   document.getElementById("challenge-accept").innerHTML = "In progress";
   document.getElementById("challenge-accept").disabled = true;
 });
 </script> -->
-
 

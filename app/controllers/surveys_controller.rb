@@ -10,10 +10,16 @@ class SurveysController < ApplicationController
     create_foods
     create_transports
     create_housings
+    @emission = calculate_emission_sum
+    @user.daily_emission = @emission
     redirect_to user_path(@user)
   end
 
   private
+
+  def calculate_emission_sum
+    EmissionCalculationService.new(@transport.value, @housing.value, @food.value).call
+  end
 
   # Method to create a new datarow in Transport-table
   def create_transports
@@ -32,17 +38,16 @@ class SurveysController < ApplicationController
     params.permit(:category)
   end
 
-
   # Method to create a new datarow in Food-table
   def create_foods
-    @foods = Food.new(strong_params_foods)
-    @foods.value = calculate_emissions
-    @foods.user = @user
-    @foods.save
+    @food = Food.new(strong_params_foods)
+    @food.value = calculate_emissions
+    @food.user = @user
+    @food.save
   end
 
   def calculate_emissions
-    FoodsEmissionService.new(params[:spend]).call
+    FoodEmissionService.new(params[:spend]).call
   end
 
   def strong_params_foods
