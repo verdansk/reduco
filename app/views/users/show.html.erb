@@ -1,2 +1,201 @@
-<h1>hello <%= @user.first_name %> </h1>
-<p>Last added transport: <%= @user.transports.last.category %>: <%= @user.transports.last.value %> CO2/year </p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <div class="user-bar back-border mt-1 mb-1">
+        <div class="row">
+          <div class="col-4 mt-1">
+            <h2 class="text-center"> <strong>Bear</strong></h2>
+            <%= image_tag('bear.svg', class: 'animal mt-2 pic-center') %>
+            <p class="mt-2 ml-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat laborum reiciendis eos.</p>
+          </div>
+
+          <div class="col-8 mt-1">
+            <h2 class="mb-4 text-shadow">Personal progress</h2>
+
+            <div class="progress-bar">
+              <div class="progress-bar-item">
+                <%= image_tag('bear.svg', class: 'animal-small') %>
+                <p>less 100XP</p>
+              </div>
+              <div class="progress-bar-item">
+                <%= image_tag('lion.svg', class: 'animal-small') %>
+                <p>200XP</p>
+              </div>
+              <div class="progress-bar-item">
+                <%= image_tag('fox.svg', class: 'animal-small') %>
+                <p>300XP</p>
+              </div>
+              <div class="progress-bar-item">
+                <%= image_tag('penguin.svg', class: 'animal-small') %>
+                <p>400XP</p>
+              </div>
+              <div class="progress-bar-item">
+                <%= image_tag('owl.svg', class: 'animal-small') %>
+                <p>500XP</p>
+              </div>
+              <div class="progress-bar-item">
+                <%= image_tag('bird.svg', class: 'animal-small') %>
+                <p>more 600XP</p>
+              </div>
+            </div>
+
+            <button class="button mt-4"><i class="fas fa-calculator"></i> Recalculate</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="challenge-bar back-border">
+        <div class="d-flex flex-row justify-content-between align-items-center mt-1 mb-3">
+          <h2 class="ml-2 text-shadow">Challenges</h2>
+          <button class="button mr-3 "><i class="fas fa-plus"></i> New Challenge</button>
+        </div>
+        <div class="d-flex justify-content-between flex-wrap ml-3 mr-3">
+          <div class="challenge-card">
+            <div class="card-picture"><%= image_tag('beach.svg', class: 'animal-mid') %></div>
+            <div class="card-info">
+              <div class="num-xp">10XP</div>
+              <h3>Lorem ipsum, dolor.</h3>
+              <p>Lorem ipsum dolor sit, amet consectetur, adipisicing elit. Aut magnam, ducimus quae rerum vitae neque eum. Architecto sit doloribus expedita.</p>
+            </div>
+            <div class="d-flex justify-content-center mb-3">
+              <button class="btn ">Complete</button>
+            </div>
+          </div>
+          <div class="challenge-card">
+            <div class="card-picture"><%= image_tag('handwash.svg', class: 'animal-mid') %></div>
+            <div class="card-info">
+              <div class="num-xp">10XP</div>
+              <h3>Lorem ipsum, dolor.</h3>
+              <p>Lorem ipsum dolor sit, amet consectetur, adipisicing elit. Aut magnam, ducimus quae rerum vitae neque eum. Architecto sit doloribus expedita.</p>
+            </div>
+            <div class="d-flex justify-content-center mb-3">
+              <button class="btn ">Complete</button>
+            </div>
+          </div>
+          <div class="challenge-card">
+            <div class="card-picture"><%= image_tag('lighthouse.svg', class: 'animal-mid') %></div>
+            <div class="card-info">
+              <div class="num-xp">10XP</div>
+              <h3>Lorem ipsum, dolor.</h3>
+              <p>Lorem ipsum dolor sit, amet consectetur, adipisicing elit. Aut magnam, ducimus quae rerum vitae neque eum. Architecto sit doloribus expedita.</p>
+            </div>
+            <div class="d-flex justify-content-center mb-3">
+              <button class="btn ">Complete</button>
+            </div>
+          </div>
+          <div class="challenge-card">
+            <div class="card-picture"><%= image_tag('shower.svg', class: 'animal-mid center') %></div>
+            <div class="card-info">
+              <div class="num-xp">10XP</div>
+              <h3 class="text-center">Lorem ipsum, dolor.</h3>
+              <p class="p-1">Lorem ipsum dolor sit, amet consectetur, adipisicing elit. Aut magnam, ducimus quae rerum vitae neque eum. Architecto sit doloribus expedita.</p>
+            </div>
+            <div class="d-flex justify-content-center mb-3">
+              <button class="btn">Complete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="friends-bar back-border mt-1 mb-1">
+        <div class="d-flex flex-row justify-content-between align-items-center mt-1 mb-3">
+          <h3 class="ml-2 text-shadow">Friends</h3>
+          <%#= link_to (path) do %>
+          <!-- Invite more friends <i class="fas fa-plus"></i>  -->
+          <%# end %>
+        </div>
+        <div class="friends">
+          <div class=row>
+            <div class="col-2">
+              <%= image_tag('woman.svg', class: 'avatar') %>
+            </div>
+            <div class="col-4"><p>Friend's name</p></div>
+            <div class="col-3">
+              <div class="avatar-num-xp ">200XP</div>
+            </div>
+            <div class="col-3">
+              <%= image_tag('lion.svg', class: 'avatar') %>
+            </div>
+          </div>
+          <div class=row>
+            <div class="col-2">
+              <%= image_tag('woman.svg', class: 'avatar') %>
+            </div>
+            <div class="col-4"><p>Friend's name</p></div>
+            <div class="col-3">
+              <div class="avatar-num-xp ">300XP</div>
+            </div>
+            <div class="col-3">
+              <%= image_tag('fox.svg', class: 'avatar') %>
+            </div>
+          </div>
+          <div class=row>
+            <div class="col-2">
+              <%= image_tag('man.svg', class: 'avatar') %>
+            </div>
+            <div class="col-4"><p>Friend's name</p></div>
+            <div class="col-3">
+              <div class="avatar-num-xp ">400XP</div>
+            </div>
+            <div class="col-3">
+              <%= image_tag('penguin.svg', class: 'avatar') %>
+            </div>
+          </div>
+          <div class=row>
+            <div class="col-2">
+              <%= image_tag('woman.svg', class: 'avatar') %>
+            </div>
+            <div class="col-4"><p>Friend's name</p></div>
+            <div class="col-3">
+              <div class="avatar-num-xp ">500XP</div>
+            </div>
+            <div class="col-3">
+              <%= image_tag('owl.svg', class: 'avatar') %>
+            </div>
+          </div>
+          <div class=row>
+            <div class="col-2">
+              <%= image_tag('man.svg', class: 'avatar') %>
+            </div>
+            <div class="col-4"><p>Friend's name</p></div>
+            <div class="col-3">
+              <div class="avatar-num-xp ">700XP</div>
+            </div>
+            <div class="col-3">
+              <%= image_tag('bird.svg', class: 'avatar') %>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="history-bar back-border mt-1 mb-1">
+        <div class="d-flex justify-content-between flex-wrap mt-1 ml-3 mr-3">
+<!-- Add links to the previous challenge cards -->
+         <div class="challenge-card-mini">
+            <div class="card-picture"><%= image_tag('shower.svg', class: 'animal-mid center') %></div>
+            <div class="card-info">
+              <h3 class="text-center">Lorem ipsum, dolor.</h3>
+            </div>
+          </div>
+          <div class="challenge-card-mini">
+            <div class="card-picture"><%= image_tag('shower.svg', class: 'animal-mid center') %></div>
+            <div class="card-info">
+              <h3 class="text-center">Lorem ipsum, dolor.</h3>
+            </div>
+          </div>
+          <div class="challenge-card-mini">
+            <div class="card-picture"><%= image_tag('shower.svg', class: 'animal-mid center') %></div>
+            <div class="card-info">
+              <h3 class="text-center">Lorem ipsum, dolor.</h3>
+            </div>
+          </div>
+
+       </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <p>Last added transport: <%= @user.transports.last.category %>: <%= @user.transports.last.value %> CO2/year </p> -->
