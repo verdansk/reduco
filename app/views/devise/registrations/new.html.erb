@@ -28,6 +28,10 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.input :gender,
+                required: true,
+                :collection => ["male", "female"],
+                :as => :radio_buttons %>
   </div>
 
     <div class="form-actions">
