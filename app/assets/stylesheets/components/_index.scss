@@ -1,5 +1,24 @@
 // Import your components CSS files here.
 @import "alert";
 @import "avatar";
+@import "avatar";
 @import "navbar";
+@import "buttons";
+@import "border";
+@import "text";
 @import "survey-form";
+
+body {
+  z-index: 10;
+  color: $light-gray;
+  background-size: cover;
+  background-image:  linear-gradient(rgba(255,255,255,0.1),rgba(255,255,255,0.1)), image-url('back_dash.jpg');
+  h1, h2, h3, h4, h5 {
+    font-family: $headers-font2;
+  }
+  p {
+    font-family: $body-font2;
+  }
+}
+
+
