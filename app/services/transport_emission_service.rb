@@ -1,6 +1,8 @@
-def TransportEmissionService
+class TransportEmissionService
+  require "open-uri"
   def initialize(attributes)
     @transport = attributes
+    @uri = "https://api.carbonkit.net/3.6/categories/"
   end
 
   def call
@@ -10,23 +12,22 @@ def TransportEmissionService
   private
 
   def calculate_emissions
-    if @transport == "walk/bike"
-      return 0
-    elsif @transport == "car"
-      data = open_url("https://api.carbonkit.net/3.6/categories/Generic_car_transport/calculation?fuel=average&values.useTypicalDistance=true")
+    case @transport
+    when "car"
+      data = open_url("#{@uri}Generic_car_transport/calculation?fuel=average&values.useTypicalDistance=true")
       data["output"]["amounts"].first["value"]
-    else @transport == "train"
-      data = open_url("https://api.carbonkit.net/3.6/categories/Generic_train_transport/calculation?type=underground&values.IsReturn=true&values.UseTypicalDistance=true&values.Journeyfrequency=daily&values.Numberofjourneys=5")
+    when "train"
+      data = open_url("#{@uri}Generic_train_transport/calculation?type=underground&values.IsReturn=true
+                      &values.UseTypicalDistance=true&values.Journeyfrequency=daily&values.Numberofjourneys=5")
       data["output"]["amounts"].first["value"]
+    else 0
     end
   end
-
-  private
 
   def open_url(url)
     request = open(url,
               "Accept" => "application/json",
-              http_basic_authentication: ["Maarten", ENV[:CARBONKIT_KEY]]).read
+              http_basic_authentication: ["Maarten", "6E@ex37Sj^7tOy4SWf"]).read
     JSON.parse(request)
   end
 end
