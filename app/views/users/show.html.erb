@@ -1,17 +1,19 @@
 <div class="container">
   <div class="row">
-    <div class="col-8">
+    <div class="col-sm-12 col-lg-8">
       <div class="user-bar back-border mt-1 mb-1">
         <div class="row">
-          <div class="col-4 mt-1">
-            <h2 class="text-center"> <strong>Bear</strong></h2>
+          <div class="col-sm-12 col-lg-4 mt-1">
+            <h2 class="text-center"><strong>Bear</strong></h2>
+            <div class="flex-small-screen">
             <%= image_tag('bear.svg', class: 'animal mt-2 pic-center') %>
             <p class="mt-2 ml-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat laborum reiciendis eos.</p>
+            </div>
           </div>
 
-          <div class="col-8 mt-1">
-            <h2 class="mb-4 text-shadow">Personal progress</h2>
-
+          <div class="col-sm-12 col-lg-8 mt-1">
+            <h3 class="mb-4 text-shadow"><strong><%= @user.full_name %></strong>, your personal progress for today</h3>
+            <div class="prog-small-screen">
             <div class="progress-bar">
               <div class="progress-bar-item">
                 <%= image_tag('bear.svg', class: 'animal-small') %>
@@ -39,7 +41,8 @@
               </div>
             </div>
 
-            <button class="button mt-4"><i class="fas fa-calculator"></i> Recalculate</button>
+            <button class="btn mt-4"><i class="fas fa-calculator"></i> Recalculate</button>
+          </div>
           </div>
         </div>
       </div>
@@ -47,7 +50,7 @@
       <div class="challenge-bar back-border">
         <div class="d-flex flex-row justify-content-between align-items-center mt-1 mb-3">
           <h2 class="ml-2 text-shadow">Challenges</h2>
-          <button class="button mr-3 "><i class="fas fa-plus"></i> New Challenge</button>
+          <button class="btn mr-3 "><i class="fas fa-plus"></i> New Challenge</button>
         </div>
         <div class="d-flex justify-content-between flex-wrap ml-3 mr-3">
           <div class="challenge-card">
@@ -97,16 +100,17 @@
         </div>
       </div>
     </div>
-    <div class="col-4">
+    <div class=" col-sm-12 col-lg-4">
       <div class="friends-bar back-border mt-1 mb-1">
-        <div class="d-flex flex-row justify-content-between align-items-center mt-1 mb-3">
+        <div class="d-flex flex-row justify-content-between align-items-center mt-1 mb-3 mr-2">
           <h3 class="ml-2 text-shadow">Friends</h3>
+          <a href="">Invite more friends <i class="fas fa-plus"></i></a>
           <%#= link_to (path) do %>
-          <!-- Invite more friends <i class="fas fa-plus"></i>  -->
+          <!--   -->
           <%# end %>
         </div>
-        <div class="friends">
-          <div class=row>
+        <div class="friends mb-2">
+          <div class="row mb-1">
             <div class="col-2">
               <%= image_tag('woman.svg', class: 'avatar') %>
             </div>
@@ -118,7 +122,7 @@
               <%= image_tag('lion.svg', class: 'avatar') %>
             </div>
           </div>
-          <div class=row>
+          <div class="row mb-1">
             <div class="col-2">
               <%= image_tag('woman.svg', class: 'avatar') %>
             </div>
@@ -130,7 +134,7 @@
               <%= image_tag('fox.svg', class: 'avatar') %>
             </div>
           </div>
-          <div class=row>
+          <div class="row mb-1">
             <div class="col-2">
               <%= image_tag('man.svg', class: 'avatar') %>
             </div>
@@ -142,7 +146,7 @@
               <%= image_tag('penguin.svg', class: 'avatar') %>
             </div>
           </div>
-          <div class=row>
+          <div class="row mb-1">
             <div class="col-2">
               <%= image_tag('woman.svg', class: 'avatar') %>
             </div>
@@ -154,7 +158,7 @@
               <%= image_tag('owl.svg', class: 'avatar') %>
             </div>
           </div>
-          <div class=row>
+          <div class="row mb-1">
             <div class="col-2">
               <%= image_tag('man.svg', class: 'avatar') %>
             </div>
@@ -170,29 +174,45 @@
 
       </div>
       <div class="history-bar back-border mt-1 mb-1">
-        <div class="d-flex justify-content-between flex-wrap mt-1 ml-3 mr-3">
+          <h3 class="ml-2 text-shadow text-24">Completed Challenges</h3>
 <!-- Add links to the previous challenge cards -->
+        <div class="d-flex justify-content-between flex-wrap gap-between mt-1 ml-3 mr-3">
          <div class="challenge-card-mini">
             <div class="card-picture"><%= image_tag('shower.svg', class: 'animal-mid center') %></div>
             <div class="card-info">
-              <h3 class="text-center">Lorem ipsum, dolor.</h3>
+              <h3 class="text-center">Lorem ipsum</h3>
             </div>
           </div>
           <div class="challenge-card-mini">
             <div class="card-picture"><%= image_tag('shower.svg', class: 'animal-mid center') %></div>
             <div class="card-info">
-              <h3 class="text-center">Lorem ipsum, dolor.</h3>
+              <h3 class="text-center">Lorem ipsum</h3>
             </div>
           </div>
           <div class="challenge-card-mini">
             <div class="card-picture"><%= image_tag('shower.svg', class: 'animal-mid center') %></div>
             <div class="card-info">
-              <h3 class="text-center">Lorem ipsum, dolor.</h3>
+              <h3 class="text-center">Lorem ipsum</h3>
             </div>
           </div>
+
+       </div>
+      </div>
+      <div class="transport-bar back-border mt-1 mb-1">
+          <h3 class="ml-2 text-shadow text-24">Last added transport</h3>
+<!-- Add links to the previous challenge cards -->
+        <div class="d-flex justify-content-between flex-wrap gap-between mt-1 ml-3 mr-3">
+         <div class="transport-card">
+            <% if @user.transports.last.category == "car" %>
+            <h4> <i class="fas fa-car"></i> <%= @user.transports.last.value %> CO2/year </h4>
+            <% end %>
+          </div>
+
 
        </div>
       </div>
     </div>
   </div>
 </div>
+
+
