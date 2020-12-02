@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :transports
+  has_many :foods
+  has_many :housings
   has_many :emissions, through: :transports
 
   validates :first_name, presence: true

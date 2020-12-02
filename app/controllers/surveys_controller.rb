@@ -7,8 +7,10 @@ class SurveysController < ApplicationController
   end
 
   def create
+    create_foods
     create_transports
-    # create_housing etc..
+    create_housings
+    redirect_to user_path(@user)
   end
 
   private
@@ -16,21 +18,50 @@ class SurveysController < ApplicationController
   # Method to create a new datarow in Transport-table
   def create_transports
     @transport = Transport.new(strong_params_transports)
-    @transport.value = calculate_emissions
+    @transport.value = calculate_transport_emissions
     @transport.user = @user
-    if @transport.save
-      redirect_to user_path(@user)
-    else
-      render :new
-    end
+    @transport.save
   end
 
-  def calculate_emissions
+  # Call the API
+  def calculate_transport_emissions
     TransportEmissionService.new(params[:category]).call
   end
 
   def strong_params_transports
     params.permit(:category)
+  end
+
+
+  # Method to create a new datarow in Food-table
+  def create_foods
+    @foods = Transport.new(strong_params_foods)
+    @foods.value = calculate_emissions
+    @foods.user = @user
+    @foods.save
+  end
+
+  def calculate_emissions
+    FoodsEmissionService.new(params[:spend]).call
+  end
+
+  def strong_params_foods
+    params.permit(:spend)
+
+   # Method to create a new datarow in Housing-table
+  def create_housings
+    @housing = Housing.new(strong_params_housing)
+    @housing.value = calculate_housing_emissions
+    @housing.user = @user
+    @housing.save
+  end
+
+  def calculate_housing_emissions
+    HousingEmissionService.new(params[:housing_category]).call
+  end
+
+  def strong_params_housing
+    params.permit(:housing_category)
   end
 
   def set_user

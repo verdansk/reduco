@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2020_12_02_142932) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +34,26 @@ ActiveRecord::Schema.define(version: 2020_12_02_142932) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["relation_type", "relation_id"], name: "index_emissions_on_relation_type_and_relation_id"
+  end
+
+
+  create_table "foods", force: :cascade do |t|
+    t.string "food_category"
+    t.integer "spend"
+    t.integer "value"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_foods_on_user_id"
+  end
+  
+  create_table "housings", force: :cascade do |t|
+    t.string "housing_category"
+    t.integer "value"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_housings_on_user_id"
   end
 
   create_table "transports", force: :cascade do |t|
@@ -79,6 +101,10 @@ ActiveRecord::Schema.define(version: 2020_12_02_142932) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+
+  add_foreign_key "foods", "users"
+
+  add_foreign_key "housings", "users"
   add_foreign_key "transports", "users"
   add_foreign_key "user_challenges", "challenges"
   add_foreign_key "user_challenges", "users"

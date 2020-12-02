@@ -38,3 +38,48 @@
   transform: translateY(4px);
 }
 
+.btn-blue {
+  background-color: DodgerBlue;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  padding: 7px 19px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  opacity: 0.7;
+  font-weight: bolder;
+
+}
+
+/* Darker background on mouse-over */
+.btn-blue:hover {
+  background-color: #2472D6!important;
+  color: white;
+  text-decoration: none;
+  background-color: RoyalBlue;
+  opacity: 1;
+}
+
+.btn-empty-grey {
+  background-color: transparent;
+  border: 1px solid grey; /* Remove borders */
+  border-radius: 20px;
+  color: white; /* White text */
+  padding: 7px 19px; /* Some padding */
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  opacity: 0.7;
+}
+
+/* Darker background on mouse-over */
+.btn-empty-grey:hover {
+  background-color: transparent!important;
+  color: white;
+  border-color: red;
+  text-decoration: none;
+  background-color: RoyalBlue;
+  opacity: 1;
+}
+
