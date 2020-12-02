@@ -11,12 +11,12 @@
     <label for="transport-option2" class="radio-label">I use my bike</label><br>
     <a href="#" btn-type="next" id="transport-next" class="btn-blue btn-survey">Next</a>
   </div>
-  <div class=" survey-categoryhouse hide" id="2-q">
+  <div class=" survey-category house hide" id="2-q">
     <h2 class="survey-title">What kind of house do you have?</h2>
-    <input type="radio" class="radio-survey" id="house-option1" name="housing_category" value="1">
-    <label for="house-option1" btn-type="next1" class="radio-label">Gaz</label><br>
-    <input type="radio" class="radio-survey" id="house-option2" name="housing_category" value="2">
-    <label for="house-option2" btn-type="next1" class="radio-label">Petrol</label><br>
+    <input type="radio" btn-type="next1" class="radio-survey" id="house-option1" name="housing_category" value="1">
+    <label for="house-option1"  class="radio-label">Gaz</label><br>
+    <input type="radio" btn-type="next1" class="radio-survey" id="house-option2" name="housing_category" value="2">
+    <label for="house-option2"  class="radio-label">Petrol</label><br>
     <a href="#" btn-type="previous" class="btn-empty-grey btn-survey" >Back</a>
     <a href="#" btn-type="next" class="btn-blue btn-survey" >Next</a>
   </div>
@@ -37,11 +37,11 @@
 
   document.addEventListener('click', (e) => {
     const targetElement = e.target;
-
+    // targetElement.setAttribute('checked','');
     if (targetElement.getAttribute("btn-type") == "next"){
       event.preventDefault();
       console.log(targetElement);
-      targetElement.checked = true;
+
       console.log(targetElement.checked);
       if(targetElement.parentElement.previousElementSibling != null){
       targetElement.parentElement.classList.add("hide");
