@@ -1,48 +1,69 @@
-<form action="/users/<%= user.id %>/surveys" class="form-survey" method="POST">
+<form action="/users/<%= user.id %>/surveys"  class="form-survey" method="POST">
   <input type="hidden"
        value="<%= form_authenticity_token() %>"
        name="authenticity_token"/>
   <div>
-  <div class="transport" id="1-q">
-    <input type="radio" id="transport-option1" name="category" value="car">
-    <label for="age1">I use my car</label><br>
-    <input type="radio" id="transport-option1" name="category" value="train">
-    <label for="age1">I use my bike</label><br>
-    <a href="#" id="transport-next">Next</a>
+  <div class="survey-category transport" id="1-q">
+    <h2 class="survey-title">What is your main transportation to go to work?</h2>
+    <input type="radio" btn-type="next1" class="radio-survey" id="transport-option1" name="category" value="car">
+    <label for="transport-option1" class="radio-label">I use my car</label><br>
+    <input type="radio" btn-type="next1" class="radio-survey" id="transport-option2" name="category" value="train">
+    <label for="transport-option2" class="radio-label">I use my bike</label><br>
+    <a href="#" btn-type="next" id="transport-next" class="btn-blue btn-survey">Next</a>
   </div>
-  <div class="house hide" id="2-q">
-    <input type="radio" id="house-option1" name="housing_category" value="flat">
-    <label for="age1">flat</label><br>
-    <input type="radio" id="house-option1" name="housing_category" value="mid-terrace-house">
-    <label for="age1">mid-terrace-house</label><br>
-    <input type="submit" value="Submit">
-
+  <div class=" survey-category house hide" id="2-q">
+    <h2 class="survey-title">What kind of house do you have?</h2>
+    <input type="radio" btn-type="next1" class="radio-survey" id="house-option1" name="housing_category" value="flat">
+    <label for="house-option1"  class="radio-label">Flat</label><br>
+    <input type="radio" btn-type="next1" class="radio-survey" id="house-option2" name="housing_category" value="mid-terrace-house">
+    <label for="house-option2"  class="radio-label">Mid terrace house</label><br>
+    <a href="#" btn-type="previous" class="btn-empty-grey btn-survey" >Back</a>
+    <a href="#" btn-type="next" class="btn-blue btn-survey" >Next</a>
   </div>
-  <div class="house hide" id="3-q">
-    <input type="radio" id="house-option1" name="food" value="1">
-    <label for="age1">Vegan</label><br>
-    <input type="radio" id="house-option1" name="food" value="2">
-    <label for="age1">Meat lover</label><br>
-    <input type="submit" value="Submit">
+  <div class="survey-category food hide" id="3-q">
+    <h2 class="survey-title">How much money do you spend in food, alcool, tobacco?</h2>
+      <div class="food-group">
+        <label for="food-option1">Insert the amount:</label><br>
+        <input type="text" id="food-option1" name="spend">
+      </div>
+    <a href="#" btn-type="previous" class="btn-empty-grey  btn-survey mr-3" >Back</a>
+    <input type="submit" value="Submit" class="btn-blue btn-survey">
+    <%#= link_to "test", "/user/#{user.id2name}/surveys" %>
   </div>
   </div>
 </form>
 <script type="text/javascript">
-  const carNext = document.querySelector("#transport-next")
+  // const carNext = document.querySelector("#transport-next")
 
+  document.addEventListener('click', (e) => {
+    const targetElement = e.target;
+    // targetElement.setAttribute('checked','');
+    if (targetElement.getAttribute("btn-type") == "next"){
+      event.preventDefault();
+      console.log(targetElement);
 
+      console.log(targetElement.checked);
+      if(targetElement.parentElement.previousElementSibling != null){
+      targetElement.parentElement.classList.add("hide");
+      targetElement.parentElement.previousElementSibling.classList.add("hide");
+      targetElement.parentElement.nextElementSibling.classList.remove("hide")
+      } else{
+        targetElement.parentElement.classList.add("hide");
+        targetElement.parentElement.nextElementSibling.classList.remove("hide")
+      }
 
-  carNext.addEventListener('click', (event) => {
-    event.preventDefault();
-    console.log(event);
-    if(carNext.parentElement.previousElementSibling != null){
-      carNext.parentElement.classList.add("hide");
-      carNext.parentElement.previousElementSibling.classList.add("hide");
-      carNext.parentElement.nextElementSibling.classList.remove("hide")
-    } else{
-      carNext.parentElement.classList.add("hide");
-      carNext.parentElement.nextElementSibling.classList.remove("hide")
+    }else if(targetElement.getAttribute("btn-type") == "previous"){
+      event.preventDefault();
+      if(targetElement.parentElement.nextElementSibling != null){
+        targetElement.parentElement.classList.add("hide");
+        targetElement.parentElement.nextElementSibling.classList.add("hide")
+        targetElement.parentElement.previousElementSibling.classList.remove("hide");
+      }else{
+        targetElement.parentElement.classList.add("hide");
+        targetElement.parentElement.previousElementSibling.classList.remove("hide");
+      }
     }
+
   });
 
 </script>

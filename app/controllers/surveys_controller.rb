@@ -7,6 +7,7 @@ class SurveysController < ApplicationController
   end
 
   def create
+    raise
     create_transports
     create_housings
     redirect_to user_path(@user)
