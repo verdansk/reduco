@@ -1,5 +1,76 @@
 // Specific CSS for your home-page
+
 #content {
-  width: 75%;
-  margin: 0 auto;
+    display: flex-inline;
+    width: 75%;
+    margin: 50px auto;
+    background-color: rgba(51, 160, 243, 0.80);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 5px 5px 15px 2px rgba(0, 0, 0, 0.58);
+
+  h2 {
+    margin: 0 auto;
+    width: 60%;
+    padding: 1%;
+    color: #181A2A;
+    position: relative;
+    top: -40px;
+    text-align: center;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 5px 5px 15px 2px rgba(0, 0, 0, 0.58);
+  }
+
+  input.form-control {
+   border-radius: 15px;
+  }
+
+  div.form-actions {
+    text-align: center;
+  }
+
+  input.btn{
+    border-radius: 15px;
+    background-color: #181A2A;
+    color: white;
+  }
+
+  a {
+    color: white;
+  }
+}
+
+#home-container{
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 10px;
+  background-image: url('homeBG.jpg');
+  background-size: cover;
+
+  img {
+    max-width: 500px;
+  }
+
+  div.row {
+    align-items: center;
+    margin: 0;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+#home-buttons {
+  margin-right:5%;
+  height: 30%;
+  color:white;
+  text-align: right;
+  margin-bottom: 50px;
+
+  h1, h4{
+  text-shadow: 1px 1px #33A0F3;
+  }
+
 }

@@ -1,0 +1,48 @@
+<form action="/users/<%= user.id %>/surveys" class="form-survey" method="POST">
+  <input type="hidden"
+       value="<%= form_authenticity_token() %>"
+       name="authenticity_token"/>
+  <div>
+  <div class="transport" id="1-q">
+    <input type="radio" id="transport-option1" name="transport" value="car">
+    <label for="age1">I use my car</label><br>
+    <input type="radio" id="transport-option1" name="transport" value="train">
+    <label for="age1">I use my bike</label><br>
+    <a href="#" id="transport-next">Next</a>
+  </div>
+  <div class="house hide" id="2-q">
+    <input type="radio" id="house-option1" name="house" value="1">
+    <label for="age1">Gaz</label><br>
+    <input type="radio" id="house-option1" name="house" value="2">
+    <label for="age1">Petrol</label><br>
+    <input type="submit" value="Submit">
+
+  </div>
+  <div class="house hide" id="3-q">
+    <input type="radio" id="house-option1" name="food" value="1">
+    <label for="age1">Vegan</label><br>
+    <input type="radio" id="house-option1" name="food" value="2">
+    <label for="age1">Meat lover</label><br>
+    <input type="submit" value="Submit">
+  </div>
+  </div>
+</form>
+<script type="text/javascript">
+  const carNext = document.querySelector("#transport-next")
+
+
+
+  carNext.addEventListener('click', (event) => {
+    event.preventDefault();
+    console.log(event);
+    if(carNext.parentElement.previousElementSibling != null){
+      carNext.parentElement.classList.add("hide");
+      carNext.parentElement.previousElementSibling.classList.add("hide");
+      carNext.parentElement.nextElementSibling.classList.remove("hide")
+    } else{
+      carNext.parentElement.classList.add("hide");
+      carNext.parentElement.nextElementSibling.classList.remove("hide")
+    }
+  });
+
+</script>
