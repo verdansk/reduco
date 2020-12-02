@@ -1,3 +1,49 @@
-.form-survey .hide{
-  display: none
+.container-survey{
+  background-color: #131212d1;
+  border-radius: 15px;
+  margin-top: 90px;
+}
+
+.form-survey{
+  width: 100%;
+  text-align:center;
+  padding-bottom: 60px;
+  .radio-survey{
+    visibility: hidden;
+  }
+  h2{
+    margin: -30px 0 30px 0;
+  }
+  input[type="radio"] + label{
+    margin-bottom: 20px
+  }
+  .radio-label{
+  width: 100%;
+  padding: 10px 0;
+  background-color: #000000b3;
+  text-align: center;
+  border-radius: 10px;
+  &:hover{
+      background-color:#439043;
+    }
+  }
+  input[type="radio"]:checked + label{
+    background-color:#75bb75;
+  }
+  .btn-survey{
+    display: inline-block;
+    margin-top: 10px;
+  }
+  .survey-category {
+  }
+  .survey-title{
+    display: inline-block;
+    padding: 10px;
+    background-color: #2472D6;
+    border-radius: 10px;
+  }
+
+  .hide{
+    display: none;
+  }
 }
