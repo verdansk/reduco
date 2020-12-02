@@ -110,6 +110,21 @@
           <%# end %>
         </div>
         <div class="friends mb-2">
+          <% current_user.friendships.each do |friend|%>
+          <div class="row mb-1">
+            <div class="col-2">
+              <%= image_tag('woman.svg', class: 'avatar') %>
+            </div>
+            <div class="col-4"><p><%= User.find(friend.friend_id).first_name.capitalize %></p></div>
+            <div class="col-3">
+              <div class="avatar-num-xp "><%= User.find(friend.friend_id).xp %></div>
+            </div>
+            <div class="col-3">
+              <%= image_tag('lion.svg', class: 'avatar') %>
+            </div>
+          </div>
+          <% end %>
+
           <div class="row mb-1">
             <div class="col-2">
               <%= image_tag('woman.svg', class: 'avatar') %>
@@ -203,9 +218,9 @@
 <!-- Add links to the previous challenge cards -->
         <div class="d-flex justify-content-between flex-wrap gap-between mt-1 ml-3 mr-3">
          <div class="transport-card">
-            <% if @user.transports.last.category == "car" %>
-            <h4> <i class="fas fa-car"></i> <%= @user.transports.last.value %> CO2/year </h4>
-            <% end %>
+            <%# if @user.transports.last.category == "car" %>
+            <h4> <i class="fas fa-car"></i> <%#= @user.transports.last.value %> CO2/year </h4>
+            <%# end %>
           </div>
 
 
