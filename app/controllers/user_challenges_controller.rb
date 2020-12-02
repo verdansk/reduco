@@ -5,11 +5,12 @@ class UserChallengesController < ApplicationController
       challenge: @challenge,
       user: current_user,
       start_at: Date.today,
-      finished_at: (Date.today + @challenge.duration.week),
+      finished_at: (Date.today + @challenge.duration),
       completed: false
       )
+    @user_challenge.started!
     if @user_challenge.save
-      redirect_to user_path(current_user), notice: 'Challenge was successfully added.'
+      redirect_to user_path(current_user, ), notice: 'Challenge was successfully added.'
     else
       redirect_to request.referer
       flash[:alert] = "Something went wrong, please try again"

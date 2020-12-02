@@ -99,7 +99,6 @@
           </div>
 
 
-
           <% Challenge.all.each do |challenge| %>
             <div class="challenge-card">
             <div class="card-picture"><%= image_tag('shower.svg', class: 'animal-mid center') %></div>
@@ -113,11 +112,12 @@
               <% unless UserChallenge.where(challenge: challenge, user: current_user).any? %>
                 <%= button_to "Accept", user_challenges_path(challenge), remote: true, method: :post ,class: "btn", id: "challenge-accept"  %>
               <% else %>
-                Already accepted!
+               <button class="btn"> <%= UserChallenge.where(challenge: challenge, user: current_user)[0].status %> </button>
               <% end %>
             </div>
           </div>
           <% end %>
+
 
         </div>
       </div>
