@@ -12,8 +12,9 @@ class FoodEmissionService
   private
 
   def calculate_emissions
-      data = open_url("#{@uri}Personal/calculation?type=food_drink_tobacco&values.CurrencyGBP=#{@food_value}")
-      data["output"]["amounts"].first["value"]
+    # times 1.11 will change from pounds to euro's
+    data = open_url("#{@uri}Personal/calculation?type=food_drink_tobacco&values.CurrencyGBP=#{@food_value.to_i * 1.11}")
+    data["output"]["amounts"].first["value"] * 12
   end
 
   def open_url(url)
