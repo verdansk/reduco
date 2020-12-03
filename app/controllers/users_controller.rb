@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   def show
     # dashboard
     @user = current_user
-    # @recent_challenges = User_challenges.order(created_at: :desc).take(4)
+    @challenges = UserChallenge.where(user_id: @user.id)
   end
 
   def accept_challenge

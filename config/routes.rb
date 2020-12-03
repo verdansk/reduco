@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :houses
     resources :transports
   end
-   post "accept_challenges/:id", to: "user_challenges#create", as: :user_challenges
+   post "accept_challenges/:id", to: "user_challenges#accept", as: :accept_challenge
+   post "complete_challenges/:id", to: "user_challenges#complete", as: :complete_challenge
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

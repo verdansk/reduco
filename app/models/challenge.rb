@@ -6,5 +6,4 @@ class Challenge < ApplicationRecord
   validates :emission_saving, presence: true, numericality: { only_integer: true }
 
   has_many :users, through: :user_challenges
-
 end
