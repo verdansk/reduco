@@ -58,7 +58,7 @@ class SurveysController < ApplicationController
     params.permit(:spend)
   end
 
-   # Method to create a new datarow in Housing-table
+  # Method to create a new datarow in Housing-table
   def create_housings
     @housing = Housing.new(strong_params_housing)
     @housing.value = calculate_housing_emissions
