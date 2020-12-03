@@ -32,7 +32,7 @@ class HousingEmissionService
   def open_url(url)
     request = open(url,
               "Accept" => "application/json",
-              http_basic_authentication: ["Maarten", "6E@ex37Sj^7tOy4SWf"]).read
+              http_basic_authentication: ["Maarten", ENV['CARBONKIT_KEY']]).read
     JSON.parse(request)
   end
 end

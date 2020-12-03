@@ -7,7 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-
+User.create(email: "a@a.a",first_name:"a",last_name: "a",gender: "male", address: "amsterdam", password:"123456")
+User.create(email: "b@a.a",first_name:"b",last_name: "b",gender: "male", address: "amsterdam", password:"123456")
+User.create(email: "c@a.a",first_name:"c",last_name: "c",gender: "male", address: "amsterdam", password:"123456")
+User.create(email: "c@a.a",first_name:"d",last_name: "d",gender: "male", address: "amsterdam", password:"123456")
 
 
   challenge = Challenge.create!(
