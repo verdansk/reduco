@@ -4,10 +4,10 @@
       <div class="user-bar back-border mt-1 mb-1">
         <div class="row">
           <div class="col-sm-12 col-lg-4 mt-1">
-            <h2 class="text-center"><strong>Bear</strong></h2>
+            <h2 class="text-center"><strong><%= @animal.upcase %></strong></h2>
             <div class="flex-small-screen">
-            <%= image_tag('bear.svg', class: 'animal mt-2 pic-center') %>
-            <p class="mt-2 ml-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat laborum reiciendis eos.</p>
+              <img src="../assets/<%= @animal %>.svg" class="animal mt-2 pic-center">
+              <p class="mt-2 ml-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat laborum reiciendis eos.</p>
             </div>
           </div>
 
@@ -40,8 +40,10 @@
                 <p>more 600XP</p>
               </div>
             </div>
-
-            <button class="btn mt-4"><i class="fas fa-calculator"></i> Recalculate</button>
+            <%= link_to new_user_survey_path(current_user) do  %>
+              <button class="btn mt-4"><i class="fas fa-calculator"></i>
+              Recalculate</button>
+            <% end %>
           </div>
           </div>
         </div>
@@ -98,27 +100,35 @@
             </div>
           </div>
 
-
           <% Challenge.all.each do |challenge| %>
             <div class="challenge-card" id="challenge-anchor">
             <div class="card-picture"><%= image_tag('shower.svg', class: 'animal-mid center') %></div>
             <div class="card-info">
-              <div class="num-xp"> <%= challenge.xp %>XP </div>
+              <div class="num-xp"> <%= challenge.xp %>XP</div>
               <h3 class="text-center"><%= challenge.name.capitalize %> challenge</h3>
               <p class="p-1"><%= challenge.description %></p>
-              <p class="p-1"> duration: <%= challenge.duration %> day(s)</p>
-              <p class="p-1"> You'll produce <%= challenge.emission_saving %> emission less</p>
+              <!-- choose method pluralized -->
+              <% user_challenge = UserChallenge.where(challenge: challenge, user: current_user).first %>
+              <% if user_challenge.status == "started" %>
+                <p class="p-1"> time remaining: <%= user_challenge.time_ago  %> day(s)</p>
+              <% else %>
+                <p class="p-1"> duration: <%= challenge.duration %> day(s)</p>
+              <% end %>
             </div>
             <div class="d-flex justify-content-center mb-3">
-              <% unless UserChallenge.where(challenge: challenge, user: current_user).any? %>
-                <%= button_to "Accept", user_challenges_path(challenge),remote: true, method: :post ,class: "btn"%>
-              <% else %>
-               <button class="btn"> <%= UserChallenge.where(challenge: challenge, user: current_user)[0].status %> </button>
+
+              <% if user_challenge.duration_passed? && user_challenge.status != "finished" %>
+                <%= button_to "Complete?", complete_challenge_path(user_challenge), remote: true, method: :post, class: "btn" %>
+              <% end %>
+              <% if user_challenge.status == "non_started" %>
+                 <%= button_to "Accept", accept_challenge_path(challenge),remote: true, method: :post ,class: "btn"%>
+              <% end %>
+              <% if user_challenge.status == "finished"%>
+                 <p>Completed, Well done!</p>
               <% end %>
             </div>
           </div>
           <% end %>
-
 
         </div>
       </div>
@@ -227,25 +237,18 @@
           <h3 class="ml-2 text-shadow text-24">Completed Challenges</h3>
 <!-- Add links to the previous challenge cards -->
         <div class="d-flex justify-content-between flex-wrap gap-between mt-1 ml-3 mr-3">
-         <div class="challenge-card-mini">
-            <div class="card-picture"><%= image_tag('shower.svg', class: 'animal-mid center') %></div>
-            <div class="card-info">
-              <h3 class="text-center">Lorem ipsum</h3>
-            </div>
-          </div>
-          <div class="challenge-card-mini">
-            <div class="card-picture"><%= image_tag('shower.svg', class: 'animal-mid center') %></div>
-            <div class="card-info">
-              <h3 class="text-center">Lorem ipsum</h3>
-            </div>
-          </div>
-          <div class="challenge-card-mini">
-            <div class="card-picture"><%= image_tag('shower.svg', class: 'animal-mid center') %></div>
-            <div class="card-info">
-              <h3 class="text-center">Lorem ipsum</h3>
-            </div>
-          </div>
 
+         <% @challenges.each do |user_challenge| %>
+         <% if user_challenge.completed %>
+             <div class="challenge-card-mini">
+                <div class="card-picture"><%= image_tag('shower.svg', class: 'animal-mid center') %></div>
+                <div class="card-info">
+                  <h3 class="text-center"><%= user_challenge.challenge.name %></h3>
+
+                </div>
+              </div>
+          <% end %>
+         <% end %>
        </div>
       </div>
       <div class="transport-bar back-border mt-1 mb-1">
