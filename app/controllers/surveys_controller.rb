@@ -1,5 +1,5 @@
 class SurveysController < ApplicationController
-  before_action :set_user, only: [:create, :new]
+  before_action :set_user, only: [:create, :new, :update_user_emission]
 
   def new
     @users = User.all
@@ -10,9 +10,14 @@ class SurveysController < ApplicationController
     create_foods
     create_transports
     create_housings
-    @emission = calculate_emission_sum
-    @user.daily_emission = @emission
+    update_user_emission
     redirect_to user_path(@user)
+  end
+
+  def update_user_emission
+    @emission = calculate_emission_sum
+    @user.update(daily_emission: @emission)
+    @user.save
   end
 
   private
@@ -29,7 +34,6 @@ class SurveysController < ApplicationController
     @transport.save
   end
 
-  # Call the API
   def calculate_transport_emissions
     TransportEmissionService.new(params[:category]).call
   end
