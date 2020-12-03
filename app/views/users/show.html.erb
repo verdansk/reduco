@@ -40,8 +40,10 @@
                 <p>more 600XP</p>
               </div>
             </div>
-
-            <button class="btn mt-4"><i class="fas fa-calculator"></i> Recalculate</button>
+            <%= link_to new_user_survey_path(current_user) do  %>
+              <button class="btn mt-4"><i class="fas fa-calculator"></i>
+              Recalculate</button>
+            <% end %>
           </div>
           </div>
         </div>
