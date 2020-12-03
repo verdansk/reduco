@@ -1,23 +1,35 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
-
-User.create(email: "a@a.a",first_name:"a",last_name: "a",gender: "male", address: "amsterdam", password:"123456")
-User.create(email: "b@a.a",first_name:"b",last_name: "b",gender: "male", address: "amsterdam", password:"123456")
-User.create(email: "c@a.a",first_name:"c",last_name: "c",gender: "male", address: "amsterdam", password:"123456")
-User.create(email: "c@a.a",first_name:"d",last_name: "d",gender: "male", address: "amsterdam", password:"123456")
-
-
-  challenge = Challenge.create!(
+marathon = Challenge.create!(
     name: "Marathon",
     duration: 7,
     xp: 50,
     description: "Instead of using your car everyday, try using your good old legs for a week!",
     emission_saving: 20
     )
-  challenge.save!
+  polar_bear = Challenge.create!(
+    name: "Polar Bear",
+    duration: 5,
+    xp: 30,
+    description: "Take Wim Hof's example and take your showers with cold water!",
+    emission_saving: 10
+    )
+  leaf = Challenge.create!(
+    name: "Herbivore",
+    duration: 3,
+    xp: 15,
+    description: "For a few days try the vegetarian life!",
+    emission_saving: 5
+    )
+  cleanup = Challenge.create!(
+    name: "Recycle",
+    duration: 1,
+    xp: 10,
+    description: "Clean up your closet and see which clothes are ready for recycling!",
+    emission_saving: 5
+    )
+  heater = Challenge.create!(
+    name: "Campfire",
+    duration: 6,
+    xp: 45,
+    description: "Instead of turning up the heat, put on some more clothing layers",
+    emission_saving: 25
+    )
