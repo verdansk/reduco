@@ -9,8 +9,7 @@ Rails.application.routes.draw do
     resources :houses
     resources :transports
   end
-  get "/users/:id/friendships/:user_id", to: "friendships#create", as: :new_friendship
-  post "/users/:id/friendships/:user_id", to: "friendships#create"
+  post "new_friendship", to: "friendships#create", as: :new_friendship
   post "accept_challenges/:id", to: "user_challenges#create", as: :user_challenges
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
