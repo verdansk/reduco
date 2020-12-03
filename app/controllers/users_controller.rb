@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :show_animal]
 
   def show
+    @challenges_all = Challenge.all
     @challenges = UserChallenge.where(user_id: @user.id)
     @animal = show_animal
   end
