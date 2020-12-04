@@ -54,10 +54,10 @@
         </span>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <p class="dropdown-item">
-            <% if current_user %>
+            <% if current_user.user_challenges.nil? %>
                  Take you first challenge
               <% else %>
-                 <%= current_user.user_challenges.count %> XP
+                 Accepted challenges: <%= current_user.user_challenges.count %>
               <% end %>
           </p>
         </div>

@@ -6,7 +6,7 @@
 
           <div class="col-8 col-md-6 col-lg-4 mt-1">
             <div class="flex-animal-screen">
-            <h2 class="text-center"><strong><%= @animal_name.upcase %></strong></h2>
+              <h2 class="text-center"><strong><%= @animal_name.upcase %></strong></h2>
               <%= image_tag(@animal, class: 'animal mt-2 pic-center') %>
               <%= link_to new_user_survey_path(current_user) do  %>
               <button class="btn-recalculate center-bt">Recalculate</button>
@@ -16,25 +16,25 @@
 
           <div class="col-4 col-md-6 col-lg-2 mt-1">
 
-              <div class="progress-bar">
-                <div class="progress-bar-item">
-                  <%= image_tag(@animal, class: 'animal-small border-around') %>
-                  <%= @animal_level %>
-                </div>
-                <span><i class="fas fa-angle-double-down"></i></span>
-                 <div class="progress-bar-item">
-                  <%= image_tag(@animal_next_level_pic, class: 'animal-small border-around') %>
-                   <%= @animal_next_level %>
-                </div>
+            <div class="progress-bar">
+              <div class="progress-bar-item">
+                <%= image_tag(@animal, class: 'animal-small border-around') %>
+                <%= @animal_level %>
               </div>
+              <span><i class="fas fa-angle-double-down"></i></span>
+              <div class="progress-bar-item">
+                <%= image_tag(@animal_next_level_pic, class: 'animal-small border-around') %>
+                <%= @animal_next_level %>
+              </div>
+            </div>
           </div>
 
           <div class="col-sm-12 col-lg-6 mt-1">
-              <div class="text-info-user">
-                <h4>Hi, <strong><%= @user.full_name %></strong>, your personal progress for today really impressive!</h4>
-                <h5>Keep going to reach next level!</h5>
-                <p>Lorem, ipsum dolor sit, amet consectetur adipisicing elit. Adipisci cumque incidunt exercitationem.</p>
-              </div>
+            <div class="text-info-user">
+              <h4>Hi, <strong><%= @user.full_name %></strong>, your personal progress for today really impressive!</h4>
+              <h5>Keep going to reach next level!</h5>
+              <p>Lorem, ipsum dolor sit, amet consectetur adipisicing elit. Adipisci cumque incidunt exercitationem.</p>
+            </div>
 
           </div>
         </div>
@@ -43,15 +43,15 @@
 
       <div class="challenge-bar back-border">
 
-         <%= render 'activeChallenges' %>
-      </div>
-      <div class="challenge-bar back-border">
-        <%= render 'browseChallenges' %>
+       <%= render 'activeChallenges' %>
+     </div>
+     <div class="challenge-bar back-border">
+      <%= render 'browseChallenges' %>
 
-      </div>
     </div>
     <div class=" col-sm-12 col-lg-4">
       <div class="friends-bar back-border mt-1 mb-1">
+
 
 
         <div class="searchbar">
@@ -196,4 +196,61 @@
   document.getElementById("challenge-accept").disabled = true;
 });
 </script> -->
+
+<script>
+  (function($) {
+
+  $(".cata-sub-nav").on('scroll', function() {
+      $val = $(this).scrollLeft();
+
+      if($(this).scrollLeft() + $(this).innerWidth()>=$(this)[0].scrollWidth){
+          $(".nav-next").hide();
+        } else {
+        $(".nav-next").show();
+      }
+
+      if($val == 0){
+        $(".nav-prev").hide();
+      } else {
+        $(".nav-prev").show();
+      }
+    });
+  console.log( 'init-scroll: ' + $(".nav-next").scrollLeft() );
+  $(".nav-next").on("click", function(){
+    $(".cata-sub-nav").animate( { scrollLeft: '+=460' }, 200);
+
+  });
+  $(".nav-prev").on("click", function(){
+    $(".cata-sub-nav").animate( { scrollLeft: '-=460' }, 200);
+  });
+
+
+
+})(jQuery);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
