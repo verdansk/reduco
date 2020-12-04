@@ -5,7 +5,9 @@ class UsersController < ApplicationController
     @users = User.all
     @user = current_user
     @query = "Search a friend.."
+
     @challenges = UserChallenge.where(user_id: @user.id)
+
     @animal = show_animal
   end
 
