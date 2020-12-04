@@ -18,6 +18,7 @@ class User < ApplicationRecord
 
   has_many :friendships
   has_many :friends, through: :friendships
+  has_many :user_challenges
   has_many :challenges, through: :user_challenges
 
   validates :first_name, presence: true
