@@ -82,4 +82,25 @@
   background-color: RoyalBlue;
   opacity: 1;
 }
+// Option 3 for recalulate btn
+.btn-recalculate {
+  background-color: DodgerBlue; /* Blue background */
+  border: none; /* Remove borders */
+  border-radius: 5px;
+  color: white; /* White text */
+  padding: 6px 19px; /* Some padding */
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
 
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.7);
+}
+
+.center-bt {
+  margin: 6px 50% 9px 50px;
+  display: inline-block;
+}
