@@ -11,6 +11,25 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
+
+        <li class="friend-request">
+          <!-- Default dropleft button -->
+          <div class="btn-group dropleft" id="requests-container" data-chatroom-id="<%= current_user.id %>">
+            <% count = Friendship.where(user:current_user,friendship_status: "received").count %>
+            <div class='<%= "count-requests" if count >0  %>'>
+              <%= count if count > 0 %>
+            </div>
+            <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-bell"></i>
+            </a>
+            <div class="dropdown-menu ">
+              <%= render "shared/friendrequest" %>
+            </div>
+          </div>
+
+
+        </li>
+
       <!-- <li class="nav-item">
         <%#= link_to "Home", "#", class: "nav-link" %>
       </li> -->
@@ -43,12 +62,7 @@
           </p>
         </div>
     </li>
-        <!-- <li class="nav-item">
-          <%#= link_to "Survey", new_user_survey_path(current_user[:id]), class: "nav-link" %>
-        </li> -->
-        <!-- <li class="nav-item">
-          <%#= link_to "Messages", "#", class: "nav-link" %>
-        </li> -->
+
         <li class="nav-item dropdown">
          <% if current_user.gender == "female"  %>
            <%= image_tag "woman.svg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>

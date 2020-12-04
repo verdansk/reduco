@@ -49,38 +49,14 @@
       <%= render 'browseChallenges' %>
 
     </div>
+    <div class=" col-sm-12 col-lg-4">
+      <div class="friends-bar back-border mt-1 mb-1">
 
 
-
-
-
-
-
-  </div>
-  <div class=" col-sm-12 col-lg-4">
-    <div class="friends-bar back-border mt-1 mb-1">
-      <div>
-        <div class="dropdown">
-          <%= form_tag (search_user_path),method: :post , class: "d-flex" do %>
-          <%= text_field_tag :search %>
-          <%= submit_tag 'Search'%>
-          <% end %>
-          <ul>
-            <% if @search_users %>
-            <% @search_users.each do |user| %>
-            <li><%= user.first_name%><%= link_to "add", new_friendship_path(current_user.id,user.id)%>
-            </li>
-            <% end %>
-            <% end %>
-          </ul>
-        </div>
 
         <div class="searchbar">
-          <%= form_tag(new_friendship_path, method: :post,remote: true, class: "form-inline") do %>
-          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-          <%= select_tag "user_id", options_from_collection_for_select( @users,:id,:first_name), class: 'select2' , onchange: "this.form.submit()", placeholder: "test" %>
-          <% end %>
-
+          <h3 class="text-shadow"> Search for a friend:</h3>
+          <%= render "searchbar" %>
         </div>
 
 
@@ -94,6 +70,7 @@
         </div>
         <div class="friends mb-2">
           <% current_user.friendships.each do |friend|%>
+          <% if friend.friendship_status == "accepted" %>
           <div class="row mb-1">
             <div class="col-2">
               <%= image_tag('woman.svg', class: 'avatar') %>
@@ -106,6 +83,7 @@
               <%= image_tag('lion.svg', class: 'avatar') %>
             </div>
           </div>
+          <% end %>
           <% end %>
 
           <div class="row mb-1">
