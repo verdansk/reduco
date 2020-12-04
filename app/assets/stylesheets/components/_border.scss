@@ -3,3 +3,10 @@
    border: 2px solid grey;
    box-shadow: 0 4px 15px rgba(0,0,0,0.6);
  }
+
+ .border-around {
+  border-radius: 50%;
+  border: 2px solid white;
+
+  padding: 2px;
+ }
