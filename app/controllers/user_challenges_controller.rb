@@ -21,6 +21,7 @@ class UserChallengesController < ApplicationController
     user_challenge = UserChallenge.find(params[:id])
     user_challenge.completed = true
     user_challenge.status = "finished"
+
     user_challenge.user.xp += user_challenge.challenge.xp
     user_challenge.user.save
     user_challenge.save
