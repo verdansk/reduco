@@ -2,8 +2,6 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :show_animal]
 
   def show
-
-    # dashboard
     @users = User.all
     @user = current_user
     @query = "Search a friend.."
@@ -11,13 +9,11 @@ class UsersController < ApplicationController
     @challenges = UserChallenge.where(user_id: @user.id)
 
     @animal = show_animal
-
   end
 
   def accept_challenge
     @user = User.find(params[:user_id])
   end
-
 
   def destroy
     current_user.destroy
@@ -28,17 +24,17 @@ class UsersController < ApplicationController
 
   def show_animal
     if @user.daily_emission.to_i < 12_000
-      'bird'
+      'bird.svg'
     elsif @user.daily_emission.to_i > 12_000 && @user.daily_emission.to_i <= 13_200
-      'owl'
+      'owl.svg'
     elsif @user.daily_emission.to_i > 13_300 && @user.daily_emission.to_i <= 14_400
-      'penguin'
+      'penguin.svg'
     elsif @user.daily_emission.to_i > 14_400 && @user.daily_emission.to_i <= 15_600
-      'fox'
+      'fox.svg'
     elsif @user.daily_emission.to_i > 15_600 && @user.daily_emission.to_i <= 16_800
-      'lion'
+      'lion.svg'
     else
-      'bear'
+      'bear.svg'
     end
   end
 
