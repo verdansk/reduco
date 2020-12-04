@@ -7,9 +7,9 @@ class UsersController < ApplicationController
     @users = User.all
     @user = current_user
     @query = "Search a friend.."
-    # @recent_challenges = User_challenges.order(created_at: :desc).take(4)
 
     @challenges = UserChallenge.where(user_id: @user.id)
+
     @animal = show_animal
 
   end
