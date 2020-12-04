@@ -1,0 +1,38 @@
+  <div class="d-flex flex-row justify-content-between align-items-center mt-1 mb-3">
+          <h2 class="ml-2 text-shadow">Active Challenges</h2>
+        </div>
+        <div class="d-flex justify-content-between flex-wrap ml-3 mr-3">
+          <% Challenge.all.each do |challenge| %>
+          <% user_challenge = UserChallenge.where(challenge: challenge, user: current_user).first %>
+          <% if !user_challenge.nil? %>
+          <div class="challenge-card" id="challenge-anchor">
+            <div class="card-picture"><%= image_tag('shower.svg', class: 'animal-mid center') %></div>
+            <div class="card-info">
+              <div class="num-xp"> <%= challenge.xp %>XP</div>
+              <h3 class="text-center"><%= challenge.name.capitalize %> challenge</h3>
+              <p class="p-1"><%= challenge.description %></p>
+              <!-- choose method pluralized -->
+
+              <% if user_challenge.nil? %>
+                 <p class="p-1"> Duration: <%= challenge.duration %> day(s)</p>
+                <% elsif user_challenge.status == "started" %>
+                   <p class="p-1"> Time remaining: <%= user_challenge.time_ago  %></p>
+              <% end %>
+            </div>
+            <div class="d-flex justify-content-center mb-3">
+              <% if user_challenge.nil? %>
+                    <%= button_to "Accept", accept_challenge_path(challenge), remote: true, method: :post , class: "btn"%>
+                <% elsif user_challenge.duration_passed? && user_challenge.status != "finished" %>
+
+                  <%= button_to "Complete?", complete_challenge_path(user_challenge), remote: true, method: :post, class: "btn" %>
+                <% elsif user_challenge.status == "finished"%>
+                  <p>Completed, Well done!</p>
+                <% end %>
+            </div>
+          </div>
+          <% end %>
+          <% end %>
+          <% if UserChallenge.all == [] %>
+              <p> <strong>Add a new challenge!</strong></p>
+          <% end %>
+        </div>
