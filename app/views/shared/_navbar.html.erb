@@ -15,10 +15,10 @@
         <li class="friend-request">
           <!-- Default dropleft button -->
           <div class="btn-group dropleft" id="requests-container" data-chatroom-id="<%= current_user.id %>">
+
             <% count = Friendship.where(user:current_user,friendship_status: "received").count %>
-            <div class='<%= "count-requests" if count >0  %>'>
-              <%= count if count > 0 %>
-            </div>
+              <%#= count if count > 0 %>
+              <%= render partial:"shared/notifications", locals:{count:count} %>
             <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fas fa-bell"></i>
             </a>

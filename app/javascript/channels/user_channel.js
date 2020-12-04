@@ -11,9 +11,9 @@ const initChatroomCable = () => {
         console.log('connected');
       },
       received(data) {
-        console.log(data)
-
-        icoming.insertAdjacentHTML('beforeend', data);
+        console.log(data.notification)
+        requests.insertAdjacentHTML('beforeend', data.notification)
+        icoming.insertAdjacentHTML('beforeend', data.request);
         // new Notification(data["title"], body: data["body"])
       }
     })
