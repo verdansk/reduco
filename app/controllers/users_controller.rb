@@ -13,6 +13,10 @@ class UsersController < ApplicationController
     @animal_level = show_animal_level
     @animal_next_level = show_animal_next_level
     @animal_next_level_pic = show_animal_next_level_pic
+
+    @animal_back_level = show_animal_back_level
+    @animal_back_level_pic = show_animal_back_level_pic
+
   end
 
   def accept_challenge
@@ -93,6 +97,7 @@ class UsersController < ApplicationController
       'Top!'
     end
 end
+
 def show_animal_next_level_pic
     if @user.daily_emission.to_i < 12_000
       'hill.svg'
@@ -107,6 +112,39 @@ def show_animal_next_level_pic
     else
       'lion.svg'
     end
+end
+
+def show_animal_back_level
+    if @user.daily_emission.to_i < 12_000
+      'Level 5'
+    elsif @user.daily_emission.to_i > 12_000 && @user.daily_emission.to_i <= 13_200
+      'Level 4'
+    elsif @user.daily_emission.to_i > 13_300 && @user.daily_emission.to_i <= 14_400
+      'Level 3'
+    elsif @user.daily_emission.to_i > 14_400 && @user.daily_emission.to_i <= 15_600
+      'Level 2'
+    elsif @user.daily_emission.to_i > 15_600 && @user.daily_emission.to_i <= 16_800
+      'Level 1'
+    else
+      'Level 6'
+    end
+end
+
+def show_animal_back_level_pic
+    if @user.daily_emission.to_i < 12_000
+      'owl.svg'
+    elsif @user.daily_emission.to_i > 12_000 && @user.daily_emission.to_i <= 13_200
+      'penguin.svg'
+    elsif @user.daily_emission.to_i > 13_300 && @user.daily_emission.to_i <= 14_400
+      'fox.svg'
+    elsif @user.daily_emission.to_i > 14_400 && @user.daily_emission.to_i <= 15_600
+      'lion.svg'
+    elsif @user.daily_emission.to_i > 15_600 && @user.daily_emission.to_i <= 16_800
+      'bear'
+    else
+      'bird'
+    end
+
 end
 
 

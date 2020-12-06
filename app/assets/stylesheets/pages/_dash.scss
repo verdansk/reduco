@@ -13,19 +13,18 @@
 // Progress bar
 
 .progress-bar {
-  display: inline-flex;
-  flex-direction: column;
-  gap: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
   background-color: inherit;
-  padding-left: 0;
-  margin-left: 0;
+  align-items: center;
   padding-top: 15px;
 
 }
 
 .progress-bar-item {
-  // position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 6px;
 }
@@ -61,11 +60,12 @@
   border-radius: 20px;
   opacity: 0.8;
   border: 2px solid white;
-
+  // animation
+  transition: transform .2s;
   &:hover {
     opacity: 0.9;
     box-shadow: 0 4px 15px rgba(0,0,0,0.7);
-    transition: 0.2s;
+    transform: scale(1.1);
   }
 
   .card-picture {
