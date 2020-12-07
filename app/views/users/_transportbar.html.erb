@@ -1,0 +1,17 @@
+<h3 class="ml-2 text-shadow text-24">Last added transport</h3>
+      <!-- Add links to the previous challenge cards -->
+      <div class="d-flex justify-content-between flex-wrap gap-between mt-1 ml-3 mr-3">
+       <div class="transport-card">
+        <% if @user.transports.last&.category == "car" %>
+        <h4> <i class="fas fa-car"></i> <%= @user.transports.last&.value %> CO2/year </h4>
+        <%  elsif @user.transports.last&.category == "bike" %>
+        <h4> <i class="fas fa-bicycle"></i> <%= @user.transports.last&.value %> CO2/year </h4>
+        <%#  elsif @user.transports.last&.category == "plane" %>
+        <!-- <h4> <i class="fas fa-plane"></i> <%#= @user.transports.last&.value %> CO2/year </h4> -->
+        <%#  elsif @user.transports.last&.category == "train" %>
+        <!-- <h4> <i class="fas fa-train"></i> <%#= @user.transports.last&.value %> CO2/year </h4> -->
+        <% else %>
+        <h4> <i class="fas fa-fish"></i> explore your daily emmision... </h4>
+        <% end %>
+      </div>
+    </div>
