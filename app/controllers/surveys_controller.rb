@@ -10,6 +10,7 @@ class SurveysController < ApplicationController
     create_foods
     create_transports
     create_housings
+    create_showers
     update_user_emission
     redirect_to user_path(@user)
   end
@@ -23,7 +24,7 @@ class SurveysController < ApplicationController
   private
 
   def calculate_emission_sum
-    EmissionCalculationService.new(@transport.value, @housing.value, @food.value).call
+    EmissionCalculationService.new(@transport.value, @housing.value, @food.value, @shower.value).call
   end
 
   # Method to create a new datarow in Transport-table
@@ -72,6 +73,22 @@ class SurveysController < ApplicationController
 
   def strong_params_housing
     params.permit(:housing_category)
+  end
+
+  # Method to create a new datarow in Housing-table
+  def create_showers
+    @shower = Shower.new(strong_params_shower)
+    @shower.value = calculate_shower_emissions
+    @shower.user = @user
+    @shower.save
+  end
+
+  def calculate_shower_emissions
+    ShowerEmissionService.new(params[:duration]).call
+  end
+
+  def strong_params_shower
+    params.permit(:duration)
   end
 
   def set_user

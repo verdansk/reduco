@@ -10,7 +10,7 @@
       <% user_challenge = UserChallenge.where(challenge: challenge, user: current_user).first %>
       <% if user_challenge.nil? %>
       <div class="challenge-card nav-item active" id="challenge-anchor">
-        <div class="card-picture"><%= image_tag('shower.svg', class: 'animal-mid center') %></div>
+        <div class="card-picture"> <%= image_tag(challenge.image, class: 'animal-mid center') %> </div>
         <div class="card-info">
           <div class="num-xp"> <%= challenge.xp %>XP</div>
           <h3 class="text-center"><%= challenge.name.capitalize %> challenge</h3>
@@ -25,7 +25,9 @@
           <% end %>
         </div>
         <div class="d-flex justify-content-center mb-3">
-          <% if user_challenge.nil? %>
+          <% if UserChallenge.count >= 3 %>
+          <%= button_to "Accept", accept_challenge_path(challenge), remote: true, method: :post, disabled: true , class: "btn-green"%>
+          <% elsif user_challenge.nil? %>
           <%= button_to "Accept", accept_challenge_path(challenge), remote: true, method: :post , class: "btn-green"%>
           <% end %>
         </div>

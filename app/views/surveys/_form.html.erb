@@ -3,36 +3,50 @@
        value="<%= form_authenticity_token() %>"
        name="authenticity_token"/>
   <div>
-  <div class="survey-category transport" id="1-q">
-    <h2 class="survey-title">What is your main form of transportation to get to work?</h2>
-    <input type="radio" btn-type="next1" class="radio-survey" id="transport-option1" name="category" value="car">
-    <label for="transport-option1" class="radio-label">Car</label><br>
-    <input type="radio" btn-type="next1" class="radio-survey" id="transport-option2" name="category" value="train">
-    <label for="transport-option2" class="radio-label">Public Transport</label><br>
-    <input type="radio" btn-type="next1" class="radio-survey" id="transport-option3" name="category" value="walk">
-    <label for="transport-option3" class="radio-label">Walking / By bike</label><br>
-    <a href="#" btn-type="next" id="transport-next" class="btn-blue btn-survey">Next</a>
-  </div>
-  <div class=" survey-category house hide" id="2-q">
-    <h2 class="survey-title">What type of house do you live in?</h2>
-    <input type="radio" btn-type="next1" class="radio-survey" id="house-option1" name="housing_category" value="flat">
-    <label for="house-option1"  class="radio-label">Flat</label><br>
-    <input type="radio" btn-type="next1" class="radio-survey" id="house-option2" name="housing_category" value="mid-terrace-house">
-    <label for="house-option2"  class="radio-label">Mid-terrace house</label><br>
-    <input type="radio" btn-type="next1" class="radio-survey" id="house-option3" name="housing_category" value="detached-house">
-    <label for="house-option3"  class="radio-label">Detached house</label><br>
-    <a href="#" btn-type="previous" class="btn-empty-grey btn-survey">Back</a>
-    <a href="#" btn-type="next" class="btn-blue btn-survey">Next</a>
-  </div>
-  <div class="survey-category food hide" id="3-q">
-    <h2 class="survey-title">How much do you spend on Food, Alcohol and Tobacco per month?</h2>
-      <div class="food-group">
-        <label for="food-option1"></label><br>
-        <input type="text" id="food-option1" name="spend" placeholder="€">
-      </div>
-    <a href="#" btn-type="previous" class="btn-empty-grey  btn-survey mr-3">Back</a>
-    <input type="submit" value="Submit" class="btn-blue btn-survey">
-  </div>
+    <!-- First Question -->
+    <div class="survey-category transport" id="1-q">
+      <h2 class="survey-title">What is your main form of transportation to get to work?</h2>
+      <input type="radio" btn-type="next1" class="radio-survey" id="transport-option1" name="category" value="car">
+      <label for="transport-option1" class="radio-label">Car</label><br>
+      <input type="radio" btn-type="next1" class="radio-survey" id="transport-option2" name="category" value="train">
+      <label for="transport-option2" class="radio-label">Public Transport</label><br>
+      <input type="radio" btn-type="next1" class="radio-survey" id="transport-option3" name="category" value="walk">
+      <label for="transport-option3" class="radio-label">Walking / By bike</label><br>
+      <a href="#" btn-type="next" id="transport-next" class="btn-blue btn-survey">Next</a>
+    </div>
+        <!-- Second Question -->
+    <div class=" survey-category house hide" id="2-q">
+      <h2 class="survey-title">What type of house do you live in?</h2>
+      <input type="radio" btn-type="next1" class="radio-survey" id="house-option1" name="housing_category" value="flat">
+      <label for="house-option1"  class="radio-label">Flat</label><br>
+      <input type="radio" btn-type="next1" class="radio-survey" id="house-option2" name="housing_category" value="mid-terrace-house">
+      <label for="house-option2"  class="radio-label">Mid-terrace house</label><br>
+      <input type="radio" btn-type="next1" class="radio-survey" id="house-option3" name="housing_category" value="detached-house">
+      <label for="house-option3"  class="radio-label">Detached house</label><br>
+      <a href="#" btn-type="previous" class="btn-empty-grey btn-survey">Back</a>
+      <a href="#" btn-type="next" class="btn-blue btn-survey">Next</a>
+    </div>
+        <!-- Third Question -->
+    <div class="survey-category food hide" id="3-q">
+      <h2 class="survey-title">How much do you spend on Food, Alcohol and Tobacco per month?</h2>
+        <div class="food-group">
+          <label for="food-option1"></label><br>
+          <input type="number" id="food-option1" name="spend" placeholder="€" required>
+        </div>
+      <a href="#" btn-type="previous" class="btn-empty-grey  btn-survey mr-3">Back</a>
+      <a href="#" btn-type="next" class="btn-blue btn-survey">Next</a>
+    </div>
+        <!-- Fourth Question -->
+    <div class="survey-category shower hide" id="4-q">
+      <h2 class="survey-title">On average how long do you shower?</h2>
+        <div class="shower-group">
+          <label for="shower-option1"></label><br>
+          <input type="number" id="shower-option1" name="duration" placeholder="minutes" required>
+        </div>
+      <a href="#" btn-type="previous" class="btn-empty-grey  btn-survey mr-3">Back</a>
+      <input type="submit" value="Calculate!" class="btn-blue btn-survey">
+    </div>
+    <!-- Closing Div -->
   </div>
 </form>
 
