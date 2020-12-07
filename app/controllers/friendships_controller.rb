@@ -8,16 +8,18 @@ class FriendshipsController < ApplicationController
     @reverseFriendship = Friendship.new()
     @reverseFriendship.user = @friend_user
     @reverseFriendship.friend = current_user
+
     @friendship.pending!
     if @friendship.save
       @reverseFriendship.received!
       @reverseFriendship.save
+      @count = Friendship.where(user:current_user,friendship_status:"pending").count
       redirect_to user_path(current_user)
     end
-
+    req = render_to_string(partial: "shared/requestsIncoming", locals: { friendship:  @reverseFriendship})
+    noti = render_to_string(partial: "shared/notifications", locals: { count: @count})
     UserChannel.broadcast_to(
-      @friend_user,
-      render_to_string(partial: "shared/requestsIncoming", locals: { friendship:  @reverseFriendship})
+      @friend_user, {notification:noti, request: req}
     )
   end
 
@@ -28,7 +30,10 @@ class FriendshipsController < ApplicationController
     @friendship.first.accepted!
     @reversefriendship.first.accepted!
     redirect_to user_path(current_user)
-
+    # req = render_to_string(partial: "users/friend-list", locals: { friendship:  @reverseFriendship})
+    # UserChannel.broadcast_to(
+    #   @friend_user, {friends:friends}
+    # )
 
   end
 

@@ -1,14 +1,23 @@
 <h5> You sent a request to </h5>
 <ul>
   <%@sent = Friendship.where(user: current_user,friendship_status:"pending") %>
+  <% if !@sent.empty? %>
   <% @sent.each do |request| %>
   <li><%= User.find(request.friend_id).first_name %></li>
   <% end %>
+  <% else %>
+  <li>No pending requests</li>
+  <% end %>
+
 </ul>
 <h5>Want to add you</h5>
 <ul id="incoming-requests">
   <%@received = Friendship.where(user: current_user,friendship_status:"received") %>
-  <% @received.each do |friendship| %>
-    <%= render partial:"shared/requestsIncoming", locals:{friendship:friendship}%>
+  <% if !@received.empty? %>
+    <% @received.each do |friendship| %>
+      <%= render partial:"shared/requestsIncoming", locals:{friendship:friendship}%>
+    <% end %>
+  <% else %>
+  <li>No friendship requests</li>
   <% end %>
 </ul>
