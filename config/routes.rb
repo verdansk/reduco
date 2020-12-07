@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   post "accept_challenges/:id", to: "user_challenges#accept", as: :accept_challenge
   post "complete_challenges/:id", to: "user_challenges#complete", as: :complete_challenge
+  post "decline_challenges/:id", to: "user_challenges#decline", as: :decline_challenge
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
