@@ -24,7 +24,7 @@
 
       <li class="friend-request nav-item">
         <!-- Default dropleft button -->
-        <div class="btn-group dropleft" id="requests-container" data-chatroom-id="<%= current_user.id %>">
+        <div class="btn-group dropleft " id="requests-container" data-chatroom-id="<%= current_user.id %>">
             <% count = Friendship.where(user:current_user,friendship_status: "received").count %>
               <%= render partial:"shared/notifications", locals:{count:count} %>
             <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -34,7 +34,6 @@
               <%= render "shared/friendrequest" %>
             </div>
           </div>
-
       </li>
 
       <li class="nav-item">
@@ -100,4 +99,7 @@ function openForm() {
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
+
+
+
 </script>

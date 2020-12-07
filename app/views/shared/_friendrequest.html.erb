@@ -12,7 +12,9 @@
 </ul>
 <h5>Want to add you</h5>
 <ul id="incoming-requests">
+
   <%@received = Friendship.where(user: current_user,friendship_status:"received") %>
+  <%# raise %>
   <% if !@received.empty? %>
     <% @received.each do |friendship| %>
       <%= render partial:"shared/requestsIncoming", locals:{friendship:friendship}%>

@@ -25,6 +25,7 @@ require("channels")
 import "bootstrap";
 
 import { initSelect2 } from '../plugins/init_select2';
+import { removeShake } from '../plugins/shake';
 import { initChatroomCable } from '../channels/user_channel';
 
 
@@ -35,4 +36,5 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initChatroomCable();
   initSelect2();
+  removeShake();
 });
