@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_04_093426) do
+ActiveRecord::Schema.define(version: 2020_12_07_105347) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,15 @@ ActiveRecord::Schema.define(version: 2020_12_04_093426) do
     t.index ["user_id"], name: "index_housings_on_user_id"
   end
 
+  create_table "showers", force: :cascade do |t|
+    t.integer "duration"
+    t.integer "value"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_showers_on_user_id"
+  end
+
   create_table "transports", force: :cascade do |t|
     t.string "category"
     t.string "fuel"
@@ -104,6 +113,7 @@ ActiveRecord::Schema.define(version: 2020_12_04_093426) do
     t.integer "xp"
     t.string "daily_emission"
     t.string "gender"
+    t.boolean "guest", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -112,6 +122,7 @@ ActiveRecord::Schema.define(version: 2020_12_04_093426) do
   add_foreign_key "friendships", "users"
   add_foreign_key "friendships", "users", column: "friend_id"
   add_foreign_key "housings", "users"
+  add_foreign_key "showers", "users"
   add_foreign_key "transports", "users"
   add_foreign_key "user_challenges", "challenges"
   add_foreign_key "user_challenges", "users"
