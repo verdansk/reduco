@@ -1,17 +1,16 @@
 .cata-sub-nav {
     background: inherit;
-    padding: 20px 15px 20px;
+    padding: 27px 15px 20px;
     margin: 0 37px;
     /* Make this scrollable when needed */
     overflow-x: auto;
     /* We don't want vertical scrolling */
-    overflow-y: hidden;
+    // overflow-y: hidden;
     /* Make an auto-hiding scroller for the 3 people using a IE */
     -ms-overflow-style: -ms-autohiding-scrollbar;
     /* For WebKit implementations, provide inertia scrolling */
     -webkit-overflow-scrolling: touch;
-    /* We don't want internal inline elements to wrap */
-    //white-space: nowrap;
+    // white-space: nowrap;
     /* Remove the default scrollbar for WebKit implementations */
 }
 .cata-sub-nav::-webkit-scrollbar {
@@ -20,12 +19,12 @@
 .cata-sub-nav ul {
     margin: 0;
         display: flex;
-          -webkit-padding-start: 0px;
+        -webkit-padding-start: 0px;
 }
 .cata-sub-nav li {
     display: inline-table;
     margin: 0 10px;
-        font-size: 16px;
+    font-size: 16px;
 }
 
 .nav-prev {
