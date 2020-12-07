@@ -15,17 +15,15 @@
       <li class="friend-request nav-item">
         <!-- Default dropleft button -->
         <div class="btn-group dropleft" id="requests-container" data-chatroom-id="<%= current_user.id %>">
-          <% count = Friendship.where(user:current_user,friendship_status: "received").count %>
-          <div class='<%= "count-requests" if count > 0  %>'>
-            <%= count if count > 0 %>
+            <% count = Friendship.where(user:current_user,friendship_status: "received").count %>
+              <%= render partial:"shared/notifications", locals:{count:count} %>
+            <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-bell"></i>
+            </a>
+            <div class="dropdown-menu ">
+              <%= render "shared/friendrequest" %>
+            </div>
           </div>
-          <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-bell"></i>
-          </a>
-          <div class="dropdown-menu ">
-            <%= render "shared/friendrequest" %>
-          </div>
-        </div>
 
       </li>
 
