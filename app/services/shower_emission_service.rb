@@ -13,8 +13,7 @@ class ShowerEmissionService
 
   def calculate_emissions
     # times 1.11 will change from pounds to euro's
-    data = open_url("#{@uri}Water_Defra/calculation?type=treatment
-                    &values.quantity=#{((@shower_value.to_i * 7) * 365) / 1000}")
+    data = open_url("#{@uri}Water_Defra/calculation?type=treatment&values.quantity=#{@shower_value.to_i}")
     data["output"]["amounts"].first["value"]
   end
 
