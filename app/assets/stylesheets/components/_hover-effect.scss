@@ -1,0 +1,44 @@
+.cata-sub-nav {
+    background: inherit;
+    padding: 34px 4px 20px;
+    margin: 0 37px;
+    /* Make this scrollable when needed */
+    overflow-x: auto;
+    /* We don't want vertical scrolling */
+    // overflow-y: hidden;
+    /* Make an auto-hiding scroller for the 3 people using a IE */
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    /* For WebKit implementations, provide inertia scrolling */
+    -webkit-overflow-scrolling: touch;
+    // white-space: nowrap;
+    /* Remove the default scrollbar for WebKit implementations */
+}
+.cata-sub-nav::-webkit-scrollbar {
+        display: none;
+    }
+.cata-sub-nav ul {
+    margin: 0;
+    display: flex;
+    align-items: stretch;
+    -webkit-padding-start: 0px;
+}
+.cata-sub-nav li {
+    display: inline-table;
+    margin: 0 10px;
+    font-size: 16px;
+}
+
+.nav-prev {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: 7px;
+    margin-top: -2px;
+}
+.nav-next {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 7px;
+    margin-top: -22px;
+}

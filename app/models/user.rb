@@ -15,9 +15,11 @@ class User < ApplicationRecord
   has_many :foods
   has_many :housings
   has_many :emissions, through: :transports
+  has_many :showers
 
   has_many :friendships
   has_many :friends, through: :friendships
+  has_many :user_challenges
   has_many :challenges, through: :user_challenges
 
   validates :first_name, presence: true

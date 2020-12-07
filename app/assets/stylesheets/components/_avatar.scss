@@ -7,16 +7,22 @@
 }
 
 .animal-small {
-  width: 30px;
-  height: 30px;
+  width: 45px;
+  height: 45px;
   margin: auto;
   display: block;
   object-fit: cover;
+  transition: transform .2s;
   &:hover {
     padding: 3px;
-    transition: 0.3s;
+    transform: scale(1.15);
   }
 }
+
+.blur {
+  opacity: 0.6;
+}
+
 .animal-mid {
   width: 65px;
   height: 65px;

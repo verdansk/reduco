@@ -1,0 +1,31 @@
+.friend-request{
+  .dropleft .dropdown-toggle::before {
+    display: none;
+  }
+
+  .dropdown-toggle{
+    color: white!important;
+    font-size: 25px!important;
+  }
+  .count-requests{
+    position: absolute;
+    padding: 1px 6px;
+    background-color: red;
+    border-radius: 50%;
+    font-size: 10px;
+    top: -2px;
+    right: -8px;
+  }
+  .dropdown-menu{
+    width: 300px;
+    padding:15px;
+    background-color: #454865f0;
+    color: white;
+    h5{
+      border-bottom: 1px solid #656161;
+    }
+    ul{
+      padding: 5px 0px;
+    }
+  }
+}

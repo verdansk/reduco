@@ -29,9 +29,9 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
-  <body>
+  <body data-chatroom-id="<%= current_user.id if user_signed_in? %>">
     <% unless action_name == "home" %>
-    <%= render 'shared/navbar' %>
+      <%= render 'shared/navbar' %>
     <% end %>
     <%= render 'shared/flashes' %>
     <%= yield %>
