@@ -15,6 +15,7 @@ class User < ApplicationRecord
   has_many :foods
   has_many :housings
   has_many :emissions, through: :transports
+  has_many :showers
 
   has_many :friendships
   has_many :friends, through: :friendships
