@@ -22,7 +22,9 @@
           <% end %>
         </div>
         <div class="d-flex justify-content-center mb-3">
-          <% if user_challenge.nil? %>
+          <% if UserChallenge.count >= 3 %>
+          <%= button_to "Accept", accept_challenge_path(challenge), remote: true, method: :post, disabled: true , class: "btn-green"%>
+          <% elsif user_challenge.nil? %>
           <%= button_to "Accept", accept_challenge_path(challenge), remote: true, method: :post , class: "btn-green"%>
           <% elsif user_challenge.duration_passed? && user_challenge.status != "finished" %>
 

@@ -20,7 +20,7 @@ marathon = Challenge.create!(
     xp: 15,
     description: "For a few days try the vegetarian life!",
     emission_saving: 5,
-    image: "herbivore.svg"
+    image: "herbivore.png"
     )
   cleanup = Challenge.create!(
     name: "Recycle",
@@ -36,5 +36,5 @@ marathon = Challenge.create!(
     xp: 45,
     description: "Instead of turning up the heat, put on some more clothing layers",
     emission_saving: 25,
-    image: "campfire.svg"
+    image: "campfire.png"
     )

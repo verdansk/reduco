@@ -8,7 +8,7 @@ class UserChallenge < ApplicationRecord
 
   def time_ago
 
-    time_ago_in_words(self.start_at + self.challenge.duration.days+1)
+    time_ago_in_words(self.start_at + self.challenge.duration.days)
 
   end
 
