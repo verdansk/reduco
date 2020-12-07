@@ -6,7 +6,7 @@
           <% user_challenge = UserChallenge.where(challenge: challenge, user: current_user).first %>
           <% if !user_challenge.nil? %>
           <div class="challenge-card" id="challenge-anchor">
-            <div class="card-picture"><%= image_tag('shower.svg', class: 'animal-mid center') %></div>
+            <div class="card-picture"> <%= image_tag(challenge.image, class: 'animal-mid center') %> </div>
             <div class="card-info">
               <div class="num-xp"> <%= challenge.xp %>XP</div>
               <h3 class="text-center"><%= challenge.name.capitalize %> challenge</h3>
