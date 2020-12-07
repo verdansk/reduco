@@ -30,11 +30,11 @@ class FriendshipsController < ApplicationController
     @friendship.first.accepted!
     @reversefriendship.first.accepted!
     redirect_to user_path(current_user)
-    # req = render_to_string(partial: "users/friend-list", locals: { friendship:  @reverseFriendship})
-    # UserChannel.broadcast_to(
-    #   @friend_user, {friends:friends}
-    # )
 
+    friend = render_to_string(partial: "users/friend-list", locals: { friend:  @friendship.first})
+    UserChannel.broadcast_to(
+      @friend, {friend:friend}
+    )
   end
 
   def declined

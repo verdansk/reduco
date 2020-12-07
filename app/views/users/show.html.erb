@@ -30,22 +30,9 @@
           <!--   -->
           <%# end %>
         </div>
-        <div class="friends mb-2">
+        <div class="friends mb-2" id="friend-container">
           <% current_user.friendships.each do |friend|%>
-          <% if friend.friendship_status == "accepted" %>
-          <div class="row mb-1">
-            <div class="col-2">
-              <%= image_tag('woman.svg', class: 'avatar') %>
-            </div>
-            <div class="col-4"><p><%= User.find(friend.friend_id).first_name.capitalize %></p></div>
-            <div class="col-3">
-              <div class="avatar-num-xp "><%= User.find(friend.friend_id).xp %></div>
-            </div>
-            <div class="col-3">
-              <%= image_tag('lion.svg', class: 'avatar') %>
-            </div>
-          </div>
-          <% end %>
+            <%= render 'users/friend-list', friend: friend %>
           <% end %>
 
           <div class="row mb-1">
