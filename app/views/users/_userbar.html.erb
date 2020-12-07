@@ -1,0 +1,36 @@
+ <div class="row">
+
+          <div class="col-sm-12 col-lg-4 mt-1">
+            <div class="flex-animal-screen">
+              <h2 class="text-center"><strong><%= @animal_name.upcase %></strong></h2>
+              <%= image_tag(@animal, class: 'animal mt-2 pic-center') %>
+              <%= link_to new_user_survey_path(current_user) do  %>
+              <button class="btn-recalculate center-bt"><span><i class="fas fa-calculator"></i> Recalculate</span></button>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-lg-8 mt-1">
+            <div class="text-info-user">
+              <h4>Hi, <strong><%= @user.full_name %></strong>, your personal progress for today really impressive!</h4>
+              <h5>Keep going to reach next level!</h5>
+            </div>
+            <div class="progress-bar mb-2">
+              <div class="progress-bar-item">
+                <%= image_tag(@animal_back_level_pic, class: 'animal-small blur border-around') %>
+                <div class="blur">Back: <%= @animal_back_level %> </div>
+              </div>
+              <span><i class="fas fa-angle-double-right"></i></span>
+              <div class="progress-bar-item">
+                <%= image_tag(@animal, class: 'animal-small border-around') %>
+                <%= @animal_level %>
+              </div>
+              <span><i class="fas fa-angle-double-right"></i></span>
+              <div class="progress-bar-item">
+                <%= image_tag(@animal_next_level_pic, class: 'animal-small blur border-around') %>
+                <div class="blur">Next: <%= @animal_next_level %></div>
+              </div>
+            </div>
+          </div>
+
+        </div>

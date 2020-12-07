@@ -2,48 +2,13 @@
   <div class="row">
     <div class="col-sm-12 col-lg-8">
       <div class="user-bar back-border mt-1 mb-1">
-        <div class="row">
-
-          <div class="col-sm-12 col-lg-4 mt-1">
-            <div class="flex-animal-screen">
-              <h2 class="text-center"><strong><%= @animal_name.upcase %></strong></h2>
-              <%= image_tag(@animal, class: 'animal mt-2 pic-center') %>
-              <%= link_to new_user_survey_path(current_user) do  %>
-              <button class="btn-recalculate center-bt"><span><i class="fas fa-calculator"></i> Recalculate</span></button>
-              <% end %>
-            </div>
-          </div>
-
-          <div class="col-sm-12 col-lg-8 mt-1">
-            <div class="text-info-user">
-              <h4>Hi, <strong><%= @user.full_name %></strong>, your personal progress for today really impressive!</h4>
-              <h5>Keep going to reach next level!</h5>
-            </div>
-            <div class="progress-bar mb-2">
-              <div class="progress-bar-item">
-                <%= image_tag(@animal_back_level_pic, class: 'animal-small blur border-around') %>
-                <div class="blur">Back: <%= @animal_back_level %> </div>
-              </div>
-              <span><i class="fas fa-angle-double-right"></i></span>
-              <div class="progress-bar-item">
-                <%= image_tag(@animal, class: 'animal-small border-around') %>
-                <%= @animal_level %>
-              </div>
-              <span><i class="fas fa-angle-double-right"></i></span>
-              <div class="progress-bar-item">
-                <%= image_tag(@animal_next_level_pic, class: 'animal-small blur border-around') %>
-                <div class="blur">Next: <%= @animal_next_level %></div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
+        <%= render 'userbar' %>
       </div>
 
       <div class="challenge-bar back-border mt-1 mb-1">
        <%= render 'activeChallenges' %>
      </div>
+
      <div class="challenge-bar back-border">
       <%= render 'browseChallenges' %>
     </div>
@@ -146,47 +111,18 @@
         </div>
 
       </div>
+
       <div class="history-bar back-border mt-1 mb-1">
-        <h3 class="ml-2 text-shadow text-24">Completed Challenges</h3>
-        <!-- Add links to the previous challenge cards -->
-        <div class="d-flex justify-content-between flex-wrap gap-between mt-1 ml-3 mr-3">
-
-         <% @challenges.each do |user_challenge| %>
-         <% if user_challenge.completed %>
-         <div class="challenge-card-mini">
-          <div class="card-picture"><%= image_tag('shower.svg', class: 'animal-mid center') %></div>
-          <div class="card-info">
-            <h3 class="text-center"><%= user_challenge.challenge.name %></h3>
-
-          </div>
-        </div>
-        <% end %>
-        <% end %>
-      </div>
+        <%= render 'historybar' %>
     </div>
+
     <div class="transport-bar back-border mt-1 mb-1">
-      <h3 class="ml-2 text-shadow text-24">Last added transport</h3>
-      <!-- Add links to the previous challenge cards -->
-      <div class="d-flex justify-content-between flex-wrap gap-between mt-1 ml-3 mr-3">
-       <div class="transport-card">
-        <% if @user.transports.last&.category == "car" %>
-        <h4> <i class="fas fa-car"></i> <%= @user.transports.last&.value %> CO2/year </h4>
-        <%  elsif @user.transports.last&.category == "bike" %>
-        <h4> <i class="fas fa-bicycle"></i> <%= @user.transports.last&.value %> CO2/year </h4>
-        <%#  elsif @user.transports.last&.category == "plane" %>
-        <!-- <h4> <i class="fas fa-plane"></i> <%#= @user.transports.last&.value %> CO2/year </h4> -->
-        <%#  elsif @user.transports.last&.category == "train" %>
-        <!-- <h4> <i class="fas fa-train"></i> <%#= @user.transports.last&.value %> CO2/year </h4> -->
-        <% else %>
-        <h4> <i class="fas fa-fish"></i> explore your daily emmision... </h4>
-        <% end %>
-      </div>
-    </div>
+      <%= render 'transportbar' %>
   </div>
 </div>
 </div>
 </div>
-</div>
+
 <!-- <script>
   document.getElementById("challenge-accept").addEventListener("click", function() {
   document.getElementById("challenge-accept").innerHTML = "In progress";
