@@ -35,6 +35,7 @@ class FriendshipsController < ApplicationController
     UserChannel.broadcast_to(
       @friend, {friend:friend}
     )
+
   end
 
   def declined
