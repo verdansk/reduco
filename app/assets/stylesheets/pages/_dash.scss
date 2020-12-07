@@ -55,8 +55,9 @@
   background: #43608B;
   box-shadow: 0 4px 15px rgba(0,0,0,0.4);
   margin-right: 2px;
-  margin-bottom: 14px;
-  max-width: 200px;
+  margin-bottom: 20px;
+  width: 215px;
+  min-height: 400px;
   border-radius: 20px;
   opacity: 0.8;
   border: 2px solid white;
@@ -87,16 +88,21 @@
     padding: 3px;
     h3 {
       text-align: center;
-      font-size: 20px;
+      font-size: 25px;
     }
     p {
      padding: 4px;
+     font-size: 14px;
      word-wrap: break-word;
    }
+   i {
+      font-size: 25px;
+      margin-left: 95px;
+    }
  }
 }
 .gap-between {
-  gap: 10px;
+  gap: 20px;
 }
 .challenge-card-mini {
   position: relative;
