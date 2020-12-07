@@ -22,22 +22,35 @@
         <% elsif user_challenge.status == "started" %>
         <i class="fas fa-hourglass-half"></i>
         <p class="p-1 text-center"> <%= user_challenge.time_ago  %></p>
-
         <% end %>
-      </div>
-      <div class="d-flex justify-content-center mb-3">
+        </div>
+
+<!-- // Delete this: -->
+<div class="btn-container mb-3">
+          <%= link_to complete_challenge_path(user_challenge), { remote: true, method: :post} do  %>
+              <i class="fas fa-check-circle approve"></i>
+          <% end %>
+
+          <a data-toggle="modal" data-target="#staticBackdrop">
+            <i class="fas fa-times-circle cancel"></i>
+          </a>
+</div>
+<!-- // Update this: -->
+      <div class="d-flex mb-3">
         <% if  user_challenge.duration_passed? && user_challenge.status != "finished" %>
           <p class="p-1 text-center">"Complete?"</p>
 
           <%= link_to complete_challenge_path(user_challenge), { remote: true, method: :post} do  %>
               <i class="fas fa-check-circle approve"></i>
           <% end %>
-          <%= link_to complete_challenge_path(user_challenge), { remote: true, method: :post} do  %>
+          <%= link_to decline_challenge_path(user_challenge), { remote: true, method: :post} do  %>
               <i class="fas fa-times-circle cancel"></i>
           <% end %>
 
         <% end %>
-      </div>
+     </div>
+<!-- // Do not change line below: -->
+
     </div>
     <% end %>
     <% end %>
@@ -45,3 +58,4 @@
     <p> <strong>Add a new challenge!</strong></p>
     <% end %>
   </div>
+      <%= render "modal-plant-tree" %>

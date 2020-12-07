@@ -28,6 +28,7 @@ import { initSelect2 } from '../plugins/init_select2';
 import { removeShake } from '../plugins/shake';
 import { initChatroomCable } from '../channels/user_channel';
 import {animate} from '../plugins/experience'
+import { carousel } from '../plugins/carousel';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -37,5 +38,6 @@ document.addEventListener('turbolinks:load', () => {
   initChatroomCable();
   initSelect2();
   removeShake();
-  // animate();
+  animate();
+  carousel();
 });
