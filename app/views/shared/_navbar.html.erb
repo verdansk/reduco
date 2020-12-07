@@ -10,10 +10,12 @@
 
         <div>
           <p>
+            <% if user_signed_in? %>
             <% if current_user.xp.nil? %>
             0 - XP <i class="fab fa-wpexplorer"></i>
             <% else %>
             <%= current_user.xp %> XP <i class="fab fa-wpexplorer"></i>
+            <% end %>
             <% end %>
           </p>
         </div>

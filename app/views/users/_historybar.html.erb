@@ -5,9 +5,10 @@
          <% @challenges.each do |user_challenge| %>
          <% if user_challenge.completed %>
          <div class="challenge-card-mini">
-          <div class="card-picture"><%= image_tag('shower.svg', class: 'animal-mid center') %></div>
+          <div class="card-picture"><%= image_tag(user_challenge.challenge.image, class: 'animal-mid center') %> </div>
           <div class="card-info">
             <h3 class="text-center"><%= user_challenge.challenge.name %></h3>
+            <p class="text-center"> <%= user_challenge.challenge.emission_saving %> emission saved!  </p>
 
           </div>
         </div>
