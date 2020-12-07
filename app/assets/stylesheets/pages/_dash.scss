@@ -56,7 +56,8 @@
   box-shadow: 0 4px 15px rgba(0,0,0,0.4);
   margin-right: 2px;
   margin-bottom: 20px;
-  max-width: 200px;
+  width: 215px;
+  min-height: 400px;
   border-radius: 20px;
   opacity: 0.8;
   border: 2px solid white;
@@ -96,7 +97,7 @@
    }
    i {
       font-size: 25px;
-      margin-left: 85px;
+      margin-left: 95px;
     }
  }
 }

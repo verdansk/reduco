@@ -42,6 +42,7 @@ class UsersController < ApplicationController
     elsif @user.daily_emission.to_i > 15_600 && @user.daily_emission.to_i <= 16_800
       'lion.svg'
     else
+      # > 16_800
       'bear.svg'
     end
   end
@@ -125,8 +126,6 @@ def show_animal_back_level
       'Level 2'
     elsif @user.daily_emission.to_i > 15_600 && @user.daily_emission.to_i <= 16_800
       'Level 1'
-    else
-      'Level 6'
     end
 end
 
@@ -140,11 +139,8 @@ def show_animal_back_level_pic
     elsif @user.daily_emission.to_i > 14_400 && @user.daily_emission.to_i <= 15_600
       'lion.svg'
     elsif @user.daily_emission.to_i > 15_600 && @user.daily_emission.to_i <= 16_800
-      'bear'
-    else
-      'bird'
+      'bear.svg'
     end
-
 end
 
 
