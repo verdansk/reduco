@@ -9,12 +9,10 @@
       <div class="d-flex justify-content-between flex-wrap gap-between mt-1 ml-3 mr-3">
 
 
-         <div class="challenge-card-mini" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">
+         <div class="challenge-card-mini" id="popover-<%= user_challenge.id %>" title="Completed at <%= user_challenge.finished_at.to_time.strftime('%b %d, %Y') %>"  data-placement="top" data-toggle="popover" data-content="Doing this for a year would reduce your emission by <%= user_challenge.challenge.emission_saving * 365 %>!">
           <div class="card-picture"><%= image_tag(user_challenge.challenge.image, class: 'animal-mid center') %> </div>
           <div class="card-info">
             <h3 class="text-center"><%= user_challenge.challenge.name %></h3>
-            <p class="text-center"> <%= user_challenge.challenge.emission_saving * 365 %> <strong>co2</strong></p>
-
           </div>
         </div>
       </div>
@@ -25,11 +23,3 @@
   <div class="nav-next"></div>
 </div>
 
-
-<button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
-
-<script>
-  $(function () {
-  $('[data-toggle="popover"]').popover()
-})
-</script>

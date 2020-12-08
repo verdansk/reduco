@@ -28,6 +28,8 @@ import { initSelect2 } from '../plugins/init_select2';
 import { removeShake } from '../plugins/shake';
 import { initChatroomCable } from '../channels/user_channel';
 import { carousel } from '../plugins/carousel';
+import { initPopover } from '../plugins/init_popover';
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -38,4 +40,5 @@ document.addEventListener('turbolinks:load', () => {
   initSelect2();
   removeShake();
   carousel();
+  initPopover();
 });
