@@ -12,6 +12,8 @@
     -webkit-overflow-scrolling: touch;
     // white-space: nowrap;
     /* Remove the default scrollbar for WebKit implementations */
+    box-shadow: inset 1px 1px 7px 0px rgba(143,207,220,0.1);
+    border-radius: 10px;
 }
 .cata-sub-nav::-webkit-scrollbar {
         display: none;

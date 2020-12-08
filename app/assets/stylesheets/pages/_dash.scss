@@ -1,20 +1,22 @@
-
-.user-bar {
+.challenge-bar, .user-bar {
+  background: #181b2a;
   p {
     font-size: 11px;
   }
 }
+
 .challenge-bar {
-  p {
-    font-size: 11px;
-  }
+  margin-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 // Progress bar
 
 .progress-bar {
   display: flex;
-  flex-direction: row;
+  flex-direction: unset;
+  align-items: center;
+  justify-content: space-evenly;
   gap: 20px;
   background-color: inherit;
   align-items: center;
@@ -22,24 +24,25 @@
 
 }
 
-.progress-bar-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-}
+// .progress-bar-item {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   gap: 6px;
+// }
 
 .flex-animal-screen {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 10px 15px;
 }
 
 .text-info-user {
  padding-left: 15px;
  padding-top: 15px;
- padding-right: 5px;
+ padding-right: 15px;
  h4 {
    font-size: 19px;
  }
@@ -140,24 +143,12 @@
   }
 }
 
-// Transport card
-.transport-card {
-  background: #43608B;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-  margin-bottom: 8px;
-  flex-grow: 1;
-  border-radius: 10px;
-  opacity: 0.8;
-  padding-top: 5px;
-  &:hover {
-    border: 2px solid white;
-    opacity: 0.9;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.7);
-  }
-  h4 {
-      text-align: center;
-      font-size: 14px;
-    }
+.friends-bar, .history-bar, .transport-bar {
+  background: #181b2a;
+}
+
+.history-bar {
+  padding-bottom: 20px;
 }
 
 // popover Completed challenges
