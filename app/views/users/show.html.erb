@@ -1,163 +1,110 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-lg-8">
+      <!-- User Bar -->
       <div class="user-bar back-border mt-1 mb-1">
         <%= render 'userbar' %>
       </div>
-
+      <!-- Active Challenges -->
       <div class="challenge-bar back-border mt-1 mb-1">
        <%= render 'activeChallenges' %>
-
-     </div>
-
-     <div class="challenge-bar back-border">
+      </div>
+      <!-- Browse Challenges -->
+      <div class="challenge-bar back-border">
       <%= render 'browseChallenges' %>
+      </div>
     </div>
+  <div class=" col-sm-12 col-lg-4">
+    <div class="friends-bar back-border mt-1 mb-1">
 
-  </div>
-    <div class=" col-sm-12 col-lg-4">
-      <div class="friends-bar back-border mt-1 mb-1">
-
-        <div class="searchbar">
-          <h3 class="text-shadow"> Search for a friend:</h3>
-          <%= render "searchbar" %>
-        </div>
-
-        <div class="d-flex flex-row justify-content-between align-items-center mt-1 mb-3 mr-2">
-          <h3 class="ml-2 text-shadow">Friends</h3>
-          <a href="">Invite more friends <i class="fas fa-plus"></i></a>
-
-          <%#= link_to (path) do %>
-          <!--   -->
-          <%# end %>
-        </div>
-        <div class="friends mb-2" id="friend-container">
-          <%# current_user.friendships.each do |friend|%>
-            <%= render 'users/friend-list', friendship: current_user.friendships %>
-          <%# end %>
-
-          <div class="row mb-1">
-            <div class="col-2">
-              <%= image_tag('woman.svg', class: 'avatar') %>
-            </div>
-            <div class="col-4"><p>Friend's name</p></div>
-            <div class="col-3">
-              <div class="avatar-num-xp ">200XP</div>
-            </div>
-            <div class="col-3">
-              <%= image_tag('lion.svg', class: 'avatar') %>
-            </div>
-          </div>
-          <div class="row mb-1">
-            <div class="col-2">
-              <%= image_tag('woman.svg', class: 'avatar') %>
-            </div>
-            <div class="col-4"><p>Friend's name</p></div>
-            <div class="col-3">
-              <div class="avatar-num-xp ">300XP</div>
-            </div>
-            <div class="col-3">
-              <%= image_tag('fox.svg', class: 'avatar') %>
-            </div>
-          </div>
-          <div class="row mb-1">
-            <div class="col-2">
-              <%= image_tag('man.svg', class: 'avatar') %>
-            </div>
-            <div class="col-4"><p>Friend's name</p></div>
-            <div class="col-3">
-              <div class="avatar-num-xp ">400XP</div>
-            </div>
-            <div class="col-3">
-              <%= image_tag('penguin.svg', class: 'avatar') %>
-            </div>
-          </div>
-          <div class="row mb-1">
-            <div class="col-2">
-              <%= image_tag('woman.svg', class: 'avatar') %>
-            </div>
-            <div class="col-4"><p>Friend's name</p></div>
-            <div class="col-3">
-              <div class="avatar-num-xp ">500XP</div>
-            </div>
-            <div class="col-3">
-              <%= image_tag('owl.svg', class: 'avatar') %>
-            </div>
-          </div>
-          <div class="row mb-1">
-            <div class="col-2">
-              <%= image_tag('man.svg', class: 'avatar') %>
-            </div>
-            <div class="col-4"><p>Friend's name</p></div>
-            <div class="col-3">
-              <div class="avatar-num-xp ">700XP</div>
-            </div>
-            <div class="col-3">
-              <%= image_tag('bird.svg', class: 'avatar') %>
-            </div>
-          </div>
-        </div>
-
+      <div class="searchbar">
+        <h3 class="text-shadow"> Search for a friend:</h3>
+        <%= render "searchbar" %>
       </div>
 
-      <div class="history-bar back-border mt-1 mb-1">
-        <%= render 'historybar' %>
-    </div>
+      <div class="d-flex flex-row justify-content-between align-items-center mt-1 mb-3 mr-2">
+        <h3 class="ml-2 text-shadow">Friends</h3>
+        <a href="">Invite more friends <i class="fas fa-plus"></i></a>
 
+        <%#= link_to (path) do %>
+        <!--   -->
+        <%# end %>
+      </div>
+      <div class="friends mb-2" id="friend-container">
+        <%# current_user.friendships.each do |friend|%>
+        <%= render 'users/friend-list', friendship: current_user.friendships %>
+        <%# end %>
+
+        <div class="row mb-1">
+          <div class="col-2">
+            <%= image_tag('woman.svg', class: 'avatar') %>
+          </div>
+          <div class="col-4"><p>Friend's name</p></div>
+          <div class="col-3">
+            <div class="avatar-num-xp ">200XP</div>
+          </div>
+          <div class="col-3">
+            <%= image_tag('lion.svg', class: 'avatar') %>
+          </div>
+        </div>
+        <div class="row mb-1">
+          <div class="col-2">
+            <%= image_tag('woman.svg', class: 'avatar') %>
+          </div>
+          <div class="col-4"><p>Friend's name</p></div>
+          <div class="col-3">
+            <div class="avatar-num-xp ">300XP</div>
+          </div>
+          <div class="col-3">
+            <%= image_tag('fox.svg', class: 'avatar') %>
+          </div>
+        </div>
+        <div class="row mb-1">
+          <div class="col-2">
+            <%= image_tag('man.svg', class: 'avatar') %>
+          </div>
+          <div class="col-4"><p>Friend's name</p></div>
+          <div class="col-3">
+            <div class="avatar-num-xp ">400XP</div>
+          </div>
+          <div class="col-3">
+            <%= image_tag('penguin.svg', class: 'avatar') %>
+          </div>
+        </div>
+        <div class="row mb-1">
+          <div class="col-2">
+            <%= image_tag('woman.svg', class: 'avatar') %>
+          </div>
+          <div class="col-4"><p>Friend's name</p></div>
+          <div class="col-3">
+            <div class="avatar-num-xp ">500XP</div>
+          </div>
+          <div class="col-3">
+            <%= image_tag('owl.svg', class: 'avatar') %>
+          </div>
+        </div>
+        <div class="row mb-1">
+          <div class="col-2">
+            <%= image_tag('man.svg', class: 'avatar') %>
+          </div>
+          <div class="col-4"><p>Friend's name</p></div>
+          <div class="col-3">
+            <div class="avatar-num-xp ">700XP</div>
+          </div>
+          <div class="col-3">
+            <%= image_tag('bird.svg', class: 'avatar') %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Completed Challenges -->
+    <div class="history-bar back-border mt-1 mb-1">
+      <%= render 'historybar' %>
+    </div>
+    <!-- Calculated Emission Fields -->
     <div class="transport-bar back-border mt-1 mb-1">
       <%= render 'transportbar' %>
+    </div>
   </div>
 </div>
-
 </div>
-</div>
-
-<!-- <script>
-  document.getElementById("challenge-accept").addEventListener("click", function() {
-  document.getElementById("challenge-accept").innerHTML = "In progress";
-  document.getElementById("challenge-accept").disabled = true;
-});
-</script> -->
-
-<!-- <script>
-  (function($) {
-
-  $(".cata-sub-nav").on('scroll', function() {
-      $val = $(this).scrollLeft();
-
-      if($(this).scrollLeft() + $(this).innerWidth()>=$(this)[0].scrollWidth){
-          $(".nav-next").hide();
-        } else {
-        $(".nav-next").show();
-      }
-
-      if($val == 0){
-        $(".nav-prev").hide();
-      } else {
-        $(".nav-prev").show();
-      }
-    });
-  console.log( 'init-scroll: ' + $(".nav-next").scrollLeft() );
-  $(".nav-next").on("click", function(){
-    $(".cata-sub-nav").animate( { scrollLeft: '+=460' }, 200);
-
-  });
-  $(".nav-prev").on("click", function(){
-    $(".cata-sub-nav").animate( { scrollLeft: '-=460' }, 200);
-  });
-
-
-
-})(jQuery);
-</script> -->
-
-
-
-
-
-
-
-
-
-
-
