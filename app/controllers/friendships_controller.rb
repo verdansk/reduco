@@ -27,11 +27,11 @@ class FriendshipsController < ApplicationController
     @friend = User.find(params[:friend_id])
     @friendship = Friendship.where(user:current_user,friend:@friend)
     @reversefriendship = Friendship.where(user:@friend,friend:current_user)
+    @friends = Friendship.where(user:@friend,friend:current_user)
     @friendship.first.accepted!
     @reversefriendship.first.accepted!
     redirect_to user_path(current_user)
-
-    friend = render_to_string(partial: "users/friend-list", locals: { friend:  @friendship.first})
+    friend = render_to_string(partial: "users/friend-list", locals: { friendship:  @friends})
     UserChannel.broadcast_to(
       @friend, {friend:friend}
     )
