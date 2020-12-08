@@ -86,9 +86,12 @@
 
   .card-info {
     padding: 3px;
+    display: grid;
+    justify-items: center;
     h3 {
       text-align: center;
       font-size: 25px;
+      padding: 0px 5px;
     }
     p {
      padding: 4px;
@@ -97,7 +100,7 @@
    }
    i {
       font-size: 25px;
-      margin-left: 95px;
+      // margin-left: 95px;
     }
  }
 }
