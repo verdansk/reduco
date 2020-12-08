@@ -1,4 +1,7 @@
-  (function($) {
+  import $ from 'jquery';
+
+  // (function($) {
+  const carousel = () => {
   $(".cata-sub-nav").on('scroll', function() {
       $val = $(this).scrollLeft();
       if($(this).scrollLeft() + $(this).innerWidth()>=$(this)[0].scrollWidth){
@@ -19,4 +22,7 @@
   $(".nav-prev").on("click", function(){
     $(".cata-sub-nav").animate( { scrollLeft: '-=460' }, 200);
   });
-})(jQuery);
+}
+// })(jQuery);
+
+export { carousel };
