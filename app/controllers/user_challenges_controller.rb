@@ -18,21 +18,18 @@ class UserChallengesController < ApplicationController
   end
 
   def complete
-    user_challenge = UserChallenge.find(params[:id])
-    user_challenge.completed = true
-    user_challenge.status = "finished"
-    user_challenge.user.xp.nil? ? (user_challenge.user.xp = user_challenge.challenge.xp) : (user_challenge.user.xp += user_challenge.challenge.xp)
-    user_challenge.user.save
-    user_challenge.save
-    redirect_to request.referer
+    @user_challenge = UserChallenge.find(params[:id])
+    @user_challenge.completed = true
+    @user_challenge.status = "finished"
+    @user_challenge.user.xp.nil? ? (@user_challenge.user.xp = @user_challenge.challenge.xp) : (@user_challenge.user.xp += @user_challenge.challenge.xp)
+    @user_challenge.user.save
+    @user_challenge.save
+    #redirect_to request.referer
   end
 
-  def decline
+  def destroy
     user_challenge = UserChallenge.find(params[:id])
-    user_challenge.completed = false
-    user_challenge.status = "failed"
-    user_challenge.user.save
-    user_challenge.save
-    redirect_to request.referer
+    user_challenge.delete
+    redirect_back(fallback_location: root_path)
   end
 end

@@ -1,4 +1,4 @@
-<h3 class="ml-2 text-shadow text-24">Completed Challenges</h3>
+<h3 class="ml-2 text-shadow">Completed Challenges</h3>
         <!-- Add links to the previous challenge cards -->
 <div class="cata-sub-nav">
   <div class="nav-prev" style="display: none;"></div>
@@ -9,12 +9,10 @@
       <div class="d-flex justify-content-between flex-wrap gap-between mt-1 ml-3 mr-3">
 
 
-         <div class="challenge-card-mini">
+         <div class="challenge-card-mini" id="popover-<%= user_challenge.id %>" title="Completed at <%= user_challenge.finished_at.to_time.strftime('%b %d, %Y') %>"  data-placement="top" data-toggle="popover" data-content="Doing this for a year would reduce your emission by <%= user_challenge.challenge.emission_saving * 365 %>!">
           <div class="card-picture"><%= image_tag(user_challenge.challenge.image, class: 'animal-mid center') %> </div>
           <div class="card-info">
             <h3 class="text-center"><%= user_challenge.challenge.name %></h3>
-            <p class="text-center"> <%= user_challenge.challenge.emission_saving %> emission saved!  </p>
-
           </div>
         </div>
       </div>
@@ -24,3 +22,4 @@
   </ul>
   <div class="nav-next"></div>
 </div>
+

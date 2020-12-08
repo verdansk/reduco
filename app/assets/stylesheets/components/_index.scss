@@ -13,9 +13,13 @@
 @import "chatroom";
 @import "modal";
 @import "shake";
+@import "survey_answers";
+@import "animate-xp";
+@import "footer";
 
 body {
   z-index: 10;
+  position: relative;
   color: $light-gray;
   background-size: cover;
   background-image:  linear-gradient(rgba(255,255,255,0.1),rgba(255,255,255,0.1)), image-url('back_dash.jpg');
@@ -25,6 +29,7 @@ body {
   p {
     font-family: $body-font2;
   }
+  padding-bottom: 2rem;
 }
 
 

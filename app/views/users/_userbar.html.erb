@@ -1,33 +1,35 @@
- <div class="row">
-
+<!-- Left column UserBar -->
   <div class="col-sm-12 col-lg-4 mt-1">
     <div class="flex-animal-screen">
+    <% if @user.daily_emission.to_i > 1894 %>
       <h2 class="text-center"><strong><%= @animal_name.upcase %></strong></h2>
-      <%= image_tag(@animal, class: 'animal mt-2 pic-center') %>
+      <%= image_tag(@animal, class: 'animal mt-2 pic-center shake-slow') %>
+      <% else %>
+      <h2 class="text-center"><strong>Nothing Yet</strong></h2>
+      <p class="user-dash-text">Use the button below to calculate your Carbon footprint</p>
+      <% end  %>
       <%= link_to new_user_survey_path(current_user) do  %>
-      <button class="btn-recalculate center-bt"><span><i class="fas fa-calculator"></i> Recalculate</span></button>
+      <button class="btn-recalculate"><span><i class="fas fa-calculator"></i> Calculate</span></button>
       <% end %>
     </div>
   </div>
-
+  <!-- Right column UserBar -->
+  <% if @user.daily_emission.to_i > 1896 %>
   <div class="col-sm-12 col-lg-8 mt-1">
     <div class="text-info-user">
-      <h4>Hi, <strong><%= @status  %></strong>, your personal progress for today really impressive!</h4>
-      <h5>Keep going to reach next level!</h5>
+      <h4>Hi, <strong><%= @user.first_name %></strong></h4>
+      <h5>You're currently at <%= @animal_level %>. Keep working on your challenges to reduce your Carbon footprint.
+      Once you earned enough XP you can recalculate your carbon footprint to go up a level.</h5>
     </div>
     <div class="progress-bar mb-2">
-
-
-      <% if !@user.daily_emission.nil?
-         if @user.daily_emission < "16800" %>
-          <div class="progress-bar-item">
-            <%if @animal_back_level_pic %>
-              <%= image_tag(@animal_back_level_pic, class: 'animal-small blur border-around') %>
-              <div class="blur">Back: <%= @animal_back_level %> </div>
-              <span><i class="fas fa-angle-double-right"></i></span>
-            <%end %>
-          </div>
-
+      <% if !@user.daily_emission.nil? %>
+        <% if @user.daily_emission < "16800" %>
+        <div class="progress-bar-item">
+          <%if @animal_back_level_pic %>
+            <%= image_tag(@animal_back_level_pic, class: 'animal-small blur border-around') %>
+            <div class="blur">Back: <%= @animal_back_level %> </div>
+            <span><i class="fas fa-angle-double-right"></i></span>
+          <%end %>
       <% end %>
       <div class="progress-bar-item">
         <%= image_tag(@animal, class: 'animal-small border-around') %>
@@ -36,11 +38,14 @@
       <span><i class="fas fa-angle-double-right"></i></span>
       <div class="progress-bar-item">
         <%= image_tag(@animal_next_level_pic, class: 'animal-small blur border-around') %>
-        <div class="blur">Next: <%= @animal_next_level %></div>
+        <div class="blur"><%= @animal_next_level %></div>
       </div>
+      <% else %>
+        <p>Press the button to calculate your carbon footprint</p>
       <% end %>
     </div>
   </div>
+  <% end  %>
   <div class="mx-auto">
     <% Stripe::Subscription.list.data.each do |e| %>
     <% if e.customer == @user.stripe_id %>

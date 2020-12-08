@@ -27,15 +27,43 @@ import "bootstrap";
 import { initSelect2 } from '../plugins/init_select2';
 import { removeShake } from '../plugins/shake';
 import { initChatroomCable } from '../channels/user_channel';
+// import {animate} from '../plugins/experience'
 import { carousel } from '../plugins/carousel';
+import { initPopover } from '../plugins/init_popover';
+import { initSweetalert } from '../plugins/init_sweetalert';
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initChatroomCable();
   initSelect2();
   removeShake();
+  initSweetalert('#sweet-alert-demo', {
+    title: "Challenge wasn't finished?",
+    // text: "May be to plant a tree, then...",
+    icon: "warning",
+    content: {
+      element: "a",
+      attributes: {
+        href: "https://www.treedom.net/en/",
+        target: "_blank",
+        text: "May be to plant a tree, then..."
+      }
+    }
+  }, (value) => {
+    if (value) {
+      const link = document.querySelector('#delete-link');
+      link.click();
+    }
+  })
   carousel();
+  initPopover();
+
 });
+
+
+
+
+

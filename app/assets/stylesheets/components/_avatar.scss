@@ -1,6 +1,7 @@
 .animal {
   width: 120px;
   height: 120px;
+  padding: 10px;
   &:hover {
     transform: translateY(4px);
   }
@@ -45,7 +46,7 @@
 }
 
 .pic-center {
-  margin-left: 48px;
+  // margin-left: 48px;
 }
 
 .num-xp {

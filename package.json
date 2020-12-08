@@ -2,6 +2,7 @@
   "name": "reduco",
   "private": true,
   "dependencies": {
+    "@popperjs/core": "^2.5.4",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
@@ -12,6 +13,7 @@
     "popper.js": "^1.16.1",
     "select2": "^4.0.13",
     "stripe": "^8.127.0",
+    "sweetalert": "^2.1.2",
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",

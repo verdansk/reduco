@@ -31,7 +31,7 @@ class UsersController < ApplicationController
   private
 
   def show_animal
-    if @user.daily_emission.to_i < 12_000
+    if @user.daily_emission.to_i > 1894 && @user.daily_emission.to_i < 12_000
       'bird.svg'
     elsif @user.daily_emission.to_i > 12_000 && @user.daily_emission.to_i <= 13_200
       'owl.svg'
@@ -42,7 +42,6 @@ class UsersController < ApplicationController
     elsif @user.daily_emission.to_i > 15_600 && @user.daily_emission.to_i <= 16_800
       'lion.svg'
     else
-      # > 16_800
       'bear.svg'
     end
   end
