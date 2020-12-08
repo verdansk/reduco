@@ -22,9 +22,8 @@
         <%= render "searchbar" %>
       </div>
 
-      <div class="d-flex flex-row justify-content-between align-items-center mt-1 mb-3 mr-2">
-        <h3 class="ml-2 text-shadow">Friends</h3>
-        <a href="">Invite more friends <i class="fas fa-plus"></i></a>
+        <div class="d-flex flex-row justify-content-between align-items-center mt-1 mb-3 mr-2">
+          <h3 class="ml-2 text-shadow">Friends</h3>
 
         <%#= link_to (path) do %>
         <!--   -->
@@ -47,53 +46,10 @@
             <%= image_tag('lion.svg', class: 'avatar') %>
           </div>
         </div>
-        <div class="row mb-1">
-          <div class="col-2">
-            <%= image_tag('woman.svg', class: 'avatar') %>
-          </div>
-          <div class="col-4"><p>Friend's name</p></div>
-          <div class="col-3">
-            <div class="avatar-num-xp ">300XP</div>
-          </div>
-          <div class="col-3">
-            <%= image_tag('fox.svg', class: 'avatar') %>
-          </div>
-        </div>
-        <div class="row mb-1">
-          <div class="col-2">
-            <%= image_tag('man.svg', class: 'avatar') %>
-          </div>
-          <div class="col-4"><p>Friend's name</p></div>
-          <div class="col-3">
-            <div class="avatar-num-xp ">400XP</div>
-          </div>
-          <div class="col-3">
-            <%= image_tag('penguin.svg', class: 'avatar') %>
-          </div>
-        </div>
-        <div class="row mb-1">
-          <div class="col-2">
-            <%= image_tag('woman.svg', class: 'avatar') %>
-          </div>
-          <div class="col-4"><p>Friend's name</p></div>
-          <div class="col-3">
-            <div class="avatar-num-xp ">500XP</div>
-          </div>
-          <div class="col-3">
-            <%= image_tag('owl.svg', class: 'avatar') %>
-          </div>
-        </div>
-        <div class="row mb-1">
-          <div class="col-2">
-            <%= image_tag('man.svg', class: 'avatar') %>
-          </div>
-          <div class="col-4"><p>Friend's name</p></div>
-          <div class="col-3">
-            <div class="avatar-num-xp ">700XP</div>
-          </div>
-          <div class="col-3">
-            <%= image_tag('bird.svg', class: 'avatar') %>
-          </div>
+        <div class="friends mb-2" id="friend-container">
+          <%# current_user.friendships.each do |friend|%>
+            <%= render 'users/friend-list', friendship: current_user.friendships %>
+          <%# end %>
         </div>
       </div>
     </div>
