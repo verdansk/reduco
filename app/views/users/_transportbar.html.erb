@@ -1,17 +1,46 @@
-<h3 class="ml-2 text-shadow text-24">Last added transport</h3>
-      <!-- Add links to the previous challenge cards -->
-      <div class="d-flex justify-content-between flex-wrap gap-between mt-1 ml-3 mr-3">
-       <div class="transport-card">
-        <% if @user.transports.last&.category == "car" %>
-        <h4> <i class="fas fa-car"></i> <%= @user.transports.last&.value %> CO2/year </h4>
-        <%  elsif @user.transports.last&.category == "bike" %>
-        <h4> <i class="fas fa-bicycle"></i> <%= @user.transports.last&.value %> CO2/year </h4>
-        <%#  elsif @user.transports.last&.category == "plane" %>
-        <!-- <h4> <i class="fas fa-plane"></i> <%#= @user.transports.last&.value %> CO2/year </h4> -->
-        <%#  elsif @user.transports.last&.category == "train" %>
-        <!-- <h4> <i class="fas fa-train"></i> <%#= @user.transports.last&.value %> CO2/year </h4> -->
-        <% else %>
-        <h4> <i class="fas fa-fish"></i> explore your daily emmision... </h4>
-        <% end %>
-      </div>
+<h3 class="ml-2 text-shadow">Your Carbon footprint:</h3>
+  <div class="justify-content-between flex-wrap gap-between mt-1 ml-3 mr-3">
+    <!-- transport -->
+    <h4 class="answers-text">Transportation</h4>
+    <div class="answers-card">
+    <% if @user.transports.last.category == "car" %>
+    <i class="fas fa-car"></i>
+    <h4 class="answers-text"><%= @user.transports.last.value %> kg/CO<sup>2</sup> per year</h4>
+    <% elsif @user.transports.last.category == "train" %>
+    <i class="fas fa-train"></i>
+    <h4 class="answers-text"><%= @user.transports.last.value %> kg/CO<sup>2</sup> per year</h4>
+    <% else %>
+    <i class="fas fa-bicycle"></i>
+    <h4 class="answers-text"><%= @user.transports.last.value %> kg/CO<sup>2</sup> per year</h4>
+    <% end %>
     </div>
+    <!-- Housing -->
+    <h4 class="answers-text">Housing</h4>
+    <div class="answers-card">
+    <% if @user.housings.last.housing_category == "flat" %>
+    <i class="fas fa-home"></i>
+    <h4 class="answers-text"><%= @user.housings.last.value %> kg/CO<sup>2</sup> per year</h4>
+    <% elsif @user.housings.last.housing_category == "mid-terrace-house" %>
+    <i class="fas fa-home"></i>
+    <h4 class="answers-text"><%= @user.housings.last.value %> kg/CO<sup>2</sup> per year</h4>
+    <% elsif @user.housings.last.housing_category == "detached-house" %>
+    <i class="fas fa-home"></i>
+    <h4 class="answers-text"><%= @user.housings.last.value %> kg/CO<sup>2</sup> per year </h4>
+    <% else %>
+    <i class="fas fa-cog fa-spin"></i>
+    <h4 class="answers-text">No values yet</h4>
+    <% end %>
+    </div>
+    <!-- Food -->
+    <h4 class="answers-text">Groceries</h4>
+    <div class="answers-card">
+    <i class="fas fa-pizza-slice"></i>
+    <h4 class="answers-text"><%= @user.foods.last.value %> kg/CO<sup>2</sup> per year</h4>
+    </div>
+    <!-- Shower -->
+    <h4 class="answers-text">Water usage</h4>
+    <div class="answers-card">
+    <i class="fas fa-shower"></i>
+    <h4 class="answers-text"><%= @user.showers.last.value %> kg/CO<sup>2</sup> per year</h4>
+    </div>
+  </div>

@@ -1,0 +1,23 @@
+.transport-bar {
+  background: #181b2a;
+}
+
+.answers-card {
+  background: #43608B;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  flex-grow: 1;
+  border-radius: 10px;
+  opacity: 0.8;
+  border: 1px solid white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 21px;
+  margin: 11px 5px;
+}
+
+.answers-text {
+  text-align: left;
+  font-size: 14px;
+  margin: 0px;
+}
