@@ -16,11 +16,16 @@
               <h5>Keep going to reach next level!</h5>
             </div>
             <div class="progress-bar mb-2">
-              <div class="progress-bar-item">
-                <%= image_tag(@animal_back_level_pic, class: 'animal-small blur border-around') %>
-                <div class="blur">Back: <%= @animal_back_level %> </div>
-              </div>
-              <span><i class="fas fa-angle-double-right"></i></span>
+
+
+              <% if !@user.daily_emission.nil?
+                 if @user.daily_emission < "16800" %>
+                  <div class="progress-bar-item">
+                    <%= image_tag(@animal_back_level_pic, class: 'animal-small blur border-around') %>
+                    <div class="blur">Back: <%= @animal_back_level %> </div>
+                  </div>
+                  <span><i class="fas fa-angle-double-right"></i></span>
+              <% end %>
               <div class="progress-bar-item">
                 <%= image_tag(@animal, class: 'animal-small border-around') %>
                 <%= @animal_level %>
@@ -30,6 +35,11 @@
                 <%= image_tag(@animal_next_level_pic, class: 'animal-small blur border-around') %>
                 <div class="blur">Next: <%= @animal_next_level %></div>
               </div>
+                 <% else %>
+                  <p> Take a survey to calculate your daily emmision!!! </p>
+              <% end %>
+
+
             </div>
           </div>
 

@@ -1,7 +1,6 @@
 <div class="d-flex flex-row justify-content-between align-items-center mt-1 mb-3">
   <h2 class="ml-2 text-shadow">Browse Challenges</h2>
 </div>
-
 <div class="cata-sub-nav">
   <div class="nav-prev" style="display: none;"></div>
   <ul>
@@ -14,23 +13,21 @@
         <div class="card-info">
           <div class="num-xp"> <%= challenge.xp %>XP</div>
           <h3 class="text-center"><%= challenge.name.capitalize %> challenge</h3>
-          <p class="p-1"><%= challenge.description %></p>
+          <i class="fas fa-book-reader"></i>
+          <p class="p-1 text-center"><%= challenge.description %></p>
           <% if user_challenge.nil? %>
-          <p class="p-1"> Duration: <%= challenge.duration %> day(s)</p>
+          <i class="far fa-hourglass"></i>
+          <p class="p-1 text-center"> <%= challenge.duration %> day(s)</p>
           <% elsif user_challenge.status == "started" %>
-          <p class="p-1"> Time remaining: <%= user_challenge.time_ago  %></p>
+          <i class="fas fa-hourglass-half"></i>
+          <p class="p-1 text-center"> <%= user_challenge.time_ago  %></p>
           <% end %>
         </div>
         <div class="d-flex justify-content-center mb-3">
-          <% if UserChallenge.count >= 3 %>
-          <%= button_to "Accept", accept_challenge_path(challenge), remote: true, method: :post, disabled: true , class: "btn-green"%>
+          <% if UserChallenge.where(status: "started").count >= 3 %>
+          <%= button_to "Limit Reached", accept_challenge_path(challenge), remote: true, method: :post, disabled: true , class: "btn-green"%>
           <% elsif user_challenge.nil? %>
           <%= button_to "Accept", accept_challenge_path(challenge), remote: true, method: :post , class: "btn-green"%>
-          <% elsif user_challenge.duration_passed? && user_challenge.status != "finished" %>
-
-          <%= button_to "Complete?", complete_challenge_path(user_challenge), remote: true, method: :post, class: "btn btn-outline-success" %>
-          <% elsif user_challenge.status == "finished"%>
-          <p>Completed, Well done!</p>
           <% end %>
         </div>
       </div>

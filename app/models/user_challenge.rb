@@ -4,7 +4,7 @@ class UserChallenge < ApplicationRecord
   belongs_to :user
   belongs_to :challenge
   # validates :completed, inclusion: {in: [true,false]}
-  enum status: {non_started: 0, started: 1, finished: 2}
+  enum status: {non_started: 0, started: 1, finished: 2, failed: 3}
 
   def time_ago
 

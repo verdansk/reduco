@@ -1,16 +1,26 @@
 <h3 class="ml-2 text-shadow text-24">Completed Challenges</h3>
         <!-- Add links to the previous challenge cards -->
-        <div class="d-flex justify-content-between flex-wrap gap-between mt-1 ml-3 mr-3">
-
-         <% @challenges.each do |user_challenge| %>
+<div class="cata-sub-nav">
+  <div class="nav-prev" style="display: none;"></div>
+  <ul>
+ <% @challenges.each do |user_challenge| %>
          <% if user_challenge.completed %>
+    <li>
+      <div class="d-flex justify-content-between flex-wrap gap-between mt-1 ml-3 mr-3">
+
+
          <div class="challenge-card-mini">
-          <div class="card-picture"><%= image_tag('shower.svg', class: 'animal-mid center') %></div>
+          <div class="card-picture"><%= image_tag(user_challenge.challenge.image, class: 'animal-mid center') %> </div>
           <div class="card-info">
             <h3 class="text-center"><%= user_challenge.challenge.name %></h3>
+            <p class="text-center"> <%= user_challenge.challenge.emission_saving %> emission saved!  </p>
 
           </div>
         </div>
-        <% end %>
-        <% end %>
       </div>
+    </li>
+    <% end %>
+    <% end %>
+  </ul>
+  <div class="nav-next"></div>
+</div>

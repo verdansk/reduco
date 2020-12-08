@@ -27,4 +27,12 @@ class UserChallengesController < ApplicationController
     redirect_to request.referer
   end
 
+  def decline
+    user_challenge = UserChallenge.find(params[:id])
+    user_challenge.completed = false
+    user_challenge.status = "failed"
+    user_challenge.user.save
+    user_challenge.save
+    redirect_to request.referer
+  end
 end

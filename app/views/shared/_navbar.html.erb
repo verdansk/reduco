@@ -8,13 +8,25 @@
   </button>
 
 
+        <div>
+          <p>
+            <% if user_signed_in? %>
+            <% if current_user.xp.nil? %>
+            0 - XP <i class="fab fa-wpexplorer"></i>
+            <% else %>
+            <%= current_user.xp %> XP <i class="fab fa-wpexplorer"></i>
+            <% end %>
+            <% end %>
+          </p>
+        </div>
+
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
 
       <li class="friend-request nav-item">
         <!-- Default dropleft button -->
-        <div class="btn-group dropleft" id="requests-container" data-chatroom-id="<%= current_user.id %>">
+        <div class="btn-group dropleft " id="requests-container" data-chatroom-id="<%= current_user.id %>">
             <% count = Friendship.where(user:current_user,friendship_status: "received").count %>
               <%= render partial:"shared/notifications", locals:{count:count} %>
             <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -24,7 +36,6 @@
               <%= render "shared/friendrequest" %>
             </div>
           </div>
-
       </li>
 
       <li class="nav-item">
@@ -40,20 +51,6 @@
             <button type="submit" class="btn-green">Send</button>
             <button type="button" class="btn-red" onclick="closeForm()">Close</button>
           </form>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <span id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fab fa-wpexplorer"></i>
-        </span>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <p class="dropdown-item">
-            <% if current_user.xp.nil? %>
-            - XP
-            <% else %>
-            <%= current_user.xp %> XP
-            <% end %>
-          </p>
         </div>
       </li>
 
@@ -104,4 +101,7 @@ function openForm() {
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
+
+
+
 </script>
