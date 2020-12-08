@@ -5,9 +5,6 @@ const initPopover = () => {
   cards.forEach(card => {
       card.addEventListener("click", (event) => {
         $(`#${event.currentTarget.id}`).popover()
-        $('.popover-dismiss').popover({
-  trigger: 'focus'
-})
     })
   })
 
