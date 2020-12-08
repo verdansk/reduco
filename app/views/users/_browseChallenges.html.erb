@@ -1,5 +1,5 @@
 <div class="d-flex flex-row justify-content-between align-items-center mt-1 mb-3">
-  <h2 class="ml-2 text-shadow">Browse Challenges</h2>
+  <h3 class="ml-2 text-shadow">Browse Challenges</h3>
 </div>
 <div class="cata-sub-nav">
   <div class="nav-prev" style="display: none;"></div>
@@ -25,7 +25,7 @@
         </div>
         <div class="d-flex justify-content-center mb-3">
           <% if UserChallenge.where(status: "started").count >= 3 %>
-          <%= button_to "Limit Reached", accept_challenge_path(challenge), remote: true, method: :post, disabled: true , class: "btn-green"%>
+          <%= button_to "Limit Reached", accept_challenge_path(challenge), remote: true, method: :post, disabled: true , class: "btn-red"%>
           <% elsif user_challenge.nil? %>
           <%= button_to "Accept", accept_challenge_path(challenge), remote: true, method: :post , class: "btn-green"%>
           <% end %>
