@@ -27,15 +27,13 @@ import "bootstrap";
 import { initSelect2 } from '../plugins/init_select2';
 import { removeShake } from '../plugins/shake';
 import { initChatroomCable } from '../channels/user_channel';
+import {animate} from '../plugins/experience'
 import { carousel } from '../plugins/carousel';
 import { initSweetalert } from '../plugins/init_sweetalert';
 
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-const el = document.createElement('div')
-el.innerHTML = '<a href="https://www.treedom.net/en/" target="_blank">Link!</a>'
-
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initChatroomCable();
@@ -60,10 +58,8 @@ document.addEventListener('turbolinks:load', () => {
     }
   })
   carousel();
-})
-
-
-
+  animate();
+});
 
 
 

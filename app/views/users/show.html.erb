@@ -7,6 +7,7 @@
 
       <div class="challenge-bar back-border mt-1 mb-1">
        <%= render 'activeChallenges' %>
+
      </div>
 
      <div class="challenge-bar back-border">
@@ -14,7 +15,6 @@
     </div>
 
   </div>
-
     <div class=" col-sm-12 col-lg-4">
       <div class="friends-bar back-border mt-1 mb-1">
 
@@ -27,15 +27,14 @@
           <h3 class="ml-2 text-shadow">Friends</h3>
           <a href="">Invite more friends <i class="fas fa-plus"></i></a>
 
-
           <%#= link_to (path) do %>
           <!--   -->
           <%# end %>
         </div>
         <div class="friends mb-2" id="friend-container">
-          <% current_user.friendships.each do |friend|%>
-            <%= render 'users/friend-list', friend: friend %>
-          <% end %>
+          <%# current_user.friendships.each do |friend|%>
+            <%= render 'users/friend-list', friendship: current_user.friendships %>
+          <%# end %>
 
           <div class="row mb-1">
             <div class="col-2">
@@ -151,7 +150,6 @@
 
 })(jQuery);
 </script> -->
-
 
 
 
