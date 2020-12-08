@@ -113,10 +113,11 @@
   border-radius: 10px;
   opacity: 0.8;
   width: 135px;
+  border: 1px solid white;
 
   &:hover {
     opacity: 0.9;
-    box-shadow: 0px 0px 0px 2px rgba(255,255,255,70%);
+    box-shadow: 0px 0px 0px 1px rgba(255,255,255,70%);
   }
 
   .card-picture {
@@ -156,10 +157,20 @@
     }
 }
 
+// popover Completed challenges
+.popover-header {
+  color: black;
+}
 
+.popover-body {
+  background: #43608B;
+  color: white;
+  border: 1px solid white;
+}
 
-
-
+.popover {
+  top: 35px !important;
+}
 
 
 

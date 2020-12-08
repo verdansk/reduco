@@ -29,7 +29,9 @@ import { removeShake } from '../plugins/shake';
 import { initChatroomCable } from '../channels/user_channel';
 import {animate} from '../plugins/experience'
 import { carousel } from '../plugins/carousel';
+import { initPopover } from '../plugins/init_popover';
 import { initSweetalert } from '../plugins/init_sweetalert';
+
 
 
 // Internal imports, e.g:
@@ -58,6 +60,7 @@ document.addEventListener('turbolinks:load', () => {
     }
   })
   carousel();
+  initPopover();
   animate();
 });
 
