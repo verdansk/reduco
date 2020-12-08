@@ -35,5 +35,6 @@
     <% end %>
     <%= render 'shared/flashes' %>
     <%= yield %>
+    <%= javascript_include_tag 'https://checkout.stripe.com/checkout.js' %>
   </body>
 </html>

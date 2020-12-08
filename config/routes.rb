@@ -20,6 +20,12 @@ Rails.application.routes.draw do
   post "complete_challenges/:id", to: "user_challenges#complete", as: :complete_challenge
   post "decline_challenges/:id", to: "user_challenges#decline", as: :decline_challenge
 
+  get '/card/new' => 'payment#new_card', as: :add_payment_method
+  post "/card" => "payment#create_card", as: :create_payment_method
 
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get '/success' => 'payment#success', as: :success
+
+  get '/subscription' => 'payment#index'
+  post '/subscription' => 'payment#subscribe', as: :subscribe
 end
+
