@@ -1,3 +1,4 @@
+<% if @user.daily_emission.to_i > 0  %>
 <h3 class="ml-2 text-shadow">Your Carbon footprint:</h3>
   <div class="justify-content-between flex-wrap gap-between mt-1 ml-3 mr-3">
     <!-- transport -->
@@ -44,3 +45,6 @@
     <h4 class="answers-text"><%= @user.showers.last.value %> kg/CO<sup>2</sup> per year</h4>
     </div>
   </div>
+  <% else  %>
+    <h3 class="ml-2 text-shadow">No emissions yet!</h3>
+  <% end  %>
