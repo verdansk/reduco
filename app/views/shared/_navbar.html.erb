@@ -9,16 +9,21 @@
 
 
         <div>
-          <p>
+          <p class="employees">
             <% if user_signed_in? %>
             <% if current_user.xp.nil? %>
             0 - XP <i class="fab fa-wpexplorer"></i>
             <% else %>
-            <%= current_user.xp %> XP <i class="fab fa-wpexplorer"></i>
+            <div class="d-flex xp-bar" >
+              <div class="counter-count"><%= current_user.xp %></div>
+                <div class="ml-2">XP <i class="fab fa-wpexplorer"></i></div>
+            </div>
+
             <% end %>
             <% end %>
           </p>
         </div>
+
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
@@ -94,6 +99,8 @@
 </div>
 
 <script>
+
+
 function openForm() {
   document.getElementById("myForm").style.display = "block";
 }
@@ -101,6 +108,8 @@ function openForm() {
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
+
+
 
 
 
