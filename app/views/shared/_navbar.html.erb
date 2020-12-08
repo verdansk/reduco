@@ -9,16 +9,18 @@
 
 
         <div>
-          <p class="employees">
+          <p class="xp">
             <% if user_signed_in? %>
             <% if current_user.xp.nil? %>
-            0 - XP <i class="fab fa-wpexplorer"></i>
+            <div class="d-flex xp-bar" >
+              <div class="counter-count">0</div>
+                <div class="ml-2">XP <i class="fab fa-wpexplorer"></i></div>
+            </div>
             <% else %>
             <div class="d-flex xp-bar" >
               <div class="counter-count"><%= current_user.xp %></div>
                 <div class="ml-2">XP <i class="fab fa-wpexplorer"></i></div>
             </div>
-
             <% end %>
             <% end %>
           </p>
