@@ -32,9 +32,9 @@
           <%# end %>
         </div>
         <div class="friends mb-2" id="friend-container">
-          <% current_user.friendships.each do |friend|%>
-            <%= render 'users/friend-list', friend: friend %>
-          <% end %>
+          <%# current_user.friendships.each do |friend|%>
+            <%= render 'users/friend-list', friendship: current_user.friendships %>
+          <%# end %>
 
           <div class="row mb-1">
             <div class="col-2">
