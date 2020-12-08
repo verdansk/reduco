@@ -8,7 +8,7 @@
 
     <% if !user_challenge.nil? && user_challenge.status != "finished" %>
 
-    <div class="challenge-card" id="challenge-anchor">
+    <div class="challenge-card challenge-<%= challenge.id %>" id="challenge-anchor">
       <div class="card-picture"><%= image_tag(challenge.image, class: 'animal-mid center') %> </div>
       <div class="card-info">
         <div class="num-xp"> <%= challenge.xp %>XP</div>
@@ -24,6 +24,7 @@
         <% end %>
         </div>
         <div class="mb-3">
+
           <% if  user_challenge.duration_passed? && user_challenge.status != "finished" %>
             <p class="p-1 text-center">"Complete?"</p>
             <div class="btn-container mb-3">
