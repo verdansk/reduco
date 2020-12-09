@@ -16,8 +16,21 @@ class UsersController < ApplicationController
 
     @animal_back_level = show_animal_back_level
     @animal_back_level_pic = show_animal_back_level_pic
-    @searchUser = User.where('id != ?',current_user.id)
 
+
+    # @bla = []
+    # @searchUser.each do| user|
+    #   @friends.each do |friend|
+    #     puts "#{user.id}-#{friend.user_id}"
+    #     byebug
+    #     if user != User.find(friend.friend_id)
+    #       byebug
+    #       @bla << user
+    #     end
+    #   end
+    # end
+    # @bla.reject()
+    @difference = filterFriends
   end
 
   def accept_challenge
@@ -146,5 +159,22 @@ end
 
   def set_user
     @user = current_user
+  end
+
+  def filterFriends
+    @searchUser = User.where('id != ?', current_user.id)
+    @array_users=[]
+    @searchUser.each {|user| @array_users << user}
+
+    @friends = Friendship.where(user:current_user)
+    @array_friends = []
+    if @friends
+      @friends.each do |friend|
+        @array_friends << User.find(friend.friend_id)
+      end
+    end
+
+
+    difference = @array_users.difference(@array_friends)
   end
 end
