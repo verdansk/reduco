@@ -16,19 +16,27 @@
     top: -2px;
     right: -8px;
   }
-  .dropdown-menu{
+  .dropdown-menu {
     width: 300px;
-    padding:15px;
+    border-radius: 5px;
+    //padding: 15px;
     background-color: #454865f0;
     color: white;
-    h5{
-      border-bottom: 1px solid #656161;
+    i {
+      font-size: 15px;
+      margin-right: 4px;
     }
     ul{
       padding: 5px 0px;
+      li {
+        list-style-position: inside;
+        text-align: center;
+        list-style-type: none;
+      }
     }
   }
 }
+
 .friendrow{
   margin: 0;
   padding: 0 10px;
@@ -44,3 +52,4 @@
 .friendcol>div{
   padding: 4px 0px;
 }
+

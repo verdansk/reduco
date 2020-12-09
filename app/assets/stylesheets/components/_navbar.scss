@@ -35,3 +35,25 @@
   display: flex;
   align-items: center;
 }
+
+.dropdown-menu {
+    width: 300px;
+    border-radius: 5px;
+    padding:15px;
+    background-color: #454865f0;
+    color: white;
+    ul{
+      padding: 5px 0px;
+      li {
+        list-style-position: inside;
+      }
+    }
+    .dropdown-item {
+      color: rgba(255, 255, 255, 0.8);
+      font-family: $headers-font2;
+      font-size: 19px;
+      &:hover {
+        color: rgba(0, 0, 0, 0.6);
+      }
+    }
+  }
