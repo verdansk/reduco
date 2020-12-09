@@ -2,7 +2,7 @@
   <!-- Left column UserBar -->
   <div class="col-sm-12 col-lg-4 mt-1">
     <div class="flex-animal-screen">
-    <h4>Hi, <strong><%= @user.first_name %></strong>!</h4>
+    <h4>Hi, <strong><%= @user.first_name.capitalize %></strong>!</h4>
     <% if @user.daily_emission.to_i > 1894 %>
       <%= image_tag(@animal, class: 'animal mt-2 pic-center shake-slow') %>
       <h2 class="text-center"><strong><%= @animal_name.upcase %></strong></h2>
