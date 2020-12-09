@@ -30,7 +30,6 @@ import { initChatroomCable } from '../channels/user_channel';
 // import {animate} from '../plugins/experience'
 import { carousel } from '../plugins/carousel';
 import { initPopover } from '../plugins/init_popover';
-import { initSweetalert } from '../plugins/init_sweetalert';
 import { challengeCleaning } from '../plugins/challenge_cleaning';
 
 
@@ -42,24 +41,6 @@ document.addEventListener('turbolinks:load', () => {
   initChatroomCable();
   initSelect2();
   removeShake();
-  initSweetalert('#sweet-alert-demo', {
-    title: "You did not complete the challenge..",
-    // text: "May be to plant a tree, then...",
-    icon: "warning",
-    content: {
-      element: "a",
-      attributes: {
-        href: "https://www.treedom.net/en/",
-        target: "_blank",
-        text: "Plant a tree to make up for it?"
-      }
-    }
-  }, (value) => {
-    if (value) {
-      const link = document.querySelector('#delete-link');
-      link.click();
-    }
-  })
   carousel();
   initPopover();
   challengeCleaning();
