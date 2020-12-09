@@ -13,7 +13,7 @@
           <input type="radio" btn-type="next1" class="radio-survey" id="transport-option3" name="category" value="walk">
           <label for="transport-option3" class="radio-label survey-box">Walking / By bike</label>
         </div>
-      <a href="#" btn-type="next" id="transport-next" class="btn-blue btn-survey">Next Question</a>
+      <a href="#" btn-type="next" id="transport-next" style="pointer-events: none" class="btn-blue btn-survey">Next Question</a>
     </div>
         <!-- Second Question -->
     <div class="survey-category house hide" id="2-q">
@@ -27,7 +27,7 @@
         <label for="house-option3"  class="radio-label survey-box">Detached house</label>
       </div>
       <a href="#" btn-type="previous" class="btn-empty-grey btn-survey">Back</a>
-      <a href="#" btn-type="next" class="btn-blue btn-survey">Next Question</a>
+      <a href="#" btn-type="next" id="house-next" style="pointer-events: none" class="btn-blue btn-survey">Next Question</a>
     </div>
         <!-- Third Question -->
     <div class="survey-category food hide" id="3-q">
@@ -79,4 +79,29 @@
       }
     }
   });
+
+  let a = document.querySelector("#transport-option1")
+  let b = document.querySelector("#transport-option2")
+  let c = document.querySelector("#transport-option3")
+  let d = document.querySelector("#house-option1")
+  let e = document.querySelector("#house-option2")
+  let f = document.querySelector("#house-option3")
+
+  a.addEventListener('click', ()=> {  a = true });
+  b.addEventListener('click', ()=> {  b = true });
+  c.addEventListener('click', ()=> {  c = true });
+  d.addEventListener('click', ()=> {  d = true });
+  e.addEventListener('click', ()=> {  e = true });
+  f.addEventListener('click', ()=> {  f = true });
+
+  document.querySelector('.survey-category').addEventListener('click', ()=>{
+    if([a,b,c].includes(true)){
+      document.querySelector('#transport-next').setAttribute("style", " ");
+    }
+  })
+  document.querySelectorAll('.survey-category')[1].addEventListener('click', ()=>{
+    if([d,e,f].includes(true)){
+      document.querySelector('#house-next').setAttribute("style", " ");
+    }
+  })
 </script>
