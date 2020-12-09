@@ -32,6 +32,8 @@ import { carousel } from '../plugins/carousel';
 import { initPopover } from '../plugins/init_popover';
 import { challengeCleaning } from '../plugins/challenge_cleaning';
 
+
+
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 document.addEventListener('turbolinks:load', () => {

@@ -172,9 +172,33 @@ p.chal-passed-text {
   }
 
 
+// failed challenge module
 
+.swal-modal {
+  background: #43608B;
+  color: white;
+  border: 1px solid white;
+  border-radius: 15px;
+}
 
+.swal-title {
+  color: white;
+}
 
+.swal-content__a {
+  color: white;
+ &:hover {
+  color: lightblue;
+ }
+}
+
+.swal-button {
+  background: #8CCDD9;
+  color: white;
+  &:hover{
+    background: #8CCDD9;
+  }
+}
 
 
 

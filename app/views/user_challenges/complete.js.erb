@@ -1,5 +1,7 @@
 document.querySelector('.counter-count').innerText = <%= current_user.xp %>
-const time = 2000;
+const animal = document.querySelector(".animal")
+animal.classList.add("shake-constant");
+const time = 3000;
 
 function animateValue(obj, start, end, duration) {
   let startTimestamp = null;
@@ -18,5 +20,8 @@ animateValue(document.querySelector(".counter-count"), 0,<%= current_user.xp %> 
 
 document.querySelector(".challenge-<%= @user_challenge.challenge.id%>").classList.add("hide-challenge");
 
-setTimeout(() => {  location.reload(); }, time);
+setTimeout(() => {
+  animal.classList.remove("shake-constant");
+  location.reload();
+}, time);
 
