@@ -31,7 +31,7 @@ import { initChatroomCable } from '../channels/user_channel';
 import { carousel } from '../plugins/carousel';
 import { initPopover } from '../plugins/init_popover';
 import { initSweetalert } from '../plugins/init_sweetalert';
-
+import { challengeCleaning } from '../plugins/challenge_cleaning';
 
 
 
@@ -62,7 +62,7 @@ document.addEventListener('turbolinks:load', () => {
   })
   carousel();
   initPopover();
-
+  challengeCleaning();
 });
 
 
