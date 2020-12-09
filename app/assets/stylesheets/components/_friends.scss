@@ -36,5 +36,23 @@
     }
   }
 }
+<<<<<<< HEAD
 
 
+=======
+.friendrow{
+  margin: 0;
+  padding: 0 10px;
+  .friendcol{
+    background-color: #3a5277;
+    border-radius: 15px;
+    border: 1px solid white;
+  }
+  .friend-name{
+    overflow-wrap: break-word;
+  }
+}
+.friendcol>div{
+  padding: 4px 0px;
+}
+>>>>>>> master
