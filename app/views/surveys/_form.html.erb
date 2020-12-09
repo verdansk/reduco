@@ -6,7 +6,7 @@
 </style>
 
 <div class="row mt-auto mt-md-0">
-  <form action="/users/<%= user.id %>/surveys"  class="form-survey" method="POST">
+  <form action="/users/<%= user.id %>/surveys" name="Form" class="form-survey" method="POST">
     <input type="hidden"
          value="<%= form_authenticity_token() %>"
          name="authenticity_token"/>
@@ -45,7 +45,7 @@
             <label for="food-option1"></label>
             <input class="survey-form-field" type="number" id="food-option1" name="spend" placeholder="€" required>
           </div>
-        <a href="#" btn-type="next" class="btn-blue btn-survey mb-auto" >Next Question</a>
+        <a href="#" btn-type="next" id="food-next" style="pointer-events: none" class="btn-blue btn-survey mb-auto" >Next Question</a>
         <br>
         <a href="#" btn-type="previous" class="btn-empty-grey  btn-survey">Back</a>
       </div>
@@ -98,6 +98,7 @@
   let d = document.querySelector("#house-option1")
   let e = document.querySelector("#house-option2")
   let f = document.querySelector("#house-option3")
+  let g = document.querySelector("#food-option1")
 
   a.addEventListener('click', ()=> {  a = true });
   b.addEventListener('click', ()=> {  b = true });
@@ -105,15 +106,25 @@
   d.addEventListener('click', ()=> {  d = true });
   e.addEventListener('click', ()=> {  e = true });
   f.addEventListener('click', ()=> {  f = true });
+  g.addEventListener('keyup', ()=> {  f = true });
 
   document.querySelector('.survey-category').addEventListener('click', ()=>{
     if([a,b,c].includes(true)){
       document.querySelector('#transport-next').setAttribute("style", " ");
     }
   })
+
   document.querySelectorAll('.survey-category')[1].addEventListener('click', ()=>{
     if([d,e,f].includes(true)){
       document.querySelector('#house-next').setAttribute("style", " ");
     }
   })
+
+  document.querySelectorAll('.survey-category')[2].addEventListener('keyup', ()=>{
+    console.log('dfasdfasd')
+      document.querySelector('#food-next').setAttribute("style", " ");
+  })
+
+
+
 </script>
