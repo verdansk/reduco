@@ -1,56 +1,61 @@
-<form action="/users/<%= user.id %>/surveys"  class="form-survey" method="POST">
-  <input type="hidden"
-       value="<%= form_authenticity_token() %>"
-       name="authenticity_token"/>
-    <!-- First Question -->
-    <div class="survey-category transport" id="1-q">
-      <h2 class="survey-title">How do you normally get from and to your work?</h2>
-        <div class="survey-questions">
-          <input type="radio" btn-type="next1" class="radio-survey" id="transport-option1" name="category" value="car">
-          <label for="transport-option1" class="radio-label survey-box">Car</label>
-          <input type="radio" btn-type="next1" class="radio-survey" id="transport-option2" name="category" value="train">
-          <label for="transport-option2" class="radio-label survey-box">Public Transport</label>
-          <input type="radio" btn-type="next1" class="radio-survey" id="transport-option3" name="category" value="walk">
-          <label for="transport-option3" class="radio-label survey-box">Walking / By bike</label>
-        </div>
-      <a href="#" btn-type="next" id="transport-next" class="btn-blue btn-survey">Next Question</a>
-    </div>
-        <!-- Second Question -->
-    <div class="survey-category house hide" id="2-q">
-      <h2 class="survey-title">What best describes the house you live in?</h2>
-      <div class="survey-questions">
-        <input type="radio" btn-type="next1" class="radio-survey" id="house-option1" name="housing_category" value="flat">
-        <label for="house-option1"  class="radio-label survey-box">Flat</label>
-        <input type="radio" btn-type="next1" class="radio-survey" id="house-option2" name="housing_category" value="mid-terrace-house">
-        <label for="house-option2"  class="radio-label survey-box">Mid-terrace house</label>
-        <input type="radio" btn-type="next1" class="radio-survey" id="house-option3" name="housing_category" value="detached-house">
-        <label for="house-option3"  class="radio-label survey-box">Detached house</label>
+<div class="row mt-auto mt-md-0">
+  <form action="/users/<%= user.id %>/surveys"  class="form-survey" method="POST">
+    <input type="hidden"
+         value="<%= form_authenticity_token() %>"
+         name="authenticity_token"/>
+      <!-- First Question -->
+      <div class="survey-category transport" id="1-q">
+        <h2 class="survey-title">How do you normally get from and to your work?</h2>
+          <div class="survey-questions row d-flex justify-content-between mx-auto" style="font-size: 75%">
+            <input type="radio" btn-type="next1" class="mx-auto radio-survey col-11 col-sm-11 col-md-3 col-lg-3" id="transport-option1" name="category" value="car">
+            <label for="transport-option1" class="mx-auto radio-label survey-box col-11 col-sm-11 col-md-3 col-lg-3">Car</label>
+            <input type="radio" btn-type="next1" class="mx-auto radio-survey col-11 col-sm-11 col-md-3 col-lg-3" id="transport-option2" name="category" value="train">
+            <label for="transport-option2" class="mx-auto radio-label survey-box col-11 col-sm-11 col-md-3 col-lg-3">Public Transport</label>
+            <input type="radio" btn-type="next1" class="mx-auto radio-survey col-11 col-sm-11 col-md-3 col-lg-3" id="transport-option3" name="category" value="walk">
+            <label for="transport-option3" class="mx-auto radio-label survey-box col-11 col-sm-11 col-md-3 col-lg-3">Walking / By bike</label>
+          </div>
+        <a href="#" btn-type="next" id="transport-next" class="btn-blue btn-survey p-auto" style="width: 35%; font-size: 75%">Next Question</a>
       </div>
-      <a href="#" btn-type="previous" class="btn-empty-grey btn-survey">Back</a>
-      <a href="#" btn-type="next" class="btn-blue btn-survey">Next Question</a>
-    </div>
-        <!-- Third Question -->
-    <div class="survey-category food hide" id="3-q">
-      <h2 class="survey-title">On average how much do you spend on groceries per month?</h2>
-        <div class="food-group">
-          <label for="food-option1"></label>
-          <input class="survey-form-field" type="number" id="food-option1" name="spend" placeholder="€" required>
+          <!-- Second Question -->
+      <div class="survey-category house hide" id="2-q">
+        <h2 class="survey-title">What best describes the house you live in?</h2>
+        <div class="survey-questions d-flex row justify-content-between mx-auto" style="font-size: 75%">
+          <input type="radio" btn-type="next1" class="mx-auto radio-survey col-11 col-sm-11 col-md-3 col-lg-3" id="house-option1" name="housing_category" value="flat">
+          <label for="house-option1"  class="mx-auto radio-label survey-box col-11 col-sm-11 col-md-3 col-lg-3">Flat</label>
+          <input type="radio" btn-type="next1" class="mx-auto radio-survey col-11 col-sm-11 col-md-3 col-lg-3" id="house-option2" name="housing_category" value="mid-terrace-house">
+          <label for="house-option2"  class="mx-auto radio-label survey-box col-11 col-sm-11 col-md-3 col-lg-3">Mid-terrace house</label>
+          <input type="radio" btn-type="next1" class="mx-auto radio-survey col-11 col-sm-11 col-md-3 col-lg-3" id="house-option3" name="housing_category" value="detached-house">
+          <label for="house-option3"  class="mx-auto radio-label survey-box col-11 col-sm-11 col-md-3 col-lg-3">Detached house</label>
         </div>
-      <a href="#" btn-type="previous" class="btn-empty-grey  btn-survey mr-3">Back</a>
-      <a href="#" btn-type="next" class="btn-blue btn-survey">Next Question</a>
-    </div>
-        <!-- Fourth Question -->
-    <div class="survey-category shower hide" id="4-q">
-      <h2 class="survey-title">On average how long do you shower?</h2>
-        <div class="shower-group">
-          <label for="shower-option1"></label>
-          <input class="survey-form-field" type="number" id="shower-option1" name="duration" placeholder="minutes" required>
-        </div>
-      <a href="#" btn-type="previous" class="btn-empty-grey  btn-survey mr-3">Back</a>
-      <input type="submit" value="Calculate!" class="btn-blue btn-survey">
-    </div>
-    <!-- Closing Div -->
-</form>
+        <a href="#" btn-type="next" class="btn-blue btn-survey mb-auto" style="width: 35%; font-size: 75%">Next Question</a>
+        <br>
+        <a href="#" btn-type="previous" class="btn-empty-grey btn-survey" style="width: 35%; font-size: 75%">Back</a>
+      </div>
+          <!-- Third Question -->
+      <div class="survey-category food hide" id="3-q">
+        <h2 class="survey-title">On average how much do you spend on groceries per month?</h2>
+          <div class="food-group">
+            <label for="food-option1"></label>
+            <input class="survey-form-field" type="number" id="food-option1" name="spend" placeholder="€" required>
+          </div>
+        <a href="#" btn-type="next" class="btn-blue btn-survey mb-auto" style="width: 35%; font-size: 75%" >Next Question</a>
+        <br>
+        <a href="#" btn-type="previous" class="btn-empty-grey  btn-survey" style="width: 35%; font-size: 75%">Back</a>
+      </div>
+          <!-- Fourth Question -->
+      <div class="survey-category shower hide" id="4-q">
+        <h2 class="survey-title">On average how long do you shower?</h2>
+          <div class="shower-group">
+            <label for="shower-option1"></label>
+            <input class="survey-form-field" type="number" id="shower-option1" name="duration" placeholder="minutes" required>
+          </div>
+        <input type="submit" value="Calculate!" class="btn-blue btn-survey mb-auto" style="width: 35%; font-size: 75%">
+        <br>
+        <a href="#" btn-type="previous" class="btn-empty-grey  btn-survey" style="width: 35%; font-size: 75%">Back</a>
+      </div>
+      <!-- Closing Div -->
+  </form>
+</div>
 
 <script type="text/javascript">
   document.addEventListener('click', (e) => {

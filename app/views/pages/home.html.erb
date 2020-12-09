@@ -10,7 +10,7 @@
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn" %>
         <%= link_to "Dashboard", user_path(current_user[:id]), class: "btn" %>
       <% else %>
-        <a type="button" class="btn" href="/">Try now!</a>
+        <a type="button" class="btn" href="/users/sign_up">Sign Up!</a>
         <a type="button" class="btn" href="/users/sign_in">Login</a>
       <% end %>
     </div>
