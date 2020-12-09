@@ -88,12 +88,12 @@
   border: none; /* Remove borders */
   border-radius: 5px;
   color: white; /* White text */
+  height: 35px;
   text-align: center;
-  padding: 6px 19px; /* Some padding */
-  font-size: 16px; /* Set a font size */
+  padding: 6px 45px; /* Some padding */
+  font-size: 0.83em; /* Set a font size */
   cursor: pointer; /* Mouse pointer on hover */
   transition: all 0.5s;
-  width: 200px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.5);
   opacity: 0.7;
   span {
