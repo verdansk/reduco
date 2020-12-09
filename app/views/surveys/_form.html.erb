@@ -1,3 +1,10 @@
+<style>
+  #transport-next, #house-next, .btn-survey {
+    width: 35%;
+    font-size: 75%;
+  }
+</style>
+
 <div class="row mt-auto mt-md-0">
   <form action="/users/<%= user.id %>/surveys"  class="form-survey" method="POST">
     <input type="hidden"
@@ -14,7 +21,7 @@
             <input type="radio" btn-type="next1" class="mx-auto radio-survey col-11 col-sm-11 col-md-3 col-lg-3" id="transport-option3" name="category" value="walk">
             <label for="transport-option3" class="mx-auto radio-label survey-box col-11 col-sm-11 col-md-3 col-lg-3">Walking / By bike</label>
           </div>
-        <a style="width: 35%; font-size: 75%" href="#" btn-type="next" id="transport-next" style="pointer-events: none" class="btn-blue btn-survey p-auto">Next Question</a>
+        <a href="#" btn-type="next" id="transport-next" style="pointer-events: none" class="btn-blue btn-survey p-auto">Next Question</a>
       </div>
           <!-- Second Question -->
       <div class="survey-category house hide" id="2-q">
@@ -27,9 +34,9 @@
           <input type="radio" btn-type="next1" class="mx-auto radio-survey col-11 col-sm-11 col-md-3 col-lg-3" id="house-option3" name="housing_category" value="detached-house">
           <label for="house-option3"  class="mx-auto radio-label survey-box col-11 col-sm-11 col-md-3 col-lg-3">Detached house</label>
         </div>
-        <a style="width: 35%; font-size: 75%" href="#" btn-type="next" id="house-next" style="pointer-events: none" class="btn-blue btn-survey mb-auto">Next Question</a>
+        <a href="#" btn-type="next" id="house-next" style="pointer-events: none" class="btn-blue btn-survey mb-auto">Next Question</a>
         <br>
-        <a href="#" btn-type="previous" class="btn-empty-grey btn-survey" style="width: 35%; font-size: 75%">Back</a>
+        <a href="#" btn-type="previous" class="btn-empty-grey btn-survey">Back</a>
       </div>
           <!-- Third Question -->
       <div class="survey-category food hide" id="3-q">
@@ -38,9 +45,9 @@
             <label for="food-option1"></label>
             <input class="survey-form-field" type="number" id="food-option1" name="spend" placeholder="€" required>
           </div>
-        <a style="width: 35%; font-size: 75%" href="#" btn-type="next" class="btn-blue btn-survey mb-auto" >Next Question</a>
+        <a href="#" btn-type="next" class="btn-blue btn-survey mb-auto" >Next Question</a>
         <br>
-        <a href="#" btn-type="previous" class="btn-empty-grey  btn-survey" style="width: 35%; font-size: 75%">Back</a>
+        <a href="#" btn-type="previous" class="btn-empty-grey  btn-survey">Back</a>
       </div>
           <!-- Fourth Question -->
       <div class="survey-category shower hide" id="4-q">
@@ -51,7 +58,7 @@
           </div>
         <input style="width: 35%; font-size: 75%" type="submit" value="Calculate!" class="btn-blue btn-survey mb-auto">
         <br>
-        <a href="#" btn-type="previous" class="btn-empty-grey  btn-survey" style="width: 35%; font-size: 75%">Back</a>
+        <a href="#" btn-type="previous" class="btn-empty-grey  btn-survey">Back</a>
       </div>
       <!-- Closing Div -->
   </form>
