@@ -48,7 +48,7 @@
     <% if !user_challenge.nil?%>
     <% end %>
     <% end %>
-    <% if UserChallenge.all == [] %>
+    <% if current_user.user_challenges.where(status: "started").all == [] %>
     <p class="user-dash-text">Add a new challenge!</p>
     <% end %>
   </div>
