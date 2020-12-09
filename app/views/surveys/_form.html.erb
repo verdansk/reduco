@@ -14,7 +14,7 @@
             <input type="radio" btn-type="next1" class="mx-auto radio-survey col-11 col-sm-11 col-md-3 col-lg-3" id="transport-option3" name="category" value="walk">
             <label for="transport-option3" class="mx-auto radio-label survey-box col-11 col-sm-11 col-md-3 col-lg-3">Walking / By bike</label>
           </div>
-        <a href="#" btn-type="next" id="transport-next" class="btn-blue btn-survey p-auto" style="width: 35%; font-size: 75%">Next Question</a>
+        <a href="#" btn-type="next" id="transport-next" style="pointer-events: none" class="btn-blue btn-survey p-auto" style="width: 35%; font-size: 75%">Next Question</a>
       </div>
           <!-- Second Question -->
       <div class="survey-category house hide" id="2-q">
@@ -27,7 +27,7 @@
           <input type="radio" btn-type="next1" class="mx-auto radio-survey col-11 col-sm-11 col-md-3 col-lg-3" id="house-option3" name="housing_category" value="detached-house">
           <label for="house-option3"  class="mx-auto radio-label survey-box col-11 col-sm-11 col-md-3 col-lg-3">Detached house</label>
         </div>
-        <a href="#" btn-type="next" class="btn-blue btn-survey mb-auto" style="width: 35%; font-size: 75%">Next Question</a>
+        <a href="#" btn-type="next" id="house-next" style="pointer-events: none" class="btn-blue btn-survey mb-auto" style="width: 35%; font-size: 75%">Next Question</a>
         <br>
         <a href="#" btn-type="previous" class="btn-empty-grey btn-survey" style="width: 35%; font-size: 75%">Back</a>
       </div>
@@ -84,4 +84,29 @@
       }
     }
   });
+
+  let a = document.querySelector("#transport-option1")
+  let b = document.querySelector("#transport-option2")
+  let c = document.querySelector("#transport-option3")
+  let d = document.querySelector("#house-option1")
+  let e = document.querySelector("#house-option2")
+  let f = document.querySelector("#house-option3")
+
+  a.addEventListener('click', ()=> {  a = true });
+  b.addEventListener('click', ()=> {  b = true });
+  c.addEventListener('click', ()=> {  c = true });
+  d.addEventListener('click', ()=> {  d = true });
+  e.addEventListener('click', ()=> {  e = true });
+  f.addEventListener('click', ()=> {  f = true });
+
+  document.querySelector('.survey-category').addEventListener('click', ()=>{
+    if([a,b,c].includes(true)){
+      document.querySelector('#transport-next').setAttribute("style", " ");
+    }
+  })
+  document.querySelectorAll('.survey-category')[1].addEventListener('click', ()=>{
+    if([d,e,f].includes(true)){
+      document.querySelector('#house-next').setAttribute("style", " ");
+    }
+  })
 </script>
