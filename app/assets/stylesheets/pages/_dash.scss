@@ -153,20 +153,19 @@
 
 // popover Completed challenges
 .popover-header {
-  color: black;
+  background-color: #454865f0;
+  color: white;
 }
 
 .popover-body {
-  background: #43608B;
+  background-color: #454865f0;
   color: white;
-  border: 1px solid white;
 }
 
 .popover {
   top: 35px !important;
+  border-radius: 5px;
 }
-
-
 // failed challenge module
 
 .swal-modal {
