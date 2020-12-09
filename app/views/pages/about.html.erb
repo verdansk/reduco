@@ -87,15 +87,17 @@
   </div>
 
 <div class="container">
-<hr>
-<%= link_to root_path do %>
-  <i class="far fa-hand-point-left"></i> Home |
-<% end %>
-
-<%= link_to user_path(current_user) do %>
-   Dashboard <i class="far fa-hand-point-right"></i>
-<% end %>
+    <hr>
+    <%= link_to root_path do %>
+      <i class="far fa-hand-point-left"></i> Home
+    <% end %>
+    <% if user_signed_in? %>
+        <%= link_to user_path(current_user) do %>
+         | Dashboard <i class="far fa-hand-point-right"></i>
+        <% end %>
+    <% end %>
 </div>
+
 
 
 
