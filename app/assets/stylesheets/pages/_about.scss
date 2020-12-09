@@ -1,36 +1,61 @@
-.card-about {
-  height: 320px;
-}
+
 .footer-about{
-  i {
+  position: absolute;
+  left: 26px;
+  bottom: 0;
+  list-style: none;
+  li {
+    display: inline;
+    cursor: pointer;
+    transition: color, 200ms;
+    i {
     color: white;
     opacity: 0.7;
     font-size: 20px;
-    padding: 5px;
+    padding-right: 5px;
     &:hover {
       opacity: 0.9;
-    }
-  }
-  ul {
-    list-style: none;
-
-    li {
-      display: inline;
-      cursor: pointer;
-      transition: color, 200ms;
+      }
     }
   }
 }
+
 .card-about {
-  background: #4E6F97;
+  position: relative;
+  background: #181b2a;
   padding: 3px;
+  margin-top: 18px;
+  height: 355px;
+  width: 210px;
+  transition: transform .2s;
   h2 {
     font-size: 24px;
     text-align: center;
+    word-wrap: break-word;
   }
   p {
    font-size: 16px;
    text-align: center;
    opacity: 0.7;
+   word-wrap: break-word;
   }
+  img {
+    padding: 3px;
+    height: 220px;
+    width: 200px;
+    object-fit: cover;
+  }
+  &:hover {
+    opacity: 0.9;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.7);
+    transform: scale(1.1);
+  }
+}
+
+.flex-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
 }

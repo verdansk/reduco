@@ -33,6 +33,8 @@ import { initPopover } from '../plugins/init_popover';
 import { initSweetalert } from '../plugins/init_sweetalert';
 import { challengeCleaning } from '../plugins/challenge_cleaning';
 
+
+
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 document.addEventListener('turbolinks:load', () => {
@@ -41,7 +43,7 @@ document.addEventListener('turbolinks:load', () => {
   initSelect2();
   removeShake();
   initSweetalert('#sweet-alert-demo', {
-    title: "Challenge wasn't finished?",
+    title: "You did not complete the challenge..",
     // text: "May be to plant a tree, then...",
     icon: "warning",
     content: {
@@ -49,7 +51,7 @@ document.addEventListener('turbolinks:load', () => {
       attributes: {
         href: "https://www.treedom.net/en/",
         target: "_blank",
-        text: "May be to plant a tree, then..."
+        text: "Plant a tree to make up for it?"
       }
     }
   }, (value) => {
