@@ -30,11 +30,15 @@
   </head>
 
   <body data-chatroom-id="<%= current_user.id if user_signed_in? %>">
+   <div class="page-container">
     <% unless action_name == "home" %>
       <%= render 'shared/navbar' %>
     <% end %>
     <%= render 'shared/flashes' %>
-    <%= yield %>
+    <div class="content-wrap">
+      <%= yield %>
+    </div>
     <%= render 'shared/footer' %>
+    </div>
   </body>
 </html>

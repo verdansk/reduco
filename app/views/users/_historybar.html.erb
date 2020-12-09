@@ -3,12 +3,10 @@
 <div class="cata-sub-nav">
   <div class="nav-prev" style="display: none;"></div>
   <ul>
- <% @challenges.each do |user_challenge| %>
+ <% @challenges.reverse.each do |user_challenge| %>
          <% if user_challenge.completed %>
     <li>
       <div class="d-flex justify-content-between flex-wrap gap-between mt-1 ml-3 mr-3">
-
-
          <div class="challenge-card-mini" id="popover-<%= user_challenge.id %>" title="Completed at <%= user_challenge.finished_at.to_time.strftime('%b %d, %Y') %>"  data-placement="top" data-toggle="popover" data-content="Doing this for a year would reduce your emission by <%= user_challenge.challenge.emission_saving * 365 %>!">
           <div class="card-picture"><%= image_tag(user_challenge.challenge.image, class: 'animal-mid center') %> </div>
           <div class="card-info">
