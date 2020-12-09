@@ -18,6 +18,7 @@
   <% if !@received.empty? %>
     <% @received.each do |friendship| %>
       <%= render partial:"shared/requestsIncoming", locals:{friendship:friendship}%>
+      <%# raise %>
     <% end %>
   <% else %>
     <li>No friendship requests</li>
