@@ -25,7 +25,7 @@
         </div>
         <div class="mb-3">
           <% if  user_challenge.duration_passed? && user_challenge.status != "finished" %>
-            <p class="p-1 text-center chal-passed-text">Your <%= challenge.name.capitalize %> challenge is over, dit you finish it?</p>
+            <p class="p-1 text-center chal-passed-text">Your <%= challenge.name.capitalize %> challenge is over, did you finish it?</p>
             <div class="btn-container mb-3">
               <%= link_to complete_challenge_path(user_challenge), { remote: true, method: :post, class: "btn-green"} do  %>
                  Yes <i class="fas fa-check-circle"></i>
@@ -47,7 +47,7 @@
                 </div>
                 <div class="modal-body">
                   <%= image_tag("polar_bear_sad.png", class: "challenge-modal-img") %>
-                <h5 class="bear">We're all doing our best to save the environment. We'll put the challenge back for you so you can try completing it later.
+                <h5 class="bear">We're all doing our best to save the environment. We'll put the challenge back for you so you can try to complete it later.
                     For now you could plant a tree 🌲 with our friends from <a href="https://www.treedom.net" class="bear" target="_blank">Treedom</a> to make up for it.</h5>
                 </div>
                 <div class="modal-footer">
