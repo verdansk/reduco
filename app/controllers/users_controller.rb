@@ -16,6 +16,7 @@ class UsersController < ApplicationController
 
     @animal_back_level = show_animal_back_level
     @animal_back_level_pic = show_animal_back_level_pic
+    @searchUser = User.where('id != ?',current_user.id)
 
   end
 
