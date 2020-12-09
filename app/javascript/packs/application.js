@@ -32,6 +32,10 @@ import { carousel } from '../plugins/carousel';
 import { initPopover } from '../plugins/init_popover';
 import { initSweetalert } from '../plugins/init_sweetalert';
 
+import { initMapbox } from '../plugins/init_mapbox';
+import { initAutocomplete } from '../plugins/init_autocomplete';
+
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -60,6 +64,8 @@ document.addEventListener('turbolinks:load', () => {
   })
   carousel();
   initPopover();
+  initMapbox();
+  initAutocomplete();
 
 });
 
