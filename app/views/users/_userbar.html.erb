@@ -25,10 +25,10 @@
     <div class="progress-bar mb-2">
       <% if !@user.daily_emission.nil? %>
         <% if @user.daily_emission < "16800" %>
-        <div class="progress-bar-item">
-          <%= image_tag(@animal_back_level_pic, class: 'animal-small blur border-around') %>
-          <div class="blur"><%= @animal_back_level %> </div>
-        </div>
+          <div class="progress-bar-item">
+            <%= image_tag(@animal_back_level_pic, class: 'animal-small blur border-around') %>
+            <div class="blur"><%= @animal_back_level %> </div>
+          </div>
         <span><i class="fas fa-angle-double-right"></i></span>
       <% end %>
       <div class="progress-bar-item">
