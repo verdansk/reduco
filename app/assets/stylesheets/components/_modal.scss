@@ -1,6 +1,36 @@
 .modal-title {
   color: black;
+    &.bear {
+    color: white;
+  }
 }
+
+h5 {
+  &.bear {
+    color: white;
+  }
+}
+ a {
+  &.bear {
+    color: white;
+    text-decoration: underline;
+  }
+  &.bear:hover {
+    text-decoration: none;
+  }
+ }
+
 .modal-content {
   color: black;
+}
+
+.challenge-modal-img {
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.challenge-modal-body {
+  background-color: #3a5278;
 }
