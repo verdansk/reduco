@@ -25,7 +25,8 @@
     -webkit-padding-start: 0px;
 }
 .cata-sub-nav li {
-    display: inline-table;
+    // display: inline-table;
+    list-style-type: none;
     margin: 0 10px;
     font-size: 16px;
 }
