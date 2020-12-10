@@ -4,6 +4,10 @@ class SurveysController < ApplicationController
   def new
     @users = User.all
     @transport = Transport.new
+    if current_user.xp.to_i > 0
+    current_user.xp = current_user.xp - 100
+    current_user.save
+    end
   end
 
   def create
