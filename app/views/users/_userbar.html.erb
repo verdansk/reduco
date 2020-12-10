@@ -15,12 +15,12 @@
       <button class="btn-recalculate"><span><i class="fas fa-calculator"></i> Calculate</span></button>
       <% end %>
       <% else %>
-      <p> Earn more xp to recalculate your emission.</p>
+      <p> You need <%= 100 - current_user.xp.to_i %> xp more to recalculate your carbon footprint.</p>
       <% end %>
     </div>
   </div>
   <!-- Right column UserBar -->
-  <% if @user.daily_emission.to_i > 1896 %>
+  <% if @user.daily_emission.to_i > 1894 %>
   <div class="col-sm-12 col-lg-8 mt-1">
     <div class="text-info-user">
       <h5>You're currently at <%= @animal_level %>. Keep working on your challenges to reduce your Carbon footprint.
@@ -28,7 +28,7 @@
     </div>
     <div class="progress-bar mb-2">
       <% if !@user.daily_emission.nil? %>
-        <% if @user.daily_emission < "16800" %>
+        <% if @user.daily_emission.to_i < 22000 %>
           <div class="progress-bar-item">
             <%= image_tag(@animal_back_level_pic, class: 'animal-small blur border-around') %>
             <div class="blur"><%= @animal_back_level %> </div>

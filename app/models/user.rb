@@ -37,4 +37,24 @@ class User < ApplicationRecord
   def all_friendships
     Friendship.where('user_id=? or friend_id=?',self.id,self.id)
   end
+
+  def animal
+    if self.daily_emission.to_i <= 1894
+      'hill.svg'
+    elsif self.daily_emission.to_i > 1894 && self.daily_emission.to_i < 8500
+      'bird.svg'
+    elsif self.daily_emission.to_i > 8500 && self.daily_emission.to_i <= 11_200
+      'owl.svg'
+    elsif self.daily_emission.to_i > 11_200 && self.daily_emission.to_i <= 13_900
+      'penguin.svg'
+    elsif self.daily_emission.to_i > 13_900 && self.daily_emission.to_i <= 16_600
+      'fox.svg'
+    elsif self.daily_emission.to_i > 16_600 && self.daily_emission.to_i <= 19_300
+      'lion.svg'
+    elsif self.daily_emission.to_i > 19_300 && self.daily_emission.to_i <= 22_000
+      'bear.svg'
+    else
+      'cow.svg'
+    end
+  end
 end

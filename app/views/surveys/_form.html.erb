@@ -5,7 +5,7 @@
   }
 </style>
 
-<div class="row mt-auto mt-md-0">
+<div class="row mt-auto mt-md-0" id="formrow">
   <form action="/users/<%= user.id %>/surveys" name="Form" class="form-survey" method="POST">
     <input type="hidden"
          value="<%= form_authenticity_token() %>"
@@ -92,7 +92,7 @@
     }
   });
 
-  let a = document.querySelector("#transport-option1")
+  let aa = document.querySelector("#transport-option1")
   let b = document.querySelector("#transport-option2")
   let c = document.querySelector("#transport-option3")
   let d = document.querySelector("#house-option1")
@@ -100,7 +100,7 @@
   let f = document.querySelector("#house-option3")
   let g = document.querySelector("#food-option1")
 
-  a.addEventListener('click', ()=> {  a = true });
+  aa.addEventListener('click', ()=> {  aa = true });
   b.addEventListener('click', ()=> {  b = true });
   c.addEventListener('click', ()=> {  c = true });
   d.addEventListener('click', ()=> {  d = true });
@@ -109,7 +109,7 @@
   g.addEventListener('keyup', ()=> {  f = true });
 
   document.querySelector('.survey-category').addEventListener('click', ()=>{
-    if([a,b,c].includes(true)){
+    if([aa,b,c].includes(true)){
       document.querySelector('#transport-next').setAttribute("style", " ");
     }
   })
