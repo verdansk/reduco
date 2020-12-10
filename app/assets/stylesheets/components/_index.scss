@@ -19,12 +19,14 @@
 
 
 body {
+  color: white;
+  outline: none;
+  text-decoration: none;
   z-index: 10;
   position: relative;
-  min-height: 100vh;
-  color: $light-gray;
-  background-size: cover;
-  background-image:  linear-gradient(rgba(255,255,255,0.1),rgba(255,255,255,0.1)), image-url('back_dash.jpg');
+  background-image: url('back_dash.jpg');
+  background-position: center;
+
   h1, h2, h3, h4, h5 {
     font-family: $headers-font2;
   }
@@ -33,13 +35,25 @@ body {
   }
 }
 
+@media only screen and (min-width: 1200px) {
+    body {
+        background-size: cover;
+        background-image: url('back_dash.jpg');
+   }
+}
+
 .page-container{
   display: grid;
-  min-height: 100vh;
-  grid-template-rows: auto 1fr auto;
+  height: 80vh;
+  overflow-y: scroll;
+  margin: 0;
 }
 
 .content-wrap {
   //padding-bottom: 4.4rem;
 }
 
+#dashcont {
+  overflow-y: scroll;
+  margin: 0 auto;
+}

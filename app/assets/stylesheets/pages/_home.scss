@@ -44,17 +44,13 @@
 #home-container{
   display: flex;
   align-items: center;
-  height:100vh;
-  // height: calc(100vh - 83px);
-  margin: 0;
-  padding: 10px;
-  background-image: url('back_dash.jpg');
-  background-size: cover;
+  margin: 10% auto;
+
   img {
-    max-width: 500px;
+    width: 320px;
   }
 
-  div.row {
+  div#row {
     align-items: center;
     margin: 0;
     width: 100%;
