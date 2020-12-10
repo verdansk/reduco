@@ -23,6 +23,7 @@ class User < ApplicationRecord
   has_many :friends, through: :friendships
   has_many :user_challenges
   has_many :challenges, through: :user_challenges
+  has_one_attached :photo
 
   validates :first_name, presence: true
   validates :last_name, presence: true
