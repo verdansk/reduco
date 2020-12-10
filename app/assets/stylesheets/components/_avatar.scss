@@ -32,14 +32,16 @@
 }
 
 .avatar {
-  width: 40px;
+  width: 50px;
   height: 50px;
   border-radius: 50%;
+  border: 2px solid white;
 }
 
 .avatar-sm {
   width: 40px;
   border-radius: 50%;
+  border: 1px solid white;
 }
 .avatar-num-xp {
   height: 40px;
