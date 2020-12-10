@@ -5,7 +5,7 @@
 
   .dropdown-toggle{
     color: white!important;
-    font-size: 25px!important;
+    font-size: 35px!important;
   }
   .count-requests{
     position: absolute;
@@ -17,7 +17,7 @@
     right: -8px;
   }
   .dropdown-menu {
-    width: 300px;
+    width: 270px;
     border-radius: 5px;
     //padding: 15px;
     background-color: #454865f0;
@@ -30,7 +30,11 @@
       padding: 5px 0px;
       li {
         list-style-position: inside;
-        text-align: center;
+        text-align: left;
+        i {
+          color: #fdb827;
+
+        }
         list-style-type: none;
       }
     }

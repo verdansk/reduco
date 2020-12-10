@@ -45,3 +45,17 @@
     right: 7px;
     margin-top: -22px;
 }
+
+@media(min-width: 960px) {
+  .big-screen {
+    li {
+    // display: inline-table;
+    list-style-type: none;
+    margin: 0 6px;
+    font-size: 16px;
+    }
+    .challenge-card {
+      width: 193px;
+    }
+  }
+}
