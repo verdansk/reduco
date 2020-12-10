@@ -51,6 +51,11 @@
   }
 }
 
+.card-about-mini {
+  margin-right: 44px;
+  text-align: center;
+}
+
 .flex-box {
   display: flex;
   justify-content: center;
@@ -60,17 +65,27 @@
 }
 
 .about-container{
-  background-image:  linear-gradient(rgba(255,255,255,0.1),rgba(255,255,255,0.1)), image-url('ice.jpg');
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 20px 0 150px 0;
+  // background-image:  linear-gradient(rgba(255,255,255,0.1),rgba(255,255,255,0.1)), image-url('ice.jpg');
+  // background-attachment: fixed;
+  // background-position: center;
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  padding: 20px 0 20px 0;
+}
+
+.our-team {
+  text-align: center;
+  padding-top: 15px;
 }
 
 .about-section {
   margin: 0 auto;
   width: 80%;
-  padding: 15px 20px;
+  padding: 15px 40px;
   background-image:  linear-gradient(rgba(255,255,255,0.1), rgba(0,0,0,0.5));
+}
+.back-home {
+  text-align: center;
+  padding: 15px 20px;
+  margin: 0 auto;
 }

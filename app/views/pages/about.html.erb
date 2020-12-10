@@ -11,7 +11,7 @@
     </div>
     </div>
 
-   <h2 style="text-align:center">Our Team</h2>
+   <h1 class=our-team>Our Team</h1>
    <hr>
    <div class="flex-box">
     <div class="card-about back-border mr-3">
@@ -83,13 +83,31 @@
     </div>
   </div>
     <hr>
-    <div class="about-section">
-      <h1>Our Values</h1>
-      <p>Some text about who we are and what we do.</p>
-      <p>Some text about who we are and what we do.</p>
-      <p>Some text about who we are and what we do.</p>
+    <div class="about-section back-border">
+      <h1 class="text-center">Our Values</h1>
+      <div class="flex-box">
+
+        <div class="card-about-mini">
+          <%= image_tag("medal.svg", class: 'value-small border-around') %>
+          <div class="container-about">
+            <p class="title">We believe in people</p>
+          </div>
+        </div>
+        <div class="card-about-mini">
+          <%= image_tag("startup.svg", class: 'value-small border-around') %>
+          <div class="container-about">
+            <p class="title">Straightforward and open-minded</p>
+          </div>
+        </div>
+        <div class="card-about-mini">
+          <%= image_tag("target.svg", class: 'value-small border-around') %>
+          <div class="container-about">
+            <p class="title">Keep it simple</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div>
+    <div class="back-home">
     <%= link_to root_path do %>
       <i class="far fa-hand-point-left"></i> Home
     <% end %>

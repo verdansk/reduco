@@ -19,6 +19,18 @@
     transform: scale(1.15);
   }
 }
+.value-small {
+  width: 65px;
+  height: 65px;
+  margin: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform .2s;
+  &:hover {
+    padding: 3px;
+    transform: scale(1.15);
+  }
+}
 
 .blur {
   opacity: 0.6;
