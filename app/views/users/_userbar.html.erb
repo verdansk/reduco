@@ -15,7 +15,7 @@
       <button class="btn-recalculate"><span><i class="fas fa-calculator"></i> Calculate</span></button>
       <% end %>
       <% else %>
-      <p> You need <%= 100 - current_user.xp %> xp more to recalculate your carbon footprint.</p>
+      <p> You need <%= 100 - current_user.xp.to_i %> xp more to recalculate your carbon footprint.</p>
       <% end %>
     </div>
   </div>
