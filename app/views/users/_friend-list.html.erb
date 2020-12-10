@@ -4,10 +4,19 @@
   <div class="col-12 friendcol">
     <div class="row">
     <div class="col-2">
-      <%= image_tag('woman.svg', class: 'avatar') %>
+
+      <% if User.find(friend.friend_id).photo.attached? %>
+        <%= cl_image_tag User.find(friend.friend_id).photo.key, height: 40, width: 40, crop: :fill,class: 'avatar-sm' %>
+      <% else %>
+         <% if current_user.gender == "female"  %>
+           <%#= image_tag "woman.svg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+         <% else %>
+           <%= image_tag "man.svg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+         <% end %>
+      <% end %>
     </div>
     <div class="col-4 friend-name d-flex align-items-center"><div><%= User.find(friend.friend_id).first_name.capitalize %></div></div>
-    <div class="col-3">
+    <div class="col-3 d-flex align-items-center">
       <div class="avatar-num-xp "><%= User.find(friend.friend_id).xp.nil? ? 0 : User.find(friend.friend_id).xp %></div>
     </div>
     <div class="col-3">
