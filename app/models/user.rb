@@ -17,6 +17,8 @@ class User < ApplicationRecord
   has_many :emissions, through: :transports
   has_many :showers
 
+  has_one_attached :photo
+
   has_many :friendships
   has_many :friends, through: :friendships
   has_many :user_challenges

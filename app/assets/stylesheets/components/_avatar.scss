@@ -33,16 +33,24 @@
 
 .avatar {
   width: 40px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.avatar-sm {
+  width: 40px;
   border-radius: 50%;
 }
 .avatar-num-xp {
   height: 40px;
+  // width: 60px;
   border-radius: 50%;
   background-color: #273145;
   color: white;
   display: flex; /* or inline-flex */
   align-items: center;
   justify-content: center;
+  // padding: 10px 20px
 }
 
 .pic-center {
