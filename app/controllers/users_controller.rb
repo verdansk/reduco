@@ -5,31 +5,14 @@ class UsersController < ApplicationController
     @users = User.all
     @user = current_user
     @query = "Search a friend.."
-
     @challenges = UserChallenge.where(user_id: @user.id)
-
     @animal = show_animal
     @animal_name = show_animal_name
     @animal_level = show_animal_level
     @animal_next_level = show_animal_next_level
     @animal_next_level_pic = show_animal_next_level_pic
-
     @animal_back_level = show_animal_back_level
     @animal_back_level_pic = show_animal_back_level_pic
-
-
-    # @bla = []
-    # @searchUser.each do| user|
-    #   @friends.each do |friend|
-    #     puts "#{user.id}-#{friend.user_id}"
-    #     byebug
-    #     if user != User.find(friend.friend_id)
-    #       byebug
-    #       @bla << user
-    #     end
-    #   end
-    # end
-    # @bla.reject()
     @difference = filterFriends
   end
 
