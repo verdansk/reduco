@@ -6,7 +6,7 @@
     <div class="col-2">
 
       <% if User.find(friend.friend_id).photo.attached? %>
-        <%= cl_image_tag User.find(friend.friend_id).photo.key, height: 40, width: 40, crop: :fill,class: 'avatar-sm' %>
+        <%= cl_image_tag User.find(friend.friend_id).photo.key, height: 40, width: 40, gravity:"face:center", crop: :fill,class: 'avatar-sm' %>
       <% else %>
          <% if current_user.gender == "female"  %>
            <%#= image_tag "woman.svg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>

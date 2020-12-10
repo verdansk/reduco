@@ -2,7 +2,7 @@ document.querySelector('.counter-count').innerText = <%= current_user.xp %>
 const animal = document.querySelector(".animal")
 animal.classList.add("shake-constant");
 const time = 3000;
-
+window.scroll({top: 0, behavior: 'smooth'});
 function animateValue(obj, start, end, duration) {
   let startTimestamp = null;
   const step = (timestamp) => {
