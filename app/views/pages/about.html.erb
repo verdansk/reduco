@@ -1,37 +1,38 @@
-<div class="container">
-    <div class="about-section">
-      <h1>About Us Page</h1>
-      <p>Some text about who we are and what we do.</p>
+<div class="about-container">
+    <div class="about-section back-border ">
+      <h1 class="text-center">Our mission</h1>
+      <div class="about-mission">
+      <p>The health of our precious planet is getting worse every single day and we are responsible for it.
+         Our leaders either know about it and don't do enough or they simple deny the existence of global warming.
+         Our mission is to get people excited about fighting global warming and do this in a fun and interactive way.
+         The idea is that people will take on our challenges and by doing so change their way of life and reduce their carbon footprint.
+      </p>
+      <small>Change isn't hard, if you know what to do.</small>
+    </div>
     </div>
 
    <h2 style="text-align:center">Our Team</h2>
-<hr>
-</div>
-
-  <div class="flex-box">
-
+   <hr>
+   <div class="flex-box">
     <div class="card-about back-border mr-3">
         <img src="m.jpg" alt="Maarten">
       <div class="container-about">
         <h2>Maarten</h2>
         <p class="title">Mastermind of the project and API master</p>
-
-          <ul class="footer-about ">
+          <ul class="footer-about-page ">
             <li><a href="#" target="_blank"><i class="fab fa-github-square"></i></a></li>
             <li><a href="#" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
             <li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
           </ul>
-
       </div>
     </div>
-
     <div class="card-about back-border mr-3">
       <img src="t.jpg" alt="Tiago">
       <div class="container-about">
         <h2>Tiago</h2>
         <p class="title">Backend professional</p>
 
-          <ul class="footer-about">
+          <ul class="footer-about-page">
             <li><a href="#" target="_blank"><i class="fab fa-github-square"></i></a></li>
             <li><a href="#" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
             <li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
@@ -43,15 +44,13 @@
     <div class="card-about back-border mr-3">
       <img src="a.jpg" alt="Alena">
       <div class="container-about">
-        <h2>Alyona</h2>
+        <h2>Alena</h2>
         <p class="title">Full stack expert</p>
-
-          <ul class="footer-about">
+          <ul class="footer-about-page">
             <li><a href="https://github.com/alena22292" target="_blank"><i class="fab fa-github-square"></i></a></li>
             <li><a href="https://www.facebook.com/helen.radchenko" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
             <li><a href="https://www.linkedin.com/in/alena-gritsiuk-62667317b/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
           </ul>
-
       </div>
     </div>
 
@@ -60,7 +59,7 @@
       <div class="container-about">
         <h2>Steven</h2>
         <p class="title">Backend genius</p>
-          <ul class="footer-about">
+          <ul class="footer-about-page">
             <li><a href="#" target="_blank"><i class="fab fa-github-square"></i></a></li>
             <li><a href="#" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
             <li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
@@ -75,19 +74,22 @@
         <h2>Antal</h2>
         <p class="title">Frontend fixer</p>
 
-          <ul class="footer-about">
+          <ul class="footer-about-page">
             <li><a href="#" target="_blank"><i class="fab fa-github-square"></i></a></li>
             <li><a href="#" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
             <li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
           </ul>
-
       </div>
     </div>
-
   </div>
-
-<div class="container">
     <hr>
+    <div class="about-section">
+      <h1>Our Values</h1>
+      <p>Some text about who we are and what we do.</p>
+      <p>Some text about who we are and what we do.</p>
+      <p>Some text about who we are and what we do.</p>
+    </div>
+    <div>
     <%= link_to root_path do %>
       <i class="far fa-hand-point-left"></i> Home
     <% end %>
@@ -96,7 +98,9 @@
          | Dashboard <i class="far fa-hand-point-right"></i>
         <% end %>
     <% end %>
+    </div>
 </div>
+
 
 
 
