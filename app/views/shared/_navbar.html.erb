@@ -76,7 +76,7 @@
 
       <div class=" dropdown">
       <% if current_user.photo.attached? %>
-                  <%= cl_image_tag current_user.photo.key, height: 40, width: 40, crop: :fill,class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
+                  <%= cl_image_tag current_user.photo.key, gravity:"face:center", crop: :fill,class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
       <% else %>
          <% if current_user.gender == "female"  %>
            <%#= image_tag "woman.svg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
