@@ -20,7 +20,7 @@
       <div class="avatar-num-xp "><%= User.find(friend.friend_id).xp.nil? ? 0 : User.find(friend.friend_id).xp %></div>
     </div>
     <div class="col-3">
-      <%= image_tag('lion.svg', class: 'avatar') %>
+      <%= image_tag(friend.friend.animal, class: 'avatar') %>
     </div>
     </div>
   </div>
