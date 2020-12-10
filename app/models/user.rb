@@ -23,6 +23,7 @@ class User < ApplicationRecord
   has_many :friends, through: :friendships
   has_many :user_challenges
   has_many :challenges, through: :user_challenges
+  has_one_attached :photo
 
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -35,5 +36,23 @@ class User < ApplicationRecord
 
   def all_friendships
     Friendship.where('user_id=? or friend_id=?',self.id,self.id)
+  end
+
+  def animal
+    if self.daily_emission.to_i <= 1894
+      'hill.svg'
+    elsif self.daily_emission.to_i > 1894 && self.daily_emission.to_i < 12_000
+      'bird.svg'
+    elsif self.daily_emission.to_i > 12_000 && self.daily_emission.to_i <= 13_200
+      'owl.svg'
+    elsif self.daily_emission.to_i > 13_300 && self.daily_emission.to_i <= 14_400
+      'penguin.svg'
+    elsif self.daily_emission.to_i > 14_400 && self.daily_emission.to_i <= 15_600
+      'fox.svg'
+    elsif self.daily_emission.to_i > 15_600 && self.daily_emission.to_i <= 16_800
+      'lion.svg'
+    else
+      'bear.svg'
+    end
   end
 end
