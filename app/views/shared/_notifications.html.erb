@@ -1,5 +1,7 @@
 
-<div class='<%= "count-requests" if count > 0 %>'>
-<%= count if count >0 %>
+<div class='notification-value <%= "count-requests" if count > 0 %>'>
+<% if count >0 %>
+<%= count %>
+<% end %>
 </div>
 

@@ -13,14 +13,15 @@ class FriendshipsController < ApplicationController
     if @friendship.save
       @reverseFriendship.received!
       @reverseFriendship.save
-      @count = Friendship.where(user:current_user,friendship_status:"pending").count
+      @count = Friendship.where(user:@friend_user,friendship_status:"received").count
+      req = render_to_string(partial: "shared/requestsIncoming", locals: { friendship:  @reverseFriendship})
+      noti = render_to_string(partial: "shared/notifications", locals: { count: @count})
+      UserChannel.broadcast_to(
+        @friend_user, {notification:noti, request: req}
+      )
       redirect_to user_path(current_user)
     end
-    req = render_to_string(partial: "shared/requestsIncoming", locals: { friendship:  @reverseFriendship})
-    noti = render_to_string(partial: "shared/notifications", locals: { count: @count})
-    UserChannel.broadcast_to(
-      @friend_user, {notification:noti, request: req}
-    )
+
   end
 
   def accept
