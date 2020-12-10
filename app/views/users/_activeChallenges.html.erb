@@ -4,8 +4,8 @@
   <div class="cata-sub-nav big-screen">
     <div class="nav-prev" style="display: none;"></div>
    <ul>
-    <% Challenge.all.each do |challenge| %>
-   <li>
+    <% Challenge.all.reverse.each do |challenge| %>
+   <li id="challenge-card-item">
     <% user_challenge = UserChallenge.where(challenge: challenge, user: current_user).first %>
 
     <% if !user_challenge.nil? && user_challenge.status != "finished" %>
