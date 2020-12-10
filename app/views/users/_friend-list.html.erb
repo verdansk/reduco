@@ -2,7 +2,7 @@
 <% if friend.friendship_status == "accepted" %>
 <div class="row friendrow mb-2">
   <div class="col-12 friendcol">
-    <div class="row">
+    <div class="row align-items-center">
     <div class="col-2">
 
       <% if User.find(friend.friend_id).photo.attached? %>
@@ -17,10 +17,10 @@
     </div>
     <div class="col-4 friend-name d-flex align-items-center"><div><%= User.find(friend.friend_id).first_name.capitalize %></div></div>
     <div class="col-3 d-flex align-items-center">
-      <div class="avatar-num-xp "><%= User.find(friend.friend_id).xp.nil? ? 0 : User.find(friend.friend_id).xp %></div>
+      <div class="avatar-num-xp "><%= User.find(friend.friend_id).xp.nil? ? 0 : User.find(friend.friend_id).xp %><div class="ml-1">XP</div></div>
     </div>
     <div class="col-3">
-      <%= image_tag('lion.svg', class: 'avatar') %>
+      <%= image_tag(friend.friend.animal, class: 'avatar') %>
     </div>
     </div>
   </div>
