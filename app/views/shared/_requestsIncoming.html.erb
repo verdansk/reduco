@@ -1,1 +1,15 @@
-<li><%= User.find(friendship.friend_id).first_name %></li> <%= link_to "accept", accept_friendship_path(friendship.friend_id)%>
+<div class="d-flex justify-content-between">
+    <li><i class="fas fa-user-plus"></i>  <%= User.find(friendship.friend_id).first_name.capitalize %></li>
+    <div class="add_friends">
+      <%= link_to accept_friendship_path(friendship.friend_id) do  %>
+        <i class="fas fa-check-circle"></i>
+      <% end %>
+
+      <%= link_to decline_friendship_path(friendship.friend_id) do  %>
+        <i class="fas fa-times-circle"></i>
+      <% end %>
+    </div>
+</div>
+
+
+

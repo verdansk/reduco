@@ -2,8 +2,8 @@
   <h3 class="ml-2 text-shadow">Browse Challenges</h3>
 </div>
 <div class="cata-sub-nav">
-<div class="nav-prev" style="display: none;"></div>
-  <ul>
+  <div class="nav-prev" style="display: none;"></div>
+    <ul>
     <% Challenge.all.each do |challenge| %>
       <li id="challenge-card-item">
         <% user_challenge = UserChallenge.where(challenge: challenge, user: current_user).first %>
@@ -28,9 +28,9 @@
 
         <div class="d-flex justify-content-center mb-3" id="accept-chal">
           <% if current_user.user_challenges.where(status: "started").count >= 3 %>
-          <%= button_to "Limit Reached", accept_challenge_path(challenge), remote: true, method: :post, disabled: true , class: "btn-red"%>
+            <%= button_to "Limit Reached", accept_challenge_path(challenge), remote: true, method: :post, disabled: true , class: "btn-red"%>
           <% elsif user_challenge.nil? %>
-          <%= button_to "Accept", accept_challenge_path(challenge), remote: true, method: :post , class: "btn-green"%>
+            <%= button_to "Accept", accept_challenge_path(challenge), remote: true, method: :post , class: "btn-green"%>
           <% end %>
         </div>
       </div>

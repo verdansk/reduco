@@ -5,7 +5,7 @@
 
   .dropdown-toggle{
     color: white!important;
-    font-size: 25px!important;
+    font-size: 35px!important;
   }
   .count-requests{
     position: absolute;
@@ -16,19 +16,31 @@
     top: -2px;
     right: -8px;
   }
-  .dropdown-menu{
-    width: 300px;
-    padding:15px;
+  .dropdown-menu {
+    width: 270px;
+    border-radius: 5px;
+    //padding: 15px;
     background-color: #454865f0;
     color: white;
-    h5{
-      border-bottom: 1px solid #656161;
+    i {
+      font-size: 15px;
+      margin-right: 4px;
     }
     ul{
       padding: 5px 0px;
+      li {
+        list-style-position: inside;
+        text-align: left;
+        i {
+          color: #fdb827;
+
+        }
+        list-style-type: none;
+      }
     }
   }
 }
+
 .friendrow{
   margin: 0;
   padding: 0 10px;
@@ -44,3 +56,4 @@
 .friendcol>div{
   padding: 4px 0px;
 }
+

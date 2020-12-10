@@ -2,7 +2,7 @@
   <!-- Left column UserBar -->
   <div class="col-sm-12 col-lg-4 mt-1">
     <div class="flex-animal-screen">
-    <h4>Hi, <strong><%= @user.first_name %></strong>!</h4>
+    <h4>Hi, <strong><%= @user.first_name.capitalize %></strong>!</h4>
     <% if @user.daily_emission.to_i > 1894 %>
       <%= image_tag(@animal, class: 'animal mt-2 pic-center shake-slow') %>
       <h2 class="text-center"><strong><%= @animal_name.upcase %></strong></h2>
@@ -10,8 +10,12 @@
       <h2 class="text-center"><strong>No footprint data yet</strong></h2>
       <p class="user-dash-text">Use the button below to calculate your Carbon footprint</p>
       <% end  %>
+      <% if (current_user.xp != nil && current_user.xp >= 100)  || current_user.daily_emission.nil? %>
       <%= link_to new_user_survey_path(current_user) do  %>
       <button class="btn-recalculate"><span><i class="fas fa-calculator"></i> Calculate</span></button>
+      <% end %>
+      <% else %>
+      <p> Earn more xp to recalculate your emission.</p>
       <% end %>
     </div>
   </div>
