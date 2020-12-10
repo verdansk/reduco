@@ -24,10 +24,8 @@ body {
   text-decoration: none;
   z-index: 10;
   position: relative;
-  min-height: 100vh;
   background-image: url('back_dash.jpg');
-  background-size: auto;
-  vertical-align: baseline;
+  background-position: center;
 
   h1, h2, h3, h4, h5 {
     font-family: $headers-font2;
@@ -35,6 +33,13 @@ body {
   p {
     font-family: $body-font2;
   }
+}
+
+@media only screen and (min-width: 1200px) {
+    body {
+        background-size: cover;
+        background-image: url('back_dash.jpg');
+   }
 }
 
 .page-container{
@@ -48,3 +53,7 @@ body {
   //padding-bottom: 4.4rem;
 }
 
+#dashcont {
+  overflow-y: scroll;
+  margin: 0 auto;
+}

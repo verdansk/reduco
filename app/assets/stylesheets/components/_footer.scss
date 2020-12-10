@@ -1,7 +1,6 @@
 .footer {
+  background-color: #0D1426;
   position: absolute;
-  bottom: 0;
-  left: 0;
    width: 100%;
    color: white;
    text-align: center;
@@ -48,15 +47,18 @@
 }
 
 .text-muted {
+  opacity: 0.4;
   width: 50%;
   align-self: center;
   line-height: 2vh;
   // margin-top: 20px;
   h4 {
+    color: white;
     widows: 100%;
     font-size: 1vh;
   }
   p {
+    color: white;
     widows: 100%;
     align-self: center;
      font-size: 1vh;
