@@ -7,7 +7,7 @@ class UserChallenge < ApplicationRecord
   enum status: {non_started: 0, started: 1, finished: 2, failed: 3}
 
   def time_ago
-    time_ago_in_words(self.start_at + self.challenge.duration.days + 1)
+    time_ago_in_words(self.created_at.to_datetime + self.challenge.duration.days)
   end
 
   def duration_passed?

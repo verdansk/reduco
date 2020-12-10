@@ -20,7 +20,11 @@
         <p class="p-1 text-center"><%= challenge.duration %> day(s)</p>
         <% elsif user_challenge.status == "started" %>
         <i class="fas fa-hourglass-half"></i>
+        <% if  user_challenge.finished_at.past?%>
+        <p></p>
+        <% else %>
         <p class="p-1 text-center"> <%= user_challenge.time_ago  %></p>
+        <% end %>
         <% end %>
         </div>
         <div class="mb-3">
