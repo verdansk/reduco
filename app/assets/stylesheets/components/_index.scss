@@ -19,12 +19,16 @@
 
 
 body {
+  color: white;
+  outline: none;
+  text-decoration: none;
   z-index: 10;
   position: relative;
   min-height: 100vh;
-  color: $light-gray;
-  background-size: cover;
-  background-image:  linear-gradient(rgba(255,255,255,0.1),rgba(255,255,255,0.1)), image-url('back_dash.jpg');
+  background-image: url('back_dash.jpg');
+  background-size: auto;
+  vertical-align: baseline;
+
   h1, h2, h3, h4, h5 {
     font-family: $headers-font2;
   }
@@ -35,8 +39,9 @@ body {
 
 .page-container{
   display: grid;
-  min-height: 100vh;
-  grid-template-rows: auto 1fr auto;
+  height: 80vh;
+  overflow-y: scroll;
+  margin: 0;
 }
 
 .content-wrap {
