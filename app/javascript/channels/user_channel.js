@@ -6,7 +6,7 @@ const initChatroomCable = () => {
   const icoming = document.querySelector("#incoming-requests");
   const friend = document.querySelector("#friend-container")
   const bell = document.querySelector(".fa-bell")
-
+  const not_value = document.querySelector(".notification-value")
   if (body) {
     // console.log("requests")
     const id = body.dataset.chatroomId;
@@ -14,10 +14,11 @@ const initChatroomCable = () => {
       received(data) {
         console.log(data)
         if(data.request){
-          requests.insertAdjacentHTML('beforeend', data.notification)
+          // requests.insertAdjacentHTML('beforeend', data.notification)
+          not_value.innerHTML = data.notification;
           icoming.insertAdjacentHTML('beforeend', data.request);
-          bell.classList.toggle("shake-rotate");
-          bell.classList.toggle("shake-constant");
+          bell.classList.add("shake-rotate");
+          bell.classList.add("shake-constant");
         }
 
         // console.log(data.friend)
