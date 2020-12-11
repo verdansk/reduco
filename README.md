@@ -1,1 +1,4 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+ReduCo - Reduce Co2
+
+An application that will help you to calculate your carbon footprint, and challenge you to reduce it in a fun and educating way.
+Sign up @ https://www.redu.co
