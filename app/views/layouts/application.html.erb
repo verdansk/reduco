@@ -35,6 +35,8 @@
     <% end %>
       <%= render 'shared/flashes' %>
     <%= yield %>
+    <% unless action_name == "home" %>
     <%= render 'shared/footer' %>
+    <% end %>
   </body>
 </html>

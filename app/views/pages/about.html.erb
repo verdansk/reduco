@@ -1,37 +1,45 @@
-<div class="container">
-    <div class="about-section">
-      <h1>About Us Page</h1>
-      <p>Some text about who we are and what we do.</p>
+<div class="about-container">
+    <h1 class="underline">Our mission</h1>
+    <p class="text-center small-text">Change isn't hard, if you know what to do.</p>
+    <div class="about-section ">
+      <div class="about-mission d-flex align-items-center">
+      <%= image_tag("mission.svg", class: 'value-small border-around') %>
+      <p>
+        The health of our precious planet is getting worse every single day and we are responsible for it.
+         Our leaders either know about it and don't do enough or they simple deny the existence of global warming.
+      </p>
+      </div>
+      <div class="about-mission d-flex align-items-center">
+        <%= image_tag("ecological.svg", class: 'value-small border-around') %>
+      <p>
+         Our mission is to get people excited about fighting global warming and do this in a fun and interactive way.
+         The idea is that people will take on our challenges and by doing so change their way of life and reduce their carbon footprint.
+      </p>
+    </div>
     </div>
 
-   <h2 style="text-align:center">Our Team</h2>
-<hr>
-</div>
-
-  <div class="flex-box">
-
+   <h1 class=our-team>Our Team</h1>
+   <hr>
+   <div class="flex-box">
     <div class="card-about back-border mr-3">
         <img src="m.jpg" alt="Maarten">
       <div class="container-about">
         <h2>Maarten</h2>
         <p class="title">Mastermind of the project and API master</p>
-
-          <ul class="footer-about ">
+          <ul class="footer-about-page ">
             <li><a href="#" target="_blank"><i class="fab fa-github-square"></i></a></li>
             <li><a href="#" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
             <li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
           </ul>
-
       </div>
     </div>
-
     <div class="card-about back-border mr-3">
       <img src="t.jpg" alt="Tiago">
       <div class="container-about">
         <h2>Tiago</h2>
         <p class="title">Backend professional</p>
 
-          <ul class="footer-about">
+          <ul class="footer-about-page">
             <li><a href="#" target="_blank"><i class="fab fa-github-square"></i></a></li>
             <li><a href="#" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
             <li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
@@ -43,15 +51,13 @@
     <div class="card-about back-border mr-3">
       <img src="a.jpg" alt="Alena">
       <div class="container-about">
-        <h2>Alyona</h2>
+        <h2>Alena</h2>
         <p class="title">Full stack expert</p>
-
-          <ul class="footer-about">
+          <ul class="footer-about-page">
             <li><a href="https://github.com/alena22292" target="_blank"><i class="fab fa-github-square"></i></a></li>
             <li><a href="https://www.facebook.com/helen.radchenko" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
             <li><a href="https://www.linkedin.com/in/alena-gritsiuk-62667317b/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
           </ul>
-
       </div>
     </div>
 
@@ -60,7 +66,7 @@
       <div class="container-about">
         <h2>Steven</h2>
         <p class="title">Backend genius</p>
-          <ul class="footer-about">
+          <ul class="footer-about-page">
             <li><a href="#" target="_blank"><i class="fab fa-github-square"></i></a></li>
             <li><a href="#" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
             <li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
@@ -75,19 +81,39 @@
         <h2>Antal</h2>
         <p class="title">Frontend fixer</p>
 
-          <ul class="footer-about">
+          <ul class="footer-about-page">
             <li><a href="#" target="_blank"><i class="fab fa-github-square"></i></a></li>
             <li><a href="#" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
             <li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
           </ul>
-
       </div>
     </div>
-
   </div>
+    <h1 class="underline">Our Values</h1>
+    <div class="about-section">
+      <div class="flex-box">
 
-<div class="container">
-    <hr>
+        <div class="card-about-mini">
+          <%= image_tag("medal.svg", class: 'value-small border-around') %>
+          <div class="container-about">
+            <p class="title">We believe in people</p>
+          </div>
+        </div>
+        <div class="card-about-mini">
+          <%= image_tag("startup.svg", class: 'value-small border-around') %>
+          <div class="container-about">
+            <p class="title">Straightforward and open-minded</p>
+          </div>
+        </div>
+        <div class="card-about-mini">
+          <%= image_tag("target.svg", class: 'value-small border-around') %>
+          <div class="container-about">
+            <p class="title">Keep it simple</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="back-home">
     <%= link_to root_path do %>
       <i class="far fa-hand-point-left"></i> Home
     <% end %>
@@ -96,7 +122,9 @@
          | Dashboard <i class="far fa-hand-point-right"></i>
         <% end %>
     <% end %>
+    </div>
 </div>
+
 
 
 

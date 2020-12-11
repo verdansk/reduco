@@ -11,13 +11,14 @@
          <% if current_user.gender == "female"  %>
            <%#= image_tag "woman.svg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
          <% else %>
-           <%= image_tag "man.svg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+           <%= image_tag "man.svg", class: "avatar-sm dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
          <% end %>
       <% end %>
     </div>
     <div class="col-4 friend-name d-flex align-items-center"><div><%= User.find(friend.friend_id).first_name.capitalize %></div></div>
     <div class="col-3 d-flex align-items-center">
       <div class="avatar-num-xp "><%= User.find(friend.friend_id).xp.nil? ? 0 : User.find(friend.friend_id).xp %><div class="ml-1">XP</div></div>
+    <!-- </div> -->
     </div>
     <div class="col-3">
       <%= image_tag(friend.friend.animal, class: 'avatar') %>

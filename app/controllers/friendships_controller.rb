@@ -39,12 +39,12 @@ class FriendshipsController < ApplicationController
     redirect_to user_path(current_user)
   end
 
-  def declined
+  def decline
     @friend = User.find(params[:friend_id])
     @friendship = Friendship.where(user:current_user,friend:@friend)
     @reversefriendship = Friendship.where(user:@friend,friend:current_user)
-    @friendship.first.declined!
-    @reversefriendship.first.declined!
+    @friendship.first.destroy
+    @reversefriendship.first.destroy
     redirect_to user_path(current_user)
   end
 end

@@ -1,5 +1,5 @@
 
-.footer-about{
+.footer-about-page {
   position: absolute;
   left: 26px;
   bottom: 0;
@@ -19,7 +19,6 @@
     }
   }
 }
-
 .card-about {
   position: relative;
   background: #181b2a;
@@ -52,10 +51,51 @@
   }
 }
 
+.card-about-mini {
+  margin-right: 44px;
+  text-align: center;
+}
+
 .flex-box {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   padding: 10px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.about-container{
+  background-image:  linear-gradient(rgba(0,0,0,0.2),rgba(255,255,255,0.1));
+  // background-attachment: fixed;
+  // background-position: center;
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  padding: 20px 0 20px 0;
+}
+
+.our-team {
+  text-align: center;
+  padding-top: 15px;
+}
+
+.about-section {
+  margin: 0 auto;
+  width: 80%;
+  padding: 15px 40px;
+  // background-image:  linear-gradient(rgba(255,255,255,0.1), rgba(0,0,0,0.5));
+}
+
+.about-mission {
+  margin-top: 20px;
+  img {
+    margin-right: 30px;
+  }
+}
+
+.back-home {
+  text-align: center;
+  padding: 15px 20px;
+  margin: 0 auto;
 }

@@ -19,6 +19,18 @@
     transform: scale(1.15);
   }
 }
+.value-small {
+  width: 65px;
+  height: 65px;
+  margin: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform .2s;
+  &:hover {
+    padding: 3px;
+    transform: scale(1.15);
+  }
+}
 
 .blur {
   opacity: 0.6;
@@ -36,15 +48,23 @@
   height: 50px;
   border-radius: 50%;
   border: 2px solid white;
+  object-fit: cover;
 }
 
 .avatar-sm {
   width: 40px;
   border-radius: 50%;
   border: 1px solid white;
+  object-fit: cover;
 }
 .avatar-num-xp {
+
+  height: 40px;
+  width: 60px;
+  border-radius: 50%;
+
   border-radius: 25px;
+
   background-color: #273145;
   color: white;
   display: flex; /* or inline-flex */
